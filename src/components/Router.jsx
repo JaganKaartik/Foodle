@@ -16,7 +16,7 @@ class Routes extends React.Component {
   }
 
   state = {
-    isAuthenticated:false
+    isAuthenticated: true
   }
 
   //Auth Handler to change the auth state [This being the parent component]
@@ -29,40 +29,40 @@ class Routes extends React.Component {
   }
 
   render() {
-  return (
-    <Router>
-      <div>
-        <Navigation authHandler = {this.authHandler} authstate = {this.state.isAuthenticated} />
-        
-        <Switch>
+    return (
+      <Router>
+        <div>
+          <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
-          {/* Default Route where authentication occurs */}
+          <Switch>
 
-          <Route path="/auth" exact>
-            <Auth authHandler = {this.authHandler}/>
-          </Route>
+            {/* Default Route where authentication occurs */}
 
-          <Route path="/" exact>
-            <Home />
-          </Route>
+            <Route path="/auth" exact>
+              <Auth authHandler={this.authHandler} />
+            </Route>
 
-          {/* Private Routes */}
+            <Route path="/" exact>
+              <Home />
+            </Route>
 
-          <PrivateRoute authstate = {this.state.isAuthenticated} path="/search" exact component={SearchDish} />
+            {/* Private Routes */}
 
-          <PrivateRoute authstate = {this.state.isAuthenticated} path="/dashboard" exact component={FoodTable} />
+            <PrivateRoute authstate={this.state.isAuthenticated} path="/search" exact component={SearchDish} />
 
-          <PrivateRoute authstate = {this.state.isAuthenticated} path="/profile" exact component={User} />
+            <PrivateRoute authstate={this.state.isAuthenticated} path="/dashboard" exact component={FoodTable} />
 
-          <PrivateRoute authstate = {this.state.isAuthenticated} path="/superadmin" exact component={SuperAdmin} />
+            <PrivateRoute authstate={this.state.isAuthenticated} path="/profile" exact component={User} />
 
-          {/* End of private routes */}
+            <PrivateRoute authstate={this.state.isAuthenticated} path="/superadmin" exact component={SuperAdmin} />
 
-        </Switch>
-      </div>
-    </Router>
-  );
-}
+            {/* End of private routes */}
+
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default Routes;
