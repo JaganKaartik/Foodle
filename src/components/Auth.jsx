@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { githubLogin, loginHelper } from "../services/helpers";
 import { Redirect } from "react-router-dom";
+import OAuthModal from "./modals/OAuthModal"
 //import { githubAuthHandler } from "../services/handlers";
 class Authentication extends Component {
 
@@ -69,53 +70,11 @@ class Authentication extends Component {
       return <Redirect to='/dashboard' />
     }
     return (
-      <div>
-        <div className="hoverable">
-          <h3 className="foodle">
-            <center>Log In to Enjoy Foodleness!</center>
-          </h3>
-          <form className="container ui form">
-            <div className="field">
-              <label>Username</label>
-              <input
-                type="text"
-                placeholder="username"
-                onChange={this.changeHandler.bind(this, "username")}
-                name="username"
-                value={this.state.username}
-              ></input>
-            </div>
-            <div className="field">
-              <label>Password </label>
-              <input
-                type="password"
-                placeholder="password"
-                onChange={this.changeHandler.bind(this, "password")}
-                name="password"
-                value={this.state.password}
-              ></input>
-            </div>
-            <div>
-              <button
-                className="z-depth-5 center-align ui facebook button"
-                onClick={this.valueHandler}
-              >
-                Log In
-                <i className="angle right icon" />
-              </button>
-
-              <button
-                value="github"
-                className="z-depth-5 center-align ui secondary button"
-                onClick={this.valueHandler}
-              >
-                <i className="github icon" />
-                Github
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <div className="container">
+        <br />
+        <br />
+        <OAuthModal onClick={this.valueHandler} />
+      </div >
     );
   }
 }

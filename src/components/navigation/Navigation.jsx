@@ -1,8 +1,6 @@
-// Testing React-Router
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-class Navigation extends Component 
-{   
+class Navigation extends Component {
   render() {
     return (
       <nav className="all">
@@ -36,9 +34,9 @@ class Navigation extends Component
             </li>
             <li>
               <NavLink to="/">
-              <i class="arrow alternate circle right outline icon"></i>
+                <i class="arrow alternate circle right outline icon"></i>
                 <button class="ui button" onClick={this.props.authHandler}>
-                Logout    
+                  Logout
                 </button>
               </NavLink>
             </li>
@@ -48,11 +46,11 @@ class Navigation extends Component
     } else {
       return (
         <div>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <NavLink to="/auth">Login</NavLink>
-          </li>
-        </ul>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li>
+              <NavLink to="/auth">Login</NavLink>
+            </li>
+          </ul>
         </div>
       );
     }

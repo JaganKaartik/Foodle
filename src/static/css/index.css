@@ -25,10 +25,10 @@ code {
   font-family: 'Enriqueta', serif;
   font-size: 50px;
 }
-
+/* 
 .nav-wrapper  {
-  background-color: #3383b8 !important;
-}
+  background-color:#172B4D !important;
+} */
 
 .foodle{
   font-family: 'Indie Flower', cursive;
@@ -36,4 +36,8 @@ code {
 
 .all{
   font-family: 'Montserrat', sans-serif;
+}
+
+.nav-wrapper  {
+  background-color:#0052CC!important;
 }

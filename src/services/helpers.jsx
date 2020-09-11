@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const loginHelper = (username, password) => {
   return fetch("http://localhost:5000/login", {
     method: "POST",
@@ -14,7 +16,7 @@ export const loginHelper = (username, password) => {
 };
 
 export const githubLogin = () => {
-  return fetch("/auth/github", {
+  return axios("/auth/github", {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -50,7 +52,7 @@ export const displayAllHelper = () => {
 
 export const displayOneHelper = (id) => {
   console.log("control at dishone helper");
-  return fetch(`http://localhost:5000/dish/${id}`, {
+  return fetch(`api/dish/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -61,7 +63,7 @@ export const displayOneHelper = (id) => {
 };
 
 export const addDishHelper = (name, type, price) => {
-  return fetch("http://localhost:5000/dish/", {
+  return fetch("api/dish/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
