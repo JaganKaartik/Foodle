@@ -1,5 +1,5 @@
-import React from "react";
-import {addDishHelper} from '../../services/helpers'
+import React from 'react';
+import { addDishHelper } from '../../services/helpers';
 
 class addDishForm extends React.Component {
   //Forn to add dish
@@ -12,22 +12,20 @@ class addDishForm extends React.Component {
   changeHandler = (field, e) => {
     this.setState({
       [field]: e.target.value
-    })
-  }
+    });
+  };
 
   dishFormHandler = (e) => {
-    e.preventDefault()
-    addDishHelper(this.state.name,this.state.type,this.state.price)
-    .then(res => {
+    e.preventDefault();
+    addDishHelper(this.state.name, this.state.type, this.state.price).then((res) => {
       if (res.ok) {
-        this.props.onAdd()
-        console.log("Successfully added dish");
+        this.props.onAdd();
+        console.log('Successfully added dish');
       } else {
-        console.log("Unable to add dish");
+        console.log('Unable to add dish');
       }
     });
-  }
-
+  };
 
   render() {
     return (
@@ -39,7 +37,7 @@ class addDishForm extends React.Component {
               type="text"
               name="dish-name"
               placeholder="Dish Name"
-              onChange={this.changeHandler.bind(this, "name")}
+              onChange={this.changeHandler.bind(this, 'name')}
               value={this.state.name}
             />
           </div>
@@ -49,7 +47,7 @@ class addDishForm extends React.Component {
               type="text"
               name="dish-type"
               placeholder="Dish Type"
-              onChange={this.changeHandler.bind(this, "type")}
+              onChange={this.changeHandler.bind(this, 'type')}
               value={this.state.type}
             />
           </div>
@@ -59,7 +57,7 @@ class addDishForm extends React.Component {
               type="text"
               name="dish-price"
               placeholder="Dish Price"
-              onChange={this.changeHandler.bind(this, "price")}
+              onChange={this.changeHandler.bind(this, 'price')}
               value={this.state.price}
             />
           </div>

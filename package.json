@@ -28,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "p": "prettier --write 'src/**/*.jsx' 'src/**/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,7 +47,8 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "prettier": "^2.1.1"
   },
   "proxy": "http://localhost:8888"
 }

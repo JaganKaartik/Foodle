@@ -1,26 +1,37 @@
-import React, { Component } from "react";
-import Button from "@atlaskit/button";
-import { connect } from "react-redux";
-import { dishTypeSelector } from "../../selectors/index";
-import { setFilter  } from "../../redux/utils/utilActions"
+import React, { Component } from 'react';
+import Button from '@atlaskit/button';
+import { connect } from 'react-redux';
+import { dishTypeSelector } from '../../selectors/index';
+import { setFilter } from '../../redux/utils/utilActions';
 
 class FilterMenu extends Component {
   state = {};
 
   clickHandler = (type) => {
-    this.props.setFilter(type)
-  }
+    this.props.setFilter(type);
+  };
 
   render() {
     return (
       <div className="ui compact menu">
         <div className="ui simple dropdown item">
-        <Button>Items Type</Button>
+          <Button>Items Type</Button>
           <div className="menu">
-            <div className="item" onClick={this.clickHandler.bind(this,null)}>All</div>
-            {console.log("Reselect Value: "+this.props.type)}
-            {this.props.type.map(type => {
-                return (<div key={type} onClick={this.clickHandler.bind(this,type)} className="item"  value={type} >{type}</div>);
+            <div className="item" onClick={this.clickHandler.bind(this, null)}>
+              All
+            </div>
+            {console.log('Reselect Value: ' + this.props.type)}
+            {this.props.type.map((type) => {
+              return (
+                <div
+                  key={type}
+                  onClick={this.clickHandler.bind(this, type)}
+                  className="item"
+                  value={type}
+                >
+                  {type}
+                </div>
+              );
             })}
           </div>
         </div>
@@ -29,21 +40,18 @@ class FilterMenu extends Component {
   }
 }
 
-const mapStateToProps = state => {
-    return {
-      type: dishTypeSelector(state)
-    };
+const mapStateToProps = (state) => {
+  return {
+    type: dishTypeSelector(state)
   };
+};
 
-
-  
-  const mapDispatchToProps = dispatch => {
-    return {
-       setFilter: (dishtype) => {
-           dispatch(setFilter(dishtype))
-       }
-    };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setFilter: (dishtype) => {
+      dispatch(setFilter(dishtype));
+    }
   };
-  
+};
 
-export default connect(mapStateToProps, mapDispatchToProps) (FilterMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(FilterMenu);

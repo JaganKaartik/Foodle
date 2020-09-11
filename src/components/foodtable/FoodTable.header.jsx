@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import AddModal from "../modals/AddModal";
-import FilterMenu from "./FilterMenu";
+import React, { Component } from 'react';
+import AddModal from '../modals/AddModal';
+import FilterMenu from './FilterMenu';
 
 class FoodTableHeader extends Component {
   render() {
@@ -9,9 +9,15 @@ class FoodTableHeader extends Component {
         <tr>
           <th>ID</th>
           <th>Item Name</th>
-          <th>  <FilterMenu /> </th>
+          <th>
+            {' '}
+            <FilterMenu />{' '}
+          </th>
           <th>Item Price</th>
-          <th> <AddModal onAdd={this.props.display} /> </th>
+          <th>
+            {' '}
+            <AddModal onAdd={this.props.display} />{' '}
+          </th>
         </tr>
       </thead>
     );

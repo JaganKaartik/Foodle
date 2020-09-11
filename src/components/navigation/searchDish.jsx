@@ -1,50 +1,59 @@
-import React, { Component } from "react";
-import "../../static/css/index.css"
-import * as thunkActions from "../../redux"
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import '../../static/css/index.css';
+import * as thunkActions from '../../redux';
+import { connect } from 'react-redux';
 import FoodModal from '../modals/FoodModal';
 
 class SearchDish extends Component {
   state = {
-    id:'',
-    modal:false
-  }
+    id: '',
+    modal: false
+  };
 
   changeHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     this.setState({
       id: e.target.value
-    })
-  }
+    });
+  };
 
-  formHandler = (e) =>{
+  formHandler = (e) => {
     e.preventDefault();
-    this.props.fetchdish(this.state.id)
-    console.log(this.props.data.dish.name)
-    this.modalHandler()
-  }
+    this.props.fetchdish(this.state.id);
+    console.log(this.props.data.dish.name);
+    this.modalHandler();
+  };
 
-  modalHandler = () =>{
-    this.state.modal ? this.setState({modal:false}):this.setState({modal:true})
-    console.log("Modal State: "+this.state.modal)
-  }
+  modalHandler = () => {
+    this.state.modal ? this.setState({ modal: false }) : this.setState({ modal: true });
+    console.log('Modal State: ' + this.state.modal);
+  };
 
   render() {
     return (
       <div>
-      <nav>
-        <div className="nav-wrapper">
-          <form className="ui form" onSubmit={this.formHandler}>
-              <input name="dish-id" placeholder="Dish ID" onChange={this.changeHandler.bind(this)} type="text"  required  value={this.state.value} />
-            <button className="ui button" type="submit">Search</button>
-          </form>
-        </div>
-        <div className="container">
-          { 
-            this.state.modal && <FoodModal dish={this.props.data.dish} onClose={this.modalHandler} /> 
-          }
-        </div>
-      </nav>
+        <nav>
+          <div className="nav-wrapper">
+            <form className="ui form" onSubmit={this.formHandler}>
+              <input
+                name="dish-id"
+                placeholder="Dish ID"
+                onChange={this.changeHandler.bind(this)}
+                type="text"
+                required
+                value={this.state.value}
+              />
+              <button className="ui button" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+          <div className="container">
+            {this.state.modal && (
+              <FoodModal dish={this.props.data.dish} onClose={this.modalHandler} />
+            )}
+          </div>
+        </nav>
       </div>
     );
   }
@@ -53,23 +62,22 @@ class SearchDish extends Component {
 // Map the state to props
 // Access the dish attribute and displauy the foodcard accordingly
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     data: state.fetchOne
-  }
-}
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    fetchdish: dishid => { 
-      dispatch(thunkActions.thunkFetchOneDish(dishid))
-      .catch((err)=>{
+    fetchdish: (dishid) => {
+      dispatch(thunkActions.thunkFetchOneDish(dishid)).catch((err) => {
         this.setState({
-          modal:false
-        })  
-      })
+          modal: false
+        });
+      });
     }
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchDish);

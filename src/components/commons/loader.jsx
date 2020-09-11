@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ProgressBar from "@atlaskit/progress-bar";
+import React, { Component } from 'react';
+import ProgressBar from '@atlaskit/progress-bar';
 
 class FoodleLoader extends Component {
   render() {

@@ -1,4 +1,4 @@
-import * as actionTypes from "./dishActionTypes";
+import * as actionTypes from './dishActionTypes';
 // Fetch Dishes
 
 export const fetchDishesRequest = () => {
@@ -7,14 +7,14 @@ export const fetchDishesRequest = () => {
   };
 };
 
-export const fetchDishesSuccess = dishes => {
+export const fetchDishesSuccess = (dishes) => {
   return {
     type: actionTypes.FETCH_DISH_SUCCESS,
     payload: dishes
   };
 };
 
-export const fetchDishesFailure = error => {
+export const fetchDishesFailure = (error) => {
   return {
     type: actionTypes.FETCH_DISH_FAILURE,
     payload: error
@@ -23,18 +23,18 @@ export const fetchDishesFailure = error => {
 
 export const fetchOneDishRequest = () => {
   return {
-    type: actionTypes.FETCH_ONE_DISH_REQUEST,
+    type: actionTypes.FETCH_ONE_DISH_REQUEST
   };
 };
 
-export const fetchOneDishSuccess = dish => {
+export const fetchOneDishSuccess = (dish) => {
   return {
     type: actionTypes.FETCH_ONE_DISH_SUCCESS,
     payload: dish
   };
 };
 
-export const fetchOneDishFailure = error => {
+export const fetchOneDishFailure = (error) => {
   return {
     type: actionTypes.FETCH_ONE_DISH_FAILURE,
     payload: error
@@ -43,14 +43,14 @@ export const fetchOneDishFailure = error => {
 
 // Add Dishes
 
-export const addDishSuccess = message => {
+export const addDishSuccess = (message) => {
   return {
     type: actionTypes.ADD_DISH_SUCCESS,
     payload: message
   };
 };
 
-export const addDishFailure = message => {
+export const addDishFailure = (message) => {
   return {
     type: actionTypes.ADD_DISH_FAILURE,
     payload: message
@@ -59,14 +59,14 @@ export const addDishFailure = message => {
 
 // Update Dishes
 
-export const updateDishSuccess = message => {
+export const updateDishSuccess = (message) => {
   return {
     type: actionTypes.UPDATE_DISH_SUCCESS,
     payload: message
   };
 };
 
-export const updateDishFailure = message => {
+export const updateDishFailure = (message) => {
   return {
     type: actionTypes.UPDATE_DISH_FAILURE,
     payload: message
@@ -75,14 +75,14 @@ export const updateDishFailure = message => {
 
 // Delete Dishes
 
-export const deleteDishSuccess = message => {
+export const deleteDishSuccess = (message) => {
   return {
     type: actionTypes.DELETE_DISH_SUCCESS,
     payload: message
   };
 };
 
-export const deleteDishFailure = message => {
+export const deleteDishFailure = (message) => {
   return {
     type: actionTypes.DELETE_DISH_FAILURE,
     payload: message

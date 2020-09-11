@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import home from "../../static/images/home.jpg";
-import "../../static/css/home.css";
+import React, { Component } from 'react';
+import home from '../../static/images/home.jpg';
+import '../../static/css/home.css';
 
 class Home extends Component {
   render() {

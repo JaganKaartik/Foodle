@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import { githubLogin, loginHelper } from "../services/helpers";
-import { Redirect } from "react-router-dom";
-import OAuthModal from "./modals/OAuthModal"
+import React, { Component } from 'react';
+import { githubLogin, loginHelper } from '../services/helpers';
+import { Redirect } from 'react-router-dom';
+import OAuthModal from './modals/OAuthModal';
 //import { githubAuthHandler } from "../services/handlers";
 class Authentication extends Component {
-
   // Need to maintain a isAuthenticated State
 
   state = {
@@ -22,59 +21,57 @@ class Authentication extends Component {
   dashHandler = () => {
     this.setState({
       toDashboard: true
-    })
-  }
+    });
+  };
 
-
-  valueHandler = e => {
+  valueHandler = (e) => {
     e.preventDefault();
-    if (e.currentTarget.value === "github") {
+    if (e.currentTarget.value === 'github') {
       githubLogin()
-        .then(resp => {
-          console.log(resp.json())
+        .then((resp) => {
+          console.log(resp.json());
           return resp.json();
         })
-        .then(resp => {
-          if (resp.message === "success") {
-            console.log("Successful Authentication");
-            this.props.authHandler()
-            this.dashHandler()
+        .then((resp) => {
+          if (resp.message === 'success') {
+            console.log('Successful Authentication');
+            this.props.authHandler();
+            this.dashHandler();
           }
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
-    }
-    else {
+    } else {
       const user = this.state.username;
       const pass = this.state.password;
       loginHelper(user, pass)
-        .then(resp => {
-          return resp.json()
+        .then((resp) => {
+          return resp.json();
         })
-        .then(resp => {
+        .then((resp) => {
           if (resp.message === 'success') {
-            console.log("Successful Authentication");
-            this.props.authHandler()
-            this.dashHandler()
+            console.log('Successful Authentication');
+            this.props.authHandler();
+            this.dashHandler();
           }
         })
-        .catch(err => {
-          console.log("Authentication Failed")
-        })
+        .catch((err) => {
+          console.log('Authentication Failed');
+        });
     }
   };
 
   render() {
     if (this.state.toDashboard) {
-      return <Redirect to='/dashboard' />
+      return <Redirect to="/dashboard" />;
     }
     return (
       <div className="container">
         <br />
         <br />
         <OAuthModal onClick={this.valueHandler} />
-      </div >
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Operations from "../modals/OperationsModal";
+import React, { Component } from 'react';
+import Operations from '../modals/OperationsModal';
 class Food extends Component {
   constructor(props) {
     super(props);
@@ -10,22 +10,18 @@ class Food extends Component {
   }
 
   sendData = () => {
-    return this.props.click.bind(
-      this,
-      this.props.name + this.state.temp,
-      "edit"
-    );
+    return this.props.click.bind(this, this.props.name + this.state.temp, 'edit');
   };
 
-  saveHandler = e => {
+  saveHandler = (e) => {
     e.preventDefault();
     if (this.state.isEditable) {
       this.setState(() => {
         return { isEditable: false };
       });
-      console.log("From Food : " + this.props.name);
-      console.log("From Temp : " + this.state.temp);
-      this.props.click(this.props.name + this.state.temp, "edit", e);
+      console.log('From Food : ' + this.props.name);
+      console.log('From Temp : ' + this.state.temp);
+      this.props.click(this.props.name + this.state.temp, 'edit', e);
     } else {
       this.setState(() => {
         return { isEditable: true };
@@ -33,7 +29,7 @@ class Food extends Component {
     }
   };
 
-  editHandler = e => {
+  editHandler = (e) => {
     this.setState({ temp: e.target.value });
     console.log(e.target.value);
   };

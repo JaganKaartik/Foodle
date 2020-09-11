@@ -3,7 +3,7 @@
     Component Contains Dummy User Information
 */
 
-import React from "react";
+import React from 'react';
 
 /*
 

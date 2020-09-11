@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "../../static/css/index.css"
-import * as thunkActions from "../../redux";
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import '../../static/css/index.css';
+import * as thunkActions from '../../redux';
+import { connect } from 'react-redux';
 
 class SuperAdmin extends Component {
   render() {
@@ -9,7 +9,8 @@ class SuperAdmin extends Component {
       <div>
         <h5 className="title">Super Admin Mode</h5>
         <div className="ui inverted segment">
-        <span>Welcome to the secret part of the application! </span><button className="ui inverted blue button">Proceed with Caution!</button>
+          <span>Welcome to the secret part of the application! </span>
+          <button className="ui inverted blue button">Proceed with Caution!</button>
         </div>
         <br />
         <br />
@@ -20,11 +21,12 @@ class SuperAdmin extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    deleteAllDishes: () => { dispatch(thunkActions.thunkDeleteAllDish()) }
+    deleteAllDishes: () => {
+      dispatch(thunkActions.thunkDeleteAllDish());
+    }
   };
 };
 
-
-export default connect(mapDispatchToProps) (SuperAdmin) ;
+export default connect(mapDispatchToProps)(SuperAdmin);

@@ -1,1 +1,1 @@
-export const FILTERED_DISH= 'FILTERED_DISH'
+export const FILTERED_DISH = 'FILTERED_DISH';

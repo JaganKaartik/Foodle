@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as thunkActions from "../../redux";
-import FoodTableHeader from "./FoodTable.header";
-import FoodTableBody from "./FoodTable.body";
-import FoodleLoader from "../commons/loader";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as thunkActions from '../../redux';
+import FoodTableHeader from './FoodTable.header';
+import FoodTableBody from './FoodTable.body';
+import FoodleLoader from '../commons/loader';
 
 class FoodTable extends Component {
   componentDidMount() {
@@ -12,12 +12,12 @@ class FoodTable extends Component {
 
   clickHandler = (field, type, e) => {
     e.preventDefault();
-    if (type === "delete") {
+    if (type === 'delete') {
       this.props.deleteOneDish(field);
       this.props.displayAllDishes();
     } else {
-      const name = field.split("$")[0];
-      const price = "$" + field.split("$")[1];
+      const name = field.split('$')[0];
+      const price = '$' + field.split('$')[1];
       this.props.updateDish(name, price);
       this.props.displayAllDishes();
     }
@@ -43,23 +43,20 @@ class FoodTable extends Component {
         <table className="highlight">
           <FoodTableHeader display={this.props.displayAllDishes} />
           {/* <FoodTableBody data={this.props.data} onDelete={this.deleteHandler} onEdit={this.editHandler} /> */}
-          <FoodTableBody
-            data={this.props.data.dishes}
-            click={this.clickHandler}
-          />
+          <FoodTableBody data={this.props.data.dishes} click={this.clickHandler} />
         </table>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     data: state.fetchdish
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     displayAllDishes: () => {
       dispatch(thunkActions.thunkFetchDishes());
@@ -67,7 +64,7 @@ const mapDispatchToProps = dispatch => {
     updateDish: (name, price) => {
       dispatch(thunkActions.thunkUpdateDishes(name, price));
     },
-    deleteOneDish: dishid => {
+    deleteOneDish: (dishid) => {
       dispatch(thunkActions.thunkDeleteDish(dishid));
     }
   };

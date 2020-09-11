@@ -1,1 +1,1 @@
-export * from './dishes/thunkActions'
+export * from './dishes/thunkActions';
