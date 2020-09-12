@@ -16,7 +16,7 @@ export const loginHelper = (username, password) => {
 };
 
 export const checkAuth = () => {
-  return axios('http://127.0.0.1:8888/auth/login/success', {
+  return axios('/auth/login/success', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -27,14 +27,7 @@ export const checkAuth = () => {
 };
 
 export const githubLogin = () => {
-  return axios('/auth/github', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });
+  window.open("/auth/github", "_self");
 };
 
 // export const googleLogin = (username, password) => {

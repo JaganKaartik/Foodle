@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { githubLogin, checkAuth } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import OAuthModal from './modals/OAuthModal';
+import GitHubLogin from 'react-github-login';
 class Authentication extends Component {
   state = {
-    toDashboard: false,
-    github: false
+    toDashboard: true,
   };
 
   changeHandler = (field, e) => {
@@ -19,30 +19,25 @@ class Authentication extends Component {
       toDashboard: true
     });
   };
-  componentDidMount() {
-    checkAuth().then((resp) => {
-      console.log(resp.json());
-      return resp.json();
-    })
-      .then((resp) => {
-        if (resp.message === 'success') {
-          console.log('Successful Authentication');
-          this.props.authHandler();
-          this.dashHandler();
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+
   valueHandler = (e) => {
     e.preventDefault();
     if (e.currentTarget.value === 'github') {
       githubLogin()
-      this.setState({
-        github: true,
-        toDashboard: true
+      checkAuth().then((resp) => {
+        console.log(resp.json());
+        return resp.json();
       })
+        .then((resp) => {
+          if (resp.message === 'success') {
+            console.log('Successful Authentication');
+            this.props.authHandler();
+            this.dashHandler();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 
