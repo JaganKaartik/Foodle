@@ -27,7 +27,7 @@ export const checkAuth = () => {
 };
 
 export const githubLogin = () => {
-  window.open("/auth/github", "_self");
+  window.open("http://127.0.0.1:8888/auth/github", "_self");
 };
 
 // export const googleLogin = (username, password) => {
