@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { githubLogin, loginHelper } from '../services/helpers';
+import { githubLogin, checkAuth } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import OAuthModal from './modals/OAuthModal';
-//import { githubAuthHandler } from "../services/handlers";
-class Authentication extends Component {
-  // Need to maintain a isAuthenticated State
 
+class Authentication extends Component {
   state = {
-    username: '',
-    password: '',
     toDashboard: false
   };
 
@@ -24,41 +20,28 @@ class Authentication extends Component {
     });
   };
 
+  componentDidMount = () => {
+    console.log('Component Did Mount')
+    checkAuth().then((resp) => {
+      console.log(resp.json());
+      return resp.json();
+    })
+      .then((resp) => {
+        if (resp.message === 'success') {
+          console.log('Successful Authentication');
+          this.props.authHandler();
+          this.dashHandler();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   valueHandler = (e) => {
     e.preventDefault();
     if (e.currentTarget.value === 'github') {
       githubLogin()
-        .then((resp) => {
-          console.log(resp.json());
-          return resp.json();
-        })
-        .then((resp) => {
-          if (resp.message === 'success') {
-            console.log('Successful Authentication');
-            this.props.authHandler();
-            this.dashHandler();
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      const user = this.state.username;
-      const pass = this.state.password;
-      loginHelper(user, pass)
-        .then((resp) => {
-          return resp.json();
-        })
-        .then((resp) => {
-          if (resp.message === 'success') {
-            console.log('Successful Authentication');
-            this.props.authHandler();
-            this.dashHandler();
-          }
-        })
-        .catch((err) => {
-          console.log('Authentication Failed');
-        });
     }
   };
 
@@ -70,7 +53,7 @@ class Authentication extends Component {
       <div className="container">
         <br />
         <br />
-        <OAuthModal onClick={this.valueHandler} />
+        <OAuthModal valueHandler={this.valueHandler.bind(this)} />
       </div>
     );
   }

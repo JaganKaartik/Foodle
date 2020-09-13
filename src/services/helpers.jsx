@@ -15,8 +15,8 @@ export const loginHelper = (username, password) => {
   });
 };
 
-export const githubLogin = () => {
-  return axios('/auth/github', {
+export const checkAuth = () => {
+  return axios('/auth/login/success', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -24,6 +24,10 @@ export const githubLogin = () => {
     mode: 'cors',
     credentials: 'include'
   });
+};
+
+export const githubLogin = () => {
+  window.open("http://127.0.0.1:8888/auth/github", "_self");
 };
 
 // export const googleLogin = (username, password) => {
@@ -39,7 +43,7 @@ export const githubLogin = () => {
 
 export const displayAllHelper = () => {
   console.log('control at dishall helper');
-  return fetch('/api/dish/all', {
+  return fetch('http://localhost:8888/api/dish/all', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
