@@ -10,6 +10,9 @@ const routes = require('./routes/api')
 const mongoDB = process.env.mongoDB_URL || 'mongodb://127.0.0.1:27017/foodle'
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
+
+db.once('open', console.log('Database connected:'))
+
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.use('/routes', routes)
