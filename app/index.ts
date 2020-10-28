@@ -1,3 +1,6 @@
-import express from "express";
+import express from 'express'
 
-const app = express();
+const routes = './routes'
+const app = express()
+
+app.use('/routes', routes)
