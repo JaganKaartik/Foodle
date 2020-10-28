@@ -6,6 +6,13 @@
   "repository": "https://github.com/JaganKaartik/Express-Foodle-API",
   "author": "JaganKaartik <kaartikjagan@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "dev": "nodemon dist/index",
+    "start": "node dist/index",
+    "lint": "eslint '*/**/*.ts' --fix",
+    "p": "prettier '*/**/*.ts' --color"
+  },
   "devDependencies": {
     "@types/express": "^4.17.8",
     "@types/node": "^14.14.5",
