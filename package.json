@@ -1,0 +1,9 @@
+{
+  "name": "express-foodle-api",
+  "version": "1.0.0",
+  "description": "Express API for Foodle",
+  "main": "index.js",
+  "repository": "https://github.com/JaganKaartik/Express-Foodle-API",
+  "author": "JaganKaartik <kaartikjagan@gmail.com>",
+  "license": "MIT"
+}
