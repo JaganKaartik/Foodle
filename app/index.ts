@@ -1,13 +1,15 @@
 import express from 'express'
-import db from './config/db'
+
+const connectDB = require('./config/database')
 
 const app = express()
+
+connectDB()
 
 const port = process.env.PORT || 5000
 const routes = require('./routes/api')
 
 app.use('/routes', routes)
-app.use(db)
 
 app.listen(port, () => {
   console.log('Server Started Successfully')
