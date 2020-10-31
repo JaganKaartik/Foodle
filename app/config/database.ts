@@ -2,9 +2,11 @@ import { ConnectionOptions, connect } from 'mongoose'
 
 require('dotenv').config()
 
+console.log(process.env)
+
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.mongoDB_URI || ''
+    const mongoURI = process.env.mongoDB_URL || ''
     const options: ConnectionOptions = {
       useNewUrlParser: true,
       useCreateIndex: true,
