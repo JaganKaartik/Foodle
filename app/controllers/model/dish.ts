@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const DishSchema = require('../../models')
 
 const getAllDish = (req, res) => {
