@@ -1,9 +1,9 @@
 import express from 'express'
+import { getAllDish, getDish } from '../../controllers/model/dish'
 
-const router = express.Router()
+const apiRouter = express.Router()
 
-router.get('/', (req, res) => {
-  res.send('<h1>Welcome</h1>')
-})
+apiRouter.get('/dish/all', getAllDish)
+apiRouter.get('/dish/:id', getDish)
 
-export = router
+export = apiRouter
