@@ -20,6 +20,7 @@
   "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "semi": 0,
+    "no-unused-vars": "off",
     "prettier/prettier": "error",
     "comma-dangle": "off",
     "no-console": "off",
@@ -33,6 +34,7 @@
         "tsx": "never"
       }
     ],
+    "noImplicitAny": 0,
     "operator-linebreak": ["error", "after"]
   }
 }

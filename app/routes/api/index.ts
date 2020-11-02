@@ -1,9 +1,16 @@
 import express from 'express'
+import {
+  getAllDish,
+  getDish,
+  deleteDish,
+  updateDish
+} from '../../controllers/model/dish'
 
-const router = express.Router()
+const apiRouter = express.Router()
 
-router.get('/', (req, res) => {
-  res.send('<h1>Welcome</h1>')
-})
+apiRouter.get('/dish/all', getAllDish)
+apiRouter.get('/dish/:id', getDish)
+apiRouter.delete('/dish/', deleteDish)
+apiRouter.put('/dish/:id', updateDish)
 
-export = router
+export = apiRouter

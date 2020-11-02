@@ -6,7 +6,7 @@ console.log(process.env)
 
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.mongoDB_URL || ''
+    const mongoURI = process.env.MONGO_URL || ''
     const options: ConnectionOptions = {
       useNewUrlParser: true,
       useCreateIndex: true,
