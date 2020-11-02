@@ -1,5 +1,6 @@
 import express from 'express'
 import connectDB from './config/database'
+import apiRoutes from './routes/api'
 
 const app = express()
 
