@@ -33,6 +33,7 @@
         "tsx": "never"
       }
     ],
+    "noImplicitAny": 0,
     "operator-linebreak": ["error", "after"]
   }
 }
