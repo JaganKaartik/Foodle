@@ -10,4 +10,14 @@ const getAllDish = (req, res) => {
     })
 }
 
-export = getAllDish
+const getDish = (req, res) => {
+  DishSchema.findById({ id: req.params.id })
+    .then((data: JSON) => {
+      console.log(data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+export { getAllDish, getDish }
