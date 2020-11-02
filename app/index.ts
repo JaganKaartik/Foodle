@@ -5,7 +5,7 @@ const app = express()
 
 connectDB()
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 const routes = require('./routes/api')
 
 app.use('/routes', routes)
