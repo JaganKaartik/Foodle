@@ -36,7 +36,11 @@ const deleteDish = (req, res) => {
 }
 
 const updateDish = (req, res) => {
-  DishSchema.findByIdAndUpdate(req.params.id, {}, { new: true })
+  DishSchema.findByIdAndUpdate(
+    req.params.id,
+    { $set: { price: req.payload.price } },
+    { new: true }
+  )
     .then((resp: JSON) => {
       if (resp) {
         res.send({ message: 'Record Updated Successfully' })
