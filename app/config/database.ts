@@ -2,8 +2,6 @@ import { ConnectionOptions, connect } from 'mongoose'
 
 require('dotenv').config()
 
-console.log(process.env)
-
 const connectDB = async () => {
   try {
     const mongoURI = process.env.MONGO_URL || ''
