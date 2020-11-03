@@ -35,6 +35,18 @@ const deleteDish = (req, res) => {
     })
 }
 
-const updateDish = (req, res) => {}
+const updateDish = (req, res) => {
+  DishSchema.findByIdAndUpdate(req.params.id, {}, { new: true })
+    .then((resp: JSON) => {
+      if (resp) {
+        res.send({ message: 'Record Updated Successfully' })
+      } else {
+        res.send({ message: 'Error Wrong ID' })
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
 
 export { getAllDish, getDish, deleteDish, updateDish }
