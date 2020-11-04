@@ -3,10 +3,8 @@ import { apiRouter, authRouter, commonRouter } from '../routes'
 
 const Middleware = express()
 
-const middlewareInit = () => {
-  Middleware.use(commonRouter)
-  Middleware.use('/api', apiRouter)
-  Middleware.use('/auth', authRouter)
-}
+Middleware.use(commonRouter)
+Middleware.use('/api', apiRouter)
+Middleware.use('/auth', authRouter)
 
-export = middlewareInit
+export = Middleware

@@ -1,11 +1,11 @@
 import express from 'express'
 import connectDB from './config/database'
-import middlewareInit from './middleware'
+import Middleware from './middleware'
 
 const app = express()
 
 connectDB()
-middlewareInit()
+app.use(Middleware)
 
 const port = process.env.PORT || 4000
 
