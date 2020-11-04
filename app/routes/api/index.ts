@@ -4,7 +4,7 @@ import {
   getDish,
   deleteDish,
   updateDish
-} from '../../controllers/model/dish'
+} from '../../controllers/api'
 
 const apiRouter = express.Router()
 
