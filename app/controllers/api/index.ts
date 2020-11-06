@@ -4,20 +4,20 @@ const Dishes = require('../../models')
 const getAllDish = (req, res) => {
   Dishes.find({})
     .then((data: JSON) => {
-      console.log(data)
+      res.send(data)
     })
     .catch((err) => {
-      console.log(err)
+      res.send(err)
     })
 }
 
 const getDish = (req, res) => {
   Dishes.findById({ id: req.params.id })
     .then((data: JSON) => {
-      console.log(data)
+      res.send(data)
     })
     .catch((err) => {
-      console.log(err)
+      res.send(err)
     })
 }
 
