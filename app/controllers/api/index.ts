@@ -1,8 +1,8 @@
 /* eslint-disable object-curly-newline */
-const DishSchema = require('../../models')
+const Dishes = require('../../models')
 
 const getAllDish = (req, res) => {
-  DishSchema.find({})
+  Dishes.find({})
     .then((data: JSON) => {
       console.log(data)
     })
@@ -12,7 +12,7 @@ const getAllDish = (req, res) => {
 }
 
 const getDish = (req, res) => {
-  DishSchema.findById({ id: req.params.id })
+  Dishes.findById({ id: req.params.id })
     .then((data: JSON) => {
       console.log(data)
     })
@@ -22,7 +22,7 @@ const getDish = (req, res) => {
 }
 
 const deleteDish = (req, res) => {
-  DishSchema.findOneAndRemove({ id: req.params.id })
+  Dishes.findOneAndRemove({ id: req.params.id })
     .then((data: JSON) => {
       if (data) {
         res.send({ message: 'Successfully Deleted Record' })
@@ -36,7 +36,7 @@ const deleteDish = (req, res) => {
 }
 
 const updateDish = (req, res) => {
-  DishSchema.findByIdAndUpdate(
+  Dishes.findByIdAndUpdate(
     req.params.id,
     { $set: { price: req.payload.price } },
     { new: true }
