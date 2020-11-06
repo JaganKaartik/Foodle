@@ -1,4 +1,4 @@
 import * as seedData from './seed.json'
-import { db } from './database'
+import DishSchema from '../models'
 
-db.dishes.insert(seedData)
+// DishSchema.insertMany(seedData)
