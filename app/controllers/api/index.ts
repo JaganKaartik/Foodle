@@ -12,7 +12,7 @@ const getAllDish = (req, res) => {
 }
 
 const getDish = (req, res) => {
-  Dishes.find({ id: req.params.id })
+  Dishes.findById({ id: req.params.id })
     .then((data: JSON) => {
       res.send(data)
     })
