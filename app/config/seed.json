@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Croissant",
+    "type": "Bread",
+    "price": "$0.50"
+  },
+  {
+    "id": 2,
+    "name": "Baguette",
+    "type": "Bread",
+    "price": "$2.50"
+  },
+  {
+    "id": 3,
+    "name": "Doughnut",
+    "type": "Confections",
+    "price": "$1.50"
+  },
+  {
+    "id": 4,
+    "name": "Pain Au Chocolat",
+    "type": "Bread",
+    "price": "$2.00"
+  },
+  {
+    "id": 5,
+    "name": "Penne Pasta",
+    "type": "Pasta",
+    "price": "$6.80"
+  },
+  {
+    "id": 6,
+    "name": "French Toast",
+    "type": "Bread",
+    "price": "$5.00"
+  },
+  {
+    "id": 7,
+    "name": "Penne Arabiata",
+    "type": "Pasta",
+    "price": "$10.80"
+  },
+  {
+    "id": 8,
+    "name": "Pasta Bologaniase",
+    "type": "Pasta",
+    "price": "$12.00"
+  },
+  {
+    "id": 9,
+    "name": "Pizza",
+    "type": "Bread",
+    "price": "$5.00"
+  },
+  {
+    "id": 10,
+    "name": "Crepe",
+    "type": "Bread",
+    "price": "$1.50"
+  },
+  {
+    "id": 11,
+    "name": "Macaroons",
+    "type": "Confections",
+    "price": "$2.00"
+  },
+  {
+    "id": 12,
+    "name": "Macaronni",
+    "type": "Pasta",
+    "price": "$7.50"
+  },
+  {
+    "id": 13,
+    "name": "Hot Dog",
+    "type": "Snacks",
+    "price": "$2.00"
+  },
+  {
+    "id": 13,
+    "name": "Hot Dog",
+    "type": "Snacks",
+    "price": "$2.00"
+  }
+]

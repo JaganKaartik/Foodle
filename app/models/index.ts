@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 
 const { Schema } = mongoose
 
-const dishes = new Schema({
+const dishSchema = new Schema({
   id: Number,
   name: String,
   type: String,
   price: String
 })
 
-export = dishes
+export = mongoose.model('dishes', dishSchema)

@@ -1,4 +1,4 @@
-import { ConnectionOptions, connect } from 'mongoose'
+import { ConnectionOptions, connect, connection } from 'mongoose'
 
 require('dotenv').config()
 
@@ -19,4 +19,6 @@ const connectDB = async () => {
   }
 }
 
-export default connectDB
+const db = connection
+
+export { db, connectDB }
