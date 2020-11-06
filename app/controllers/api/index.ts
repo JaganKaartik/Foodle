@@ -36,7 +36,7 @@ const deleteDish = (req, res) => {
 }
 
 const updateDish = (req, res) => {
-  Dishes.findByIdAndUpdate(
+  Dishes.findOneAndUpdate(
     req.params.id,
     { $set: { price: req.payload.price } },
     { new: true }
