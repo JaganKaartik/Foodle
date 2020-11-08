@@ -1,11 +1,6 @@
 import express from 'express'
-import {
-  getAllDish,
-  getDish,
-  deleteDish,
-  updateDish
-} from '../../controllers/api'
-import authCheck from '../../middleware/auth-check'
+import { getAllDish, getDish, deleteDish, updateDish } from '../controllers/api'
+import authCheck from '../middleware/auth-check'
 
 const apiRouter = express.Router()
 
