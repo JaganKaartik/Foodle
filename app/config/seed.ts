@@ -1,4 +1,8 @@
 import * as seedData from './seed.json'
-import DishSchema from '../models'
+import Dish from '../models/dish'
 
-// DishSchema.insertMany(seedData)
+const seed = () => {
+  Dish.insertMany(seedData)
+}
+
+export = seed
