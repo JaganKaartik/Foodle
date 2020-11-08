@@ -35,6 +35,7 @@
       }
     ],
     "noImplicitAny": 0,
-    "operator-linebreak": ["error", "after"]
+    "operator-linebreak": ["error", "after"],
+    "no-underscore-dangle": "off"
   }
 }
