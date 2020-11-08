@@ -1,6 +1,6 @@
 import express from 'express'
-import { homeController, errorController } from '../../controllers/common'
-import authCheck from '../../middleware/auth-check'
+import { homeController, errorController } from '../controllers/common'
+import authCheck from '../middleware/auth-check'
 
 const CommonRouter = express.Router()
 
