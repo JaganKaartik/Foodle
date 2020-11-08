@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-const Dishes = require('../../models')
+const Dishes = require('../models')
 
 const getAllDish = (req, res) => {
   Dishes.find({})
