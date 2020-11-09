@@ -15,7 +15,7 @@ const authRedirect = () => {
   })
 }
 
-const authStatus = (res, req) => {
+const authStatus = (req, res) => {
   if (req.user) {
     res.json({
       success: true,
