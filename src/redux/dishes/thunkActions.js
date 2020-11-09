@@ -1,17 +1,10 @@
 import * as actionCreators from './dishActions';
-import {
-  displayOneHelper,
-  displayAllHelper,
-  delOneHelper,
-  deleteAllHelper,
-  updateHelper,
-  addDishHelper
-} from '../../services/helpers';
+import { displayAllDish, displayDish, updateDish, addDish, delDish } from '../../services/helpers';
 
 export const thunkFetchDishes = () => {
   return function (dispatch) {
     dispatch(actionCreators.fetchDishesRequest());
-    return displayAllHelper()
+    return displayAllDish()
       .then((resp) => {
         console.log(resp);
         return resp.json();
@@ -27,7 +20,7 @@ export const thunkFetchDishes = () => {
 export const thunkFetchOneDish = (id) => {
   return function (dispatch) {
     dispatch(actionCreators.fetchOneDishRequest());
-    return displayOneHelper(id)
+    return displayDish(id)
       .then((resp) => {
         return resp.json();
       })
@@ -41,7 +34,7 @@ export const thunkFetchOneDish = (id) => {
 
 export const thunkDeleteDish = (id) => {
   return function (dispatch) {
-    delOneHelper(id)
+    delDish(id)
       .then((resp) => {
         if (resp.ok) {
           const message = 'Successfully Deleted!';
@@ -52,22 +45,9 @@ export const thunkDeleteDish = (id) => {
   };
 };
 
-export const thunkDeleteAllDish = () => {
-  return function (dispatch) {
-    deleteAllHelper()
-      .then((resp) => {
-        if (resp.ok) {
-          const message = 'Successfully Deleted All!';
-          dispatch(actionCreators.deleteDishSuccess(message));
-        }
-      })
-      .catch((err) => dispatch(actionCreators.deleteDishFailure(err)));
-  };
-};
-
 export const thunkUpdateDishes = (name, price) => {
   return function (dispatch) {
-    updateHelper(name, price)
+    updateDish(name, price)
       .then((resp) => {
         if (resp.ok) {
           const message = 'Successfully Updated!';
@@ -80,7 +60,7 @@ export const thunkUpdateDishes = (name, price) => {
 
 export const thunkAddDishes = () => {
   return function (dispatch) {
-    addDishHelper()
+    addDish()
       .then((resp) => {
         if (resp.ok) {
           const message = 'Successfully Added Dish!';

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../static/css/index.css';
-import * as thunkActions from '../../redux';
 import { connect } from 'react-redux';
 
 class SuperAdmin extends Component {
@@ -23,9 +22,9 @@ class SuperAdmin extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteAllDishes: () => {
-      dispatch(thunkActions.thunkDeleteAllDish());
-    }
+    // deleteAllDishes: () => {
+    //   dispatch(thunkActions.thunkDeleteAllDish());
+    // }
   };
 };
 
