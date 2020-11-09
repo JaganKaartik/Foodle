@@ -9,6 +9,17 @@ const logout = (res, req) => {
   res.redirect(CLIENT_HOME_PAGE_URL)
 }
 
+const authRedirect = () => {
+  passport.authenticate('twitter', {
+    successRedirect: CLIENT_HOME_PAGE_URL,
+    failureRedirect: '/auth/status'
+  })
+}
+
+const auth = () => {
+  passport.authenticate('twitter')
+}
+
 const authStatus = (res, req) => {
   if (req.user) {
     res.json({
@@ -23,17 +34,6 @@ const authStatus = (res, req) => {
       message: 'user failed to authenticate.'
     })
   }
-}
-
-const authRedirect = () => {
-  passport.authenticate('twitter', {
-    successRedirect: CLIENT_HOME_PAGE_URL,
-    failureRedirect: '/auth/status'
-  })
-}
-
-const auth = () => {
-  passport.authenticate('twitter')
 }
 
 export { authStatus, auth, authRedirect, logout }
