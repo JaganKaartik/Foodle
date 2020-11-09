@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { githubLogin, checkAuth } from '../services/helpers';
+import { twitterLogin, checkAuth } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import OAuthModal from './modals/OAuthModal';
 
@@ -21,27 +21,23 @@ class Authentication extends Component {
   };
 
   componentDidMount = () => {
-    console.log('Component Did Mount')
-    checkAuth().then((resp) => {
-      console.log(resp.json());
-      return resp.json();
-    })
+    checkAuth()
       .then((resp) => {
-        if (resp.message === 'success') {
+        return resp.json();
+      })
+      .then((resp) => {
+        if (resp.success === true) {
           console.log('Successful Authentication');
           this.props.authHandler();
           this.dashHandler();
         }
-      })
-      .catch((err) => {
-        console.log(err);
       });
-  }
+  };
 
   valueHandler = (e) => {
     e.preventDefault();
-    if (e.currentTarget.value === 'github') {
-      githubLogin()
+    if (e.currentTarget.value === 'twitter') {
+      twitterLogin();
     }
   };
 

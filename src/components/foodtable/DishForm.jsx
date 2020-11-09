@@ -1,5 +1,5 @@
 import React from 'react';
-import { addDishHelper } from '../../services/helpers';
+import { addDish } from '../../services/helpers';
 
 class addDishForm extends React.Component {
   //Forn to add dish
@@ -17,7 +17,7 @@ class addDishForm extends React.Component {
 
   dishFormHandler = (e) => {
     e.preventDefault();
-    addDishHelper(this.state.name, this.state.type, this.state.price).then((res) => {
+    addDish(this.state.name, this.state.type, this.state.price).then((res) => {
       if (res.ok) {
         this.props.onAdd();
         console.log('Successfully added dish');

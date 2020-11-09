@@ -23,7 +23,7 @@ class OAuthModal extends Component {
               <form className="container ui form">
                 <button
                   value="google"
-                  className="z-depth-5 center-align ui primary button"
+                  className="z-depth-5 center-align ui google plus button"
                   onClick={this.props.valueHandler}
                 >
                   <i className="google icon" />
@@ -32,11 +32,11 @@ class OAuthModal extends Component {
                 <br />
                 <br />
                 <button
-                  value="github"
-                  className="z-depth-5 center-align ui secondary button"
+                  value="twitter"
+                  className="z-depth-5 center-align ui twitter button"
                   onClick={this.props.valueHandler}
                 >
-                  <i className="github icon" /> Github
+                  <i className="twitter icon" /> Twitter
                 </button>
               </form>
             </Modal>
