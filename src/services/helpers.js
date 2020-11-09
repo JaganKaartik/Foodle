@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const server_url = process.env.SERVER_URL || '';
+
 export const loginHelper = (username, password) => {
-  return fetch('http://localhost:5000/login', {
+  return fetch(server_url + '/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -26,8 +28,8 @@ export const checkAuth = () => {
   });
 };
 
-export const githubLogin = () => {
-  window.open("http://127.0.0.1:8888/auth/github", "_self");
+export const twitterLogin = () => {
+  window.open(server_url + '/auth/twitter', '_self');
 };
 
 // export const googleLogin = (username, password) => {
@@ -43,7 +45,7 @@ export const githubLogin = () => {
 
 export const displayAllHelper = () => {
   console.log('control at dishall helper');
-  return fetch('http://localhost:8888/api/dish/all', {
+  return fetch(server_url + '/api/dish/all', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
