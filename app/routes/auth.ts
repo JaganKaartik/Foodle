@@ -1,18 +1,9 @@
 import express from 'express'
-import {
-  loginSuccess,
-  loginFailed,
-  auth,
-  authRedirect,
-  logout
-} from '../controllers/auth'
+import { auth, authStatus, authRedirect, logout } from '../controllers/auth'
 
 const authRouter = express.Router()
 // when login is successful, retrieve user info
-authRouter.get('/login/success', loginSuccess)
-
-// when login failed, send failed msg
-authRouter.get('/login/failed', loginFailed)
+authRouter.get('/status', authStatus)
 
 // When logout, redirect to client
 authRouter.get('/logout', logout)
