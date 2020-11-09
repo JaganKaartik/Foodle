@@ -2,23 +2,8 @@ import axios from 'axios';
 
 const server_url = process.env.SERVER_URL || '';
 
-export const loginHelper = (username, password) => {
-  return fetch(server_url + '/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      username,
-      password
-    }),
-    mode: 'cors',
-    credentials: 'include'
-  });
-};
-
 export const checkAuth = () => {
-  return axios('/auth/login/success', {
+  return axios(server_url + '/auth/status', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -32,18 +17,11 @@ export const twitterLogin = () => {
   window.open(server_url + '/auth/twitter', '_self');
 };
 
-// export const googleLogin = (username, password) => {
-//   return fetch("http://localhost:5000/home", {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     mode: "cors",
-//     credentials: "include"
-//   });
-// };
+export const googleLogin = () => {
+  window.open(server_url + '/auth/google', '_self');
+};
 
-export const displayAllHelper = () => {
+export const displayAllDish = () => {
   console.log('control at dishall helper');
   return fetch(server_url + '/api/dish/all', {
     method: 'GET',
@@ -55,9 +33,9 @@ export const displayAllHelper = () => {
   });
 };
 
-export const displayOneHelper = (id) => {
+export const displayDish = (id) => {
   console.log('control at dishone helper');
-  return fetch(`api/dish/${id}`, {
+  return fetch(server_url + `api/dish/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -67,7 +45,7 @@ export const displayOneHelper = (id) => {
   });
 };
 
-export const addDishHelper = (name, type, price) => {
+export const addDish = (name, type, price) => {
   return fetch('api/dish/add', {
     method: 'POST',
     headers: {
@@ -83,8 +61,8 @@ export const addDishHelper = (name, type, price) => {
   });
 };
 
-export const deleteAllHelper = () => {
-  return fetch('http://localhost:5000/dish/', {
+export const delDish = (id) => {
+  return fetch(server_url + `/api/dish/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -94,22 +72,8 @@ export const deleteAllHelper = () => {
   });
 };
 
-export const delOneHelper = (id) => {
-  return fetch(`http://localhost:5000/dish/p/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });
-};
-
-export const updateHelper = (name, price) => {
-  console.log('control in handler');
-  console.log(name);
-  console.log(price);
-  return fetch('http://localhost:5000/dish/', {
+export const updateDish = (id, name, price) => {
+  return fetch(server_url + `/api/dish/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
