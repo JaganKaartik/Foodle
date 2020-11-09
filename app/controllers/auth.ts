@@ -9,15 +9,15 @@ const logout = (res, req) => {
   res.redirect(CLIENT_HOME_PAGE_URL)
 }
 
+const auth = () => {
+  passport.authenticate('twitter')
+}
+
 const authRedirect = () => {
   passport.authenticate('twitter', {
     successRedirect: CLIENT_HOME_PAGE_URL,
     failureRedirect: '/auth/status'
   })
-}
-
-const auth = () => {
-  passport.authenticate('twitter')
 }
 
 const authStatus = (res, req) => {
