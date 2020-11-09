@@ -4,19 +4,18 @@ require('dotenv').config()
 
 const CLIENT_HOME_PAGE_URL = process.env.CLIENT_HOME_PAGE_URL || ''
 
-const loginFailed = (res, req) => {
-  res.status(401).json({
-    success: false,
-    message: 'user failed to authenticate.'
+const auth = () => {
+  passport.authenticate('twitter')
+}
+
+const authRedirect = () => {
+  passport.authenticate('twitter', {
+    successRedirect: CLIENT_HOME_PAGE_URL,
+    failureRedirect: '/auth/status'
   })
 }
 
-const logout = (res, req) => {
-  delete req.user
-  res.redirect(CLIENT_HOME_PAGE_URL)
-}
-
-const loginSuccess = (res, req) => {
+const authStatus = (res, req) => {
   if (req.user) {
     res.json({
       success: true,
@@ -24,18 +23,17 @@ const loginSuccess = (res, req) => {
       user: req.user,
       cookies: req.cookies
     })
+  } else {
+    res.status(401).json({
+      success: false,
+      message: 'user failed to authenticate.'
+    })
   }
 }
 
-const authRedirect = () => {
-  passport.authenticate('twitter', {
-    successRedirect: CLIENT_HOME_PAGE_URL,
-    failureRedirect: '/auth/login/failed'
-  })
+const logout = (res, req) => {
+  delete req.user
+  res.redirect(CLIENT_HOME_PAGE_URL)
 }
 
-const auth = () => {
-  passport.authenticate('twitter')
-}
-
-export { loginSuccess, loginFailed, auth, authRedirect, logout }
+export { authStatus, auth, authRedirect, logout }
