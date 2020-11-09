@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const server_url = process.env.SERVER_URL || '';
+const server_url = process.env.REACT_APP_SERVER_URL || '';
 
 export const checkAuth = () => {
   return axios(server_url + '/auth/status', {
