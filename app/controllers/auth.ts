@@ -31,7 +31,7 @@ const authStatus = (req, res) => {
   }
 }
 
-const logout = (res, req) => {
+const logout = (req, res) => {
   delete req.user
   res.redirect(CLIENT_HOME_PAGE_URL)
 }
