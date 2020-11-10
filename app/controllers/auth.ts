@@ -10,7 +10,7 @@ const auth = () => {
 
 const authRedirect = () => {
   passport.authenticate('twitter', {
-    successRedirect: CLIENT_HOME_PAGE_URL,
+    successRedirect: '/auth/status',
     failureRedirect: '/auth/status'
   })
 }
@@ -36,4 +36,4 @@ const logout = (req, res) => {
   res.redirect(CLIENT_HOME_PAGE_URL)
 }
 
-export { authStatus, auth, authRedirect, logout }
+export { auth, authRedirect, authStatus, logout }

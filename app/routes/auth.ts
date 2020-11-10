@@ -1,10 +1,7 @@
 import express from 'express'
-import { auth, authStatus, authRedirect, logout } from '../controllers/auth'
+import { auth, authRedirect, authStatus, logout } from '../controllers/auth'
 
 const authRouter = express.Router()
-
-// When logout, redirect to client
-authRouter.get('/logout', logout)
 
 // auth with twitter
 authRouter.get('/twitter', auth)
@@ -14,5 +11,8 @@ authRouter.get('/status', authStatus)
 
 // redirect to home page after successfully login via twitter
 authRouter.get('/twitter/redirect', authRedirect)
+
+// When logout, redirect to client
+authRouter.get('/logout', logout)
 
 export = authRouter
