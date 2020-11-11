@@ -16,7 +16,7 @@ class Routes extends React.Component {
   }
 
   state = {
-    isAuthenticated: false
+    isAuthenticated: true
   };
 
   //Auth Handler to change the auth state [This being the parent component]
