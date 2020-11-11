@@ -35,8 +35,6 @@ class Routes extends React.Component {
           <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
           <Switch>
-            {/* Default Route where authentication occurs */}
-
             <Route path="/auth" exact>
               <Auth authHandler={this.authHandler} />
             </Route>
@@ -44,8 +42,6 @@ class Routes extends React.Component {
             <Route path="/" exact>
               <Home />
             </Route>
-
-            {/* Private Routes */}
 
             <PrivateRoute
               authstate={this.state.isAuthenticated}
@@ -74,8 +70,6 @@ class Routes extends React.Component {
               exact
               component={SuperAdmin}
             />
-
-            {/* End of private routes */}
           </Switch>
         </div>
       </Router>
