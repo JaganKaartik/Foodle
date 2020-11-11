@@ -14,6 +14,6 @@ apiRouter.get('/dish/all', authCheck, getAllDish)
 apiRouter.get('/dish/:id', authCheck, getDish)
 apiRouter.delete('/dish/:id', authCheck, deleteDish)
 apiRouter.put('/dish/:id', authCheck, updateDish)
-apiRouter.post('/dish/', addDish)
+apiRouter.post('/dish/', authCheck, addDish)
 
 export = apiRouter
