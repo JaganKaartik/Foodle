@@ -22,7 +22,6 @@ export const googleLogin = () => {
 };
 
 export const displayAllDish = () => {
-  console.log('control at dishall helper');
   return fetch(server_url + '/api/dish/all', {
     method: 'GET',
     headers: {
@@ -34,8 +33,7 @@ export const displayAllDish = () => {
 };
 
 export const displayDish = (id) => {
-  console.log('control at dishone helper');
-  return fetch(server_url + `api/dish/${id}`, {
+  return fetch(server_url + `/api/dish/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'

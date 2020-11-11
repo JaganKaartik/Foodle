@@ -12,7 +12,7 @@ class FoodModal extends Component {
       <div>
         <ModalTransition>
           {
-            <Modal actions={actions} onClose={this.close} heading="Details!">
+            <Modal actions={actions} onClose={this.close} heading="Search Info">
               <table>
                 <thead>
                   <th>Name</th>
