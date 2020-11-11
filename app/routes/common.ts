@@ -4,9 +4,6 @@ import authCheck from '../middleware/auth-check'
 
 const CommonRouter = express.Router()
 
-// if it's already login, send the profile response,
-// otherwise, send a 401 response that the user is not authenticated
-// authCheck before navigating to home page
 CommonRouter.get('/', authCheck, (req, res) => {
   res.status(200).json({
     authenticated: true,

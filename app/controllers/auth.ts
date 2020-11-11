@@ -4,7 +4,7 @@ const auth = passport.authenticate('twitter')
 
 const authRedirect = passport.authenticate('twitter', {
   successRedirect: '/auth/status',
-  failureRedirect: '/auth/login/failed'
+  failureRedirect: '/auth/status'
 })
 
 const authStatus = (req, res) => {
