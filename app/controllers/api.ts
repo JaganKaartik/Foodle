@@ -5,8 +5,8 @@ const addDish = (req, res) => {
     .limit(1)
     .sort({ $natural: -1 })
     .then((data: JSON) => {
-      const newId = data[0].id
-      Dishes.insert({
+      const newId = data[0].id + 1
+      Dishes.create({
         id: newId,
         name: req.body.name,
         type: req.body.type,
@@ -52,9 +52,9 @@ const deleteDish = (req, res) => {
   Dishes.findOneAndRemove({ id: req.params.id })
     .then((data: JSON) => {
       if (data) {
-        res.send({ message: 'Successfully Deleted Record' })
+        res.send({ success: true })
       } else {
-        res.send({ message: 'Error Wrong ID' })
+        res.send({ success: false })
       }
     })
     .catch((err) => {
@@ -70,9 +70,9 @@ const updateDish = (req, res) => {
   )
     .then((resp: JSON) => {
       if (resp) {
-        res.send({ message: 'Record Updated Successfully' })
+        res.send({ success: true })
       } else {
-        res.send({ message: 'Error Wrong ID' })
+        res.send({ success: false })
       }
     })
     .catch((err) => {
