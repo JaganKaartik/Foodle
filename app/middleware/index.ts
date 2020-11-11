@@ -20,19 +20,14 @@ Middleware.use(
   })
 )
 
-// Parse cookies
 Middleware.use(cookieParser())
 
-// Initalize passport
 Middleware.use(passport.initialize())
-
-// Deserialize cookie from the browser
 Middleware.use(passport.session())
 
-// Cors
 Middleware.use(
   cors({
-    origin: process.env.CLIENT_HOME_PAGE_URL || '', // allow to server to accept request from different origin
+    origin: process.env.CLIENT_HOME_PAGE_URL || '',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true // allow session cookie from browser to pass through
   })
