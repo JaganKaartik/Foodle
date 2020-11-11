@@ -13,7 +13,7 @@ const apiRouter = express.Router()
 apiRouter.get('/dish/all', authCheck, getAllDish)
 apiRouter.get('/dish/:id', authCheck, getDish)
 apiRouter.delete('/dish/:id', authCheck, deleteDish)
-apiRouter.put('/dish/:id', authCheck, updateDish)
+apiRouter.put('/dish/', authCheck, updateDish)
 apiRouter.post('/dish/', authCheck, addDish)
 
 export = apiRouter

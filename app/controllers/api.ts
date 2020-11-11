@@ -64,7 +64,7 @@ const deleteDish = (req, res) => {
 
 const updateDish = (req, res) => {
   Dishes.findOneAndUpdate(
-    { id: req.params.id },
+    { name: req.body.name },
     { price: req.body.price },
     { new: true }
   )
