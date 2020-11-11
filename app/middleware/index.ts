@@ -27,7 +27,7 @@ Middleware.use(passport.session())
 
 Middleware.use(
   cors({
-    origin: process.env.CLIENT_HOME_PAGE_URL || '',
+    origin: 'http://localhost:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true // allow session cookie from browser to pass through
   })
