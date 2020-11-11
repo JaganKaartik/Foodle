@@ -1,17 +1,13 @@
-/* eslint-disable import/no-unresolved */
 const passport = require('passport')
 const TwitterStrategy = require('passport-twitter')
 const User = require('../models/user')
 
 require('dotenv').config()
 
-// serialize the user.id to save in the cookie session
-// so the browser will  remember the user when login
 passport.serializeUser((user, done) => {
   done(null, user.id)
 })
 
-// deserialize the cookie UserId to user in the database
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then((user) => {
@@ -30,11 +26,9 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
-      // find current user in UserModel
       const currentUser = await User.findOne({
         twitterId: profile._json.id_str
       })
-      // create new user if the database doesn't have this user
       if (!currentUser) {
         const newUser = await new User({
           name: profile._json.name,
