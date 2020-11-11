@@ -72,8 +72,8 @@ export const delDish = (id) => {
   });
 };
 
-export const updateDish = (id, name, price) => {
-  return fetch(server_url + `/api/dish/${id}`, {
+export const updateDish = (name, price) => {
+  return fetch(server_url + `/api/dish/`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
