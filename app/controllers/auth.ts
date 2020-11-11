@@ -7,4 +7,25 @@ const authRedirect = passport.authenticate('twitter', {
   failureRedirect: '/auth/login/failed'
 })
 
-export { auth, authRedirect }
+const authStatus = (req, res) => {
+  if (req.user) {
+    res.json({
+      success: true,
+      message: 'User has successfully authenticated',
+      user: req.user,
+      cookies: req.cookies
+    })
+  } else {
+    res.status(401).json({
+      success: false,
+      message: 'user failed to authenticate.'
+    })
+  }
+}
+
+const logout = (req, res) => {
+  req.logout()
+  res.redirect('/auth/status')
+}
+
+export { auth, authRedirect, authStatus, logout }
