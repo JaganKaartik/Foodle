@@ -46,7 +46,7 @@ export const displayDish = (id) => {
 };
 
 export const addDish = (name, type, price) => {
-  return fetch('api/dish/add', {
+  return fetch(server_url + '/api/dish/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
