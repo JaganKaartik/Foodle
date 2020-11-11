@@ -22,7 +22,6 @@ export const googleLogin = () => {
 };
 
 export const displayAllDish = () => {
-  console.log('control at dishall helper');
   return fetch(server_url + '/api/dish/all', {
     method: 'GET',
     headers: {
@@ -34,8 +33,7 @@ export const displayAllDish = () => {
 };
 
 export const displayDish = (id) => {
-  console.log('control at dishone helper');
-  return fetch(server_url + `api/dish/${id}`, {
+  return fetch(server_url + `/api/dish/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -46,7 +44,7 @@ export const displayDish = (id) => {
 };
 
 export const addDish = (name, type, price) => {
-  return fetch('api/dish/add', {
+  return fetch(server_url + '/api/dish/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -72,8 +70,8 @@ export const delDish = (id) => {
   });
 };
 
-export const updateDish = (id, name, price) => {
-  return fetch(server_url + `/api/dish/${id}`, {
+export const updateDish = (name, price) => {
+  return fetch(server_url + `/api/dish/`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
