@@ -1,4 +1,4 @@
-version: 3
+version: '3'
 services:
   foodle-api-server:
     image: foodle-api-server
