@@ -9,7 +9,7 @@ services:
     depends_on:
       - mongo
   mongo:
-    image: mongo:3.4.20-xenial
+    image: mongo:3.6.19-xenial
     ports:
       - '27017:27017'
     networks:
