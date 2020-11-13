@@ -1,17 +1,9 @@
 version: '3'
 services:
-  foodle-api-server:
+  api-server:
     build:
       context: .
       dockerfile: Dockerfile
-    image: node:latest
-    container_name: foodle-api-server
-    ports:
-      - '7000:7000'
-    networks:
-      - foodle-server-app
-    depends_on:
-      - mongo
     env_file: .env
     environment:
       PORT: ${PORT}
@@ -20,6 +12,13 @@ services:
       TWITTER_CONSUMER_SECRET: ${TWITTER_CONSUMER_SECRET}
       COOKIE_KEY: ${COOKIE_KEY}
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
+    ports:
+      - '7000:7000'
+    command: yarn start
+    networks:
+      - foodle-server-app
+    depends_on:
+      - mongo
 
   mongo:
     image: mongo:latest
@@ -29,6 +28,7 @@ services:
       - foodle-server-app
     volumes:
       - mongo-data:/data/db
+
 networks:
   foodle-server-app:
     driver: bridge
