@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: node
+    image: node:latest
     container_name: foodle-api-server
     ports:
       - '7000:7000'
