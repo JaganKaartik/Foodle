@@ -4,7 +4,7 @@ FROM node:latest
 WORKDIR /app
 
 # Install runtime dependencies
-RUN npm install yarn -g
+RUN npm install yarn 
 
 # Copy app source to work directory
 COPY . .
