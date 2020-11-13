@@ -16,8 +16,6 @@ services:
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
       - '7000:7000'
-    networks:
-      - foodle-server-app
     depends_on:
       - mongo
 
@@ -25,13 +23,8 @@ services:
     image: mongo:3.6.19-xenial
     ports:
       - '27017:27017'
-    networks:
-      - foodle-server-app
     volumes:
       - mongo-data:/data/db
-networks:
-  foodle-server-app:
-    driver: bridge
 volumes:
   mongo-data:
     driver: local
