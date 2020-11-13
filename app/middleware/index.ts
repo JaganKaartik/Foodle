@@ -1,11 +1,8 @@
 import express from 'express'
 import { apiRouter, authRouter, commonRouter } from '../routes'
 
-require('dotenv').config()
-
 const Middleware = express()
 const bodyParser = require('body-parser')
-const session = require('express-session')
 const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
@@ -29,7 +26,7 @@ Middleware.use(
   cors({
     origin: 'http://localhost:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true // allow session cookie from browser to pass through
+    credentials: true
   })
 )
 
