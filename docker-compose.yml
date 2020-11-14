@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    build: ./
+    build: .
     env_file: .env
     environment:
       PORT: ${PORT}
@@ -13,11 +13,12 @@ services:
     ports:
       - '9000:7000'
     depends_on:
-      - mongo
+      - mongodb
     networks:
       - my-app
-  mongo:
+  mongodb:
     image: mongo:latest
+    command: mongod
     ports:
       - '27017:27017'
     networks:
