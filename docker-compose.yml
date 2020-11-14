@@ -15,13 +15,13 @@ services:
     depends_on:
       - mongo
     networks:
-      - my-network
+      - my-app
   mongo:
     image: mongo:latest
     ports:
       - '27017:27017'
     networks:
-      - my-network
+      - my-app
   networks:
-    my-network:
+    my-app:
       driver: bridge
