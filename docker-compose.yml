@@ -1,9 +1,8 @@
 version: '3'
 services:
-  api-server:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  app:
+    container_name: foodle-server
+    build: ./
     env_file: .env
     environment:
       PORT: ${PORT}
@@ -14,24 +13,12 @@ services:
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
       - '7000:7000'
-    command: yarn start
-    networks:
-      - foodle-server-app
-    depends_on:
+    volumes:
+      - ./app
+    links:
       - mongo
 
   mongo:
     image: mongo:latest
     ports:
       - '27017:27017'
-    networks:
-      - foodle-server-app
-    volumes:
-      - mongo-data:/data/db
-
-networks:
-  foodle-server-app:
-    driver: bridge
-volumes:
-  mongo-data:
-    driver: local
