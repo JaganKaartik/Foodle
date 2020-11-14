@@ -1,19 +1,20 @@
-FROM node:latest
+FROM node:10
 
 # Create work directory
 WORKDIR /app
 
 # Install runtime dependencies
-RUN npm install yarn -g
+RUN npm install yarn 
 
-# Copy app source to work directory
-COPY . .
+COPY package.json yarn.lock ./
 
 # Install app dependencies
 RUN yarn install
 
-# Build and run the app
-RUN yarn build
+# Copy app source to work directory
+COPY ./dist .
 
-CMD yarn start
+# Expose Port 
+EXPOSE 7000
 
+CMD ["yarn","dev"]
