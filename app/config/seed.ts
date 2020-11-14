@@ -1,5 +1,6 @@
-import * as seedData from './seed.json'
 import Dish from '../models/dish'
+
+import seedData = require('./seed.json')
 
 const seed = async () => {
   await Dish.insertMany(seedData)
