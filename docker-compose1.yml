@@ -14,10 +14,22 @@ services:
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
       - '7000:7000'
-    links:
-      - mongo
+    depends_on:
+      - mongodb
+    networks:
+      - my-app
   mongo:
     container_name: mongo
     image: mongo:latest
     ports:
       - '27017:27017'
+    networks:
+      - my-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  my-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
