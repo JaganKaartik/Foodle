@@ -14,10 +14,10 @@ services:
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
       - '7000:7000'
-    links:
+    external_links:
       - mongo
   mongo:
     container_name: mongo
-    image: mongo:latest
+    image: mongo
     ports:
       - '27017:27017'
