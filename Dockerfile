@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:10
 
 # Create work directory
 WORKDIR /app
