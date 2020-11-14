@@ -10,4 +10,7 @@ const seed = async () => {
     .catch((err) => console.error(`Failed to insert documents: ${err}`))
 }
 
-export = seed
+if (process.env.NODE_ENV === 'prod-local') {
+  console.log('Production Env: Adding Seed Data')
+  seed()
+}

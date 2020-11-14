@@ -76,11 +76,5 @@
     "name": "Hot Dog",
     "type": "Snacks",
     "price": "$2.00"
-  },
-  {
-    "id": 13,
-    "name": "Hot Dog",
-    "type": "Snacks",
-    "price": "$2.00"
   }
 ]
