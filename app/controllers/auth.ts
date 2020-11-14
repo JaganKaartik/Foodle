@@ -7,7 +7,7 @@ require('dotenv').config()
 const CLIENT_HOME_PAGE_URL = process.env.CLIENT_HOME_PAGE_URL || ''
 
 const authRedirect = passport.authenticate('twitter', {
-  successRedirect: CLIENT_HOME_PAGE_URL,
+  successRedirect: '/auth/status',
   failureRedirect: '/auth/status'
 })
 
