@@ -11,6 +11,7 @@ connectDB()
 app.use(Middleware)
 
 if (process.env.NODE_ENV === 'prod-local') {
+  console.log('Production Local Env: Adding Seed Data')
   seed()
 }
 
