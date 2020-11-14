@@ -11,10 +11,17 @@ services:
       COOKIE_KEY: ${COOKIE_KEY}
       CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
-      - '7000:7000'
+      - '9000:7000'
     depends_on:
       - mongo
+    networks:
+      - my-network
   mongo:
     image: mongo:latest
     ports:
       - '27017:27017'
+    networks:
+      - my-network
+  networks:
+    my-network:
+      driver: bridge
