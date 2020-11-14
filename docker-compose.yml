@@ -22,6 +22,11 @@ services:
       - '27017:27017'
     networks:
       - my-app
-  networks:
-    my-app:
-      driver: bridge
+    volumes:
+      - mongo-data:/data/db
+networks:
+  my-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
