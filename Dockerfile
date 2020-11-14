@@ -18,4 +18,4 @@ RUN yarn install
 # Build and run the app
 RUN yarn build
 
-CMD ["yarn","start"]
+CMD ["yarn","dev"]
