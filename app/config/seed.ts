@@ -2,6 +2,8 @@ import Dish from '../models/dish'
 
 import seedData = require('./seed.json')
 
+require('dotenv').config()
+
 const seed = async () => {
   await Dish.insertMany(seedData)
     .then((res) => {
