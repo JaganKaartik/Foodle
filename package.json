@@ -12,7 +12,7 @@
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",
-    "seed": "node app/config/seed"
+    "seed": "node dist/config/seed"
   },
   "husky": {
     "hooks": {
