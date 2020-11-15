@@ -1,31 +1,37 @@
+const { validationResult } = require('express-validator')
 const Dishes = require('../models/dish')
 
 const addDish = (req, res) => {
-  Dishes.find({}, { id: 1, _id: 0 })
-    .limit(1)
-    .sort({ $natural: -1 })
-    .then((data: JSON) => {
-      const newId = data[0].id + 1
-      Dishes.create({
-        id: newId,
-        name: req.body.name,
-        type: req.body.type,
-        price: req.body.price
+  const errors = validationResult(req)
+  if (errors.isEmpty()) {
+    Dishes.find({}, { id: 1, _id: 0 })
+      .limit(1)
+      .sort({ $natural: -1 })
+      .then((data: JSON) => {
+        const newId = data[0].id + 1
+        Dishes.create({
+          id: newId,
+          name: req.body.name,
+          type: req.body.type,
+          price: req.body.price
+        })
+          .then((resp: JSON) => {
+            if (resp) {
+              res.send({ success: true })
+            } else {
+              res.send({ success: false })
+            }
+          })
+          .catch((err) => {
+            res.send(err)
+          })
       })
-        .then((resp: JSON) => {
-          if (resp) {
-            res.send({ success: true })
-          } else {
-            res.send({ success: false })
-          }
-        })
-        .catch((err) => {
-          res.send(err)
-        })
-    })
-    .catch((err) => {
-      res.send(err)
-    })
+      .catch((err) => {
+        res.send(err)
+      })
+  } else {
+    res.status(422).jsonp(errors.array())
+  }
 }
 
 const getAllDish = (req, res) => {
