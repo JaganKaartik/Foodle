@@ -12,7 +12,10 @@ COPY package.json yarn.lock ./
 RUN yarn install
 
 # Copy app source to work directory
-COPY ./dist .
+COPY . .
+
+# Build Files
+RUN yarn Build
 
 # Expose Port 
 EXPOSE 7000
