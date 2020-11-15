@@ -45,45 +45,60 @@ const getAllDish = (req, res) => {
 }
 
 const getDish = (req, res) => {
-  Dishes.find({ id: req.params.id })
-    .then((data: JSON) => {
-      res.send(data)
-    })
-    .catch((err) => {
-      res.send(err)
-    })
+  const errors = validationResult(req)
+  if (errors.isEmpty()) {
+    Dishes.find({ id: req.params.id })
+      .then((data: JSON) => {
+        res.send(data)
+      })
+      .catch((err) => {
+        res.send(err)
+      })
+  } else {
+    res.status(422).jsonp(errors.array())
+  }
 }
 
 const deleteDish = (req, res) => {
-  Dishes.findOneAndRemove({ id: req.params.id })
-    .then((data: JSON) => {
-      if (data) {
-        res.send({ success: true })
-      } else {
-        res.send({ success: false })
-      }
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  const errors = validationResult(req)
+  if (errors.isEmpty()) {
+    Dishes.findOneAndRemove({ id: req.params.id })
+      .then((data: JSON) => {
+        if (data) {
+          res.send({ success: true })
+        } else {
+          res.send({ success: false })
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  } else {
+    res.status(422).jsonp(errors.array())
+  }
 }
 
 const updateDish = (req, res) => {
-  Dishes.findOneAndUpdate(
-    { name: req.body.name },
-    { price: req.body.price },
-    { new: true }
-  )
-    .then((resp: JSON) => {
-      if (resp) {
-        res.send({ success: true })
-      } else {
-        res.send({ success: false })
-      }
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  const errors = validationResult(req)
+  if (errors.isEmpty()) {
+    Dishes.findOneAndUpdate(
+      { name: req.body.name },
+      { price: req.body.price },
+      { new: true }
+    )
+      .then((resp: JSON) => {
+        if (resp) {
+          res.send({ success: true })
+        } else {
+          res.send({ success: false })
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  } else {
+    res.status(422).jsonp(errors.array())
+  }
 }
 
 export { addDish, getAllDish, getDish, deleteDish, updateDish }
