@@ -15,7 +15,7 @@ RUN yarn install
 COPY . .
 
 # Build Files
-RUN yarn Build
+RUN yarn build
 
 # Expose Port 
 EXPOSE 7000
