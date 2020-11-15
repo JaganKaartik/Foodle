@@ -17,6 +17,8 @@ services:
       - '7000:7000'
     external_links:
       - mongo
+    networks:
+      - foodle-app
   mongo:
     container_name: mongo
     image: mongo
@@ -24,6 +26,12 @@ services:
       - '27017:27017'
     volumes:
       - mongo-data:/data/db
+    networks:
+      - foodle-app
 volumes:
   mongo-data:
     name: ${VOLUME_ID}
+
+networks:
+  foodle-app:
+    driver: bridge
