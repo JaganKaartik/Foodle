@@ -1,3 +1,4 @@
+import { connectDB } from './database'
 import seedData = require('./seed.json')
 
 const Dishes = require('../models/dish')
@@ -12,5 +13,6 @@ const seed = () => {
 }
 
 if (process.env.NODE_ENV === 'prod-local') {
+  connectDB()
   seed()
 }
