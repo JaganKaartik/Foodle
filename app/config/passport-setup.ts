@@ -27,22 +27,22 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
-      const currentUser = await User.findOne({
+      User.findOne({
         userId: profile._json.id_str
-      })
-      if (!currentUser) {
-        const newUser = await new User({
-          userId: profile._json.id_str,
-          provider: profile.proivider,
-          name: profile._json.name,
-          profileImageUrl: profile._json.profile_image_url,
-          otherInfo: profile._json.screen_name
-        }).save()
-        if (newUser) {
+      }).then((currentUser) => {
+        if (!currentUser) {
+          const newUser = new User({
+            userId: profile._json.id_str,
+            provider: profile.proivider,
+            name: profile._json.name,
+            profileImageUrl: profile._json.profile_image_url,
+            otherInfo: profile._json.screen_name
+          }).save()
           done(null, newUser)
+        } else {
+          done(null, currentUser)
         }
-      }
-      done(null, currentUser)
+      })
     }
   )
 )
