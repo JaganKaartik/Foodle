@@ -9,6 +9,8 @@ const passport = require('passport')
 const cors = require('cors')
 const passportSetup = require('../config/passport-setup')
 
+require('dotenv').config()
+
 Middleware.use(
   cookieSession({
     name: 'session',
@@ -24,7 +26,7 @@ Middleware.use(passport.session())
 
 Middleware.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT_ORIGIN,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
   })
