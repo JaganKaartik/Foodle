@@ -32,6 +32,7 @@ Middleware.use(
   })
 )
 
+Middleware.set('view engine', 'ejs')
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
 Middleware.use('/', mainRouter)
