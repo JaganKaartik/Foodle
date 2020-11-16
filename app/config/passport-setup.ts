@@ -56,22 +56,26 @@ passport.use(
       passReqToCallback: true
     },
     async (request, accessToken, refreshToken, profile, done) => {
-      const currentUser = await User.findOne({
+      User.findOne({
         userId: profile._json.sub
       })
-      if (!currentUser) {
-        const newUser = await new User({
-          userId: profile._json.sub,
-          provider: profile.proivider,
-          name: profile._json.name,
-          profileImageUrl: profile._json.picture,
-          otherInfo: profile._json.email
-        }).save()
-        if (newUser) {
-          done(null, newUser)
-        }
-      }
-      done(null, currentUser)
+        .then((currentUser) => {
+          if (!currentUser) {
+            const newUser = new User({
+              userId: profile._json.sub,
+              provider: profile.proivider,
+              name: profile._json.name,
+              profileImageUrl: profile._json.picture,
+              otherInfo: profile._json.email
+            }).save()
+            done(null, newUser)
+          } else {
+            done(null, currentUser)
+          }
+        })
+        .catch((err) => {
+          console.error(err)
+        })
     }
   )
 )
