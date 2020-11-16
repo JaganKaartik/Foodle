@@ -1,5 +1,6 @@
 const passport = require('passport')
 const TwitterStrategy = require('passport-twitter')
+const GoogleStrategy = require('passport-google-oauth2')
 const User = require('../models/user')
 
 require('dotenv').config()
@@ -41,6 +42,22 @@ passport.use(
         }
       }
       done(null, currentUser)
+    }
+  )
+)
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: '/auth/google/redirect',
+      passReqToCallback: true
+    },
+    (request, accessToken, refreshToken, profile, done) => {
+      User.findOrCreate({ googleId: profile.id }, (err, user) => {
+        done(err, user)
+      })
     }
   )
 )
