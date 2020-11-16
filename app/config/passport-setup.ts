@@ -27,7 +27,6 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
-      console.log(profile)
       const currentUser = await User.findOne({
         userId: profile._json.id_str
       })
@@ -56,7 +55,7 @@ passport.use(
       callbackURL: '/auth/google/redirect',
       passReqToCallback: true
     },
-    async (token, tokenSecret, profile, done) => {
+    async (request, accessToken, refreshToken, profile, done) => {
       const currentUser = await User.findOne({
         userId: profile._json.sub
       })
