@@ -5,7 +5,7 @@ const authCheck = (req, res, next) => {
       message: 'user has not been authenticated'
     })
   } else {
-    res.end()
+    next()
   }
 }
 

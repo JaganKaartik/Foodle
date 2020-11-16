@@ -21,7 +21,7 @@ const authRedirectTwitter = passport.authenticate('twitter', {
 
 const authStatus = (req, res) => {
   if (req.user) {
-    res.json({
+    res.status(200).sjson({
       success: true,
       message: 'User has successfully authenticated',
       user: req.user,
