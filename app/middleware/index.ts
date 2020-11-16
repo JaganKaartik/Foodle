@@ -1,5 +1,5 @@
 import express from 'express'
-import { apiRouter, authRouter, commonRouter } from '../routes'
+import { apiRouter, authRouter, mainRouter } from '../routes'
 
 const Middleware = express()
 const bodyParser = require('body-parser')
@@ -34,7 +34,7 @@ Middleware.use(
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
-Middleware.use(commonRouter)
+Middleware.use('/', mainRouter)
 Middleware.use('/auth', authRouter)
 Middleware.use('/api', apiRouter)
 
