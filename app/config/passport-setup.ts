@@ -36,7 +36,7 @@ passport.use(
           provider: profile.proivider,
           name: profile._json.name,
           profileImageUrl: profile._json.profile_image_url,
-          screenName: profile._json.screen_name
+          otherInfo: profile._json.screen_name
         }).save()
         if (newUser) {
           done(null, newUser)
@@ -65,7 +65,7 @@ passport.use(
           provider: profile.proivider,
           name: profile._json.name,
           profileImageUrl: profile._json.picture,
-          email: profile._json.email
+          otherInfo: profile._json.email
         }).save()
         if (newUser) {
           done(null, newUser)
