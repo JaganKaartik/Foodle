@@ -6,7 +6,7 @@ import {
   deleteDish,
   updateDish
 } from '../controllers/api'
-import authCheck from '../middleware/auth-check'
+import authCheck from '../middleware/authCheck'
 
 const { check } = require('express-validator')
 

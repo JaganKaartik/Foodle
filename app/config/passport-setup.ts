@@ -27,22 +27,22 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
-      const currentUser = await User.findOne({
+      User.findOne({
         userId: profile._json.id_str
-      })
-      if (!currentUser) {
-        const newUser = await new User({
-          userId: profile._json.id_str,
-          provider: profile.proivider,
-          name: profile._json.name,
-          profileImageUrl: profile._json.profile_image_url,
-          otherInfo: profile._json.screen_name
-        }).save()
-        if (newUser) {
+      }).then((currentUser) => {
+        if (!currentUser) {
+          const newUser = new User({
+            userId: profile._json.id_str,
+            provider: profile.proivider,
+            name: profile._json.name,
+            profileImageUrl: profile._json.profile_image_url,
+            otherInfo: profile._json.screen_name
+          }).save()
           done(null, newUser)
+        } else {
+          done(null, currentUser)
         }
-      }
-      done(null, currentUser)
+      })
     }
   )
 )
@@ -56,22 +56,26 @@ passport.use(
       passReqToCallback: true
     },
     async (request, accessToken, refreshToken, profile, done) => {
-      const currentUser = await User.findOne({
+      User.findOne({
         userId: profile._json.sub
       })
-      if (!currentUser) {
-        const newUser = await new User({
-          userId: profile._json.sub,
-          provider: profile.proivider,
-          name: profile._json.name,
-          profileImageUrl: profile._json.picture,
-          otherInfo: profile._json.email
-        }).save()
-        if (newUser) {
-          done(null, newUser)
-        }
-      }
-      done(null, currentUser)
+        .then((currentUser) => {
+          if (!currentUser) {
+            const newUser = new User({
+              userId: profile._json.sub,
+              provider: profile.proivider,
+              name: profile._json.name,
+              profileImageUrl: profile._json.picture,
+              otherInfo: profile._json.email
+            }).save()
+            done(null, newUser)
+          } else {
+            done(null, currentUser)
+          }
+        })
+        .catch((err) => {
+          console.error(err)
+        })
     }
   )
 )
