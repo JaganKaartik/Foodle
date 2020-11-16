@@ -27,15 +27,17 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
+      console.log(profile)
       const currentUser = await User.findOne({
-        twitterId: profile._json.id_str
+        userId: profile._json.id_str
       })
       if (!currentUser) {
         const newUser = await new User({
+          userId: profile._json.id_str,
+          provider: profile.proivider,
           name: profile._json.name,
-          screenName: profile._json.screen_name,
-          twitterId: profile._json.id_str,
-          profileImageUrl: profile._json.profile_image_url
+          profileImageUrl: profile._json.profile_image_url,
+          screenName: profile._json.screen_name
         }).save()
         if (newUser) {
           done(null, newUser)
@@ -54,10 +56,23 @@ passport.use(
       callbackURL: '/auth/google/redirect',
       passReqToCallback: true
     },
-    (request, accessToken, refreshToken, profile, done) => {
-      User.findOrCreate({ googleId: profile.id }, (err, user) => {
-        done(err, user)
+    async (token, tokenSecret, profile, done) => {
+      const currentUser = await User.findOne({
+        userId: profile._json.sub
       })
+      if (!currentUser) {
+        const newUser = await new User({
+          userId: profile._json.sub,
+          provider: profile.proivider,
+          name: profile._json.name,
+          profileImageUrl: profile._json.picture,
+          email: profile._json.email
+        }).save()
+        if (newUser) {
+          done(null, newUser)
+        }
+      }
+      done(null, currentUser)
     }
   )
 )
