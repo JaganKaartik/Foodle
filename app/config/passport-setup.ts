@@ -14,7 +14,7 @@ passport.deserializeUser((id, done) => {
     .then((user) => {
       done(null, user)
     })
-    .catch((e) => {
+    .catch(() => {
       done(new Error('Failed to deserialize an user'))
     })
 })

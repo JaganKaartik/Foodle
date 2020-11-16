@@ -1,5 +1,5 @@
 import apiRouter from './api'
 import authRouter from './auth'
-import commonRouter from './common'
+import mainRouter from './main'
 
-export { apiRouter, authRouter, commonRouter }
+export { apiRouter, authRouter, mainRouter }
