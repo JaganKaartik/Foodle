@@ -1,13 +1,9 @@
 const root = (req, res) => {
-  res.render('pages/index')
-}
-
-const developer = (req, res) => {
-  res.render('pages/developer')
+  res.send('Welcome to Root')
 }
 
 const error = (req, res) => {
-  res.render('pages/error')
+  res.send('Error')
 }
 
-export { root, developer, error }
+export { root, error }
