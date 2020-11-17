@@ -1,17 +1,16 @@
 import { ConnectionOptions, connect, connection } from 'mongoose'
 
-require('dotenv').config()
+const { MONGO_URL } = process.env
 
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGO_URL || ''
     const options: ConnectionOptions = {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
       useUnifiedTopology: true
     }
-    await connect(mongoURI, options)
+    await connect(MONGO_URL || '', options)
     console.log('MongoDB Connected...')
   } catch (err) {
     console.error(err.message)

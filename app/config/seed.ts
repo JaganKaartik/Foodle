@@ -2,7 +2,6 @@ import { connectDB } from './database'
 import seedData = require('./seed.json')
 
 const Dishes = require('../models/dish')
-require('dotenv').config()
 
 const seed = () => {
   Dishes.insertMany(seedData)
