@@ -2,5 +2,5 @@ version: '3'
 
 services:
   foodle-app:
-    container_name: foodle-app-dev
+    container_name: foodle-app-prod
     command: yarn start
