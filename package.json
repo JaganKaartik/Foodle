@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "dev": "nodemon dist/index",
+    "dev": "yarn build && nodemon dist/index",
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",

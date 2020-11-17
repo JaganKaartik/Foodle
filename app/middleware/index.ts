@@ -36,6 +36,6 @@ Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
 Middleware.use('/', mainRouter)
 Middleware.use('/auth', authRouter)
-Middleware.use('/api', apiRouter)
+Middleware.use('/api/v1', apiRouter)
 
 export = Middleware
