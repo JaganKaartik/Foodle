@@ -2,6 +2,5 @@ version: '3'
 
 services:
   foodle-app:
-    container_name: foodle-app-dev
-    command: yarn start
-    env_file: prod.env
+    container_name: foodle-app-prod
+    command: yarn start:prod

@@ -2,15 +2,12 @@ const passport = require('passport')
 const TwitterStrategy = require('passport-twitter')
 const GoogleStrategy = require('passport-google-oauth2')
 const User = require('../models/user')
-
-require('dotenv').config()
-
 const {
   TWITTER_CONSUMER_KEY,
   TWITTER_CONSUMER_SECRET,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET
-} = process.env
+} = require('./default.config')
 
 passport.serializeUser((user, done) => {
   done(null, user.id)

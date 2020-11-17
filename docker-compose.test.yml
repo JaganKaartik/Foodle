@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  foodle-app:
+    container_name: foodle-app-test
+    command: yarn start:dev
