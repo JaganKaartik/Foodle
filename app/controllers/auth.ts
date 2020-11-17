@@ -1,8 +1,5 @@
 const passport = require('passport')
-
-require('dotenv').config()
-
-const { CLIENT_HOME_PAGE_URL } = process.env
+const { CLIENT_HOME_PAGE_URL } = require('../config/default.config')
 
 const authGoogle = passport.authenticate('google', {
   scope: ['email', 'profile']

@@ -8,8 +8,7 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
 const passportSetup = require('../config/passport-setup')
-
-const { CLIENT_ORIGIN } = process.env
+const { CLIENT_ORIGIN } = require('../config/default.config')
 
 Middleware.use(
   cookieSession({

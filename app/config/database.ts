@@ -1,8 +1,9 @@
 import { ConnectionOptions, connect, connection } from 'mongoose'
 
+const { MONGO_URL } = require('./default.config')
+
 const connectDB = async () => {
   try {
-    const MONGO_URL = process.env.MONGO_URL || ''
     const options: ConnectionOptions = {
       useNewUrlParser: true,
       useCreateIndex: true,
