@@ -4,15 +4,8 @@ services:
     container_name: foodle-api-server
     restart: always
     build: .
-    env_file: .env
     environment:
-      NODE_ENV: ${NODE_ENV}
-      PORT: ${PORT}
       MONGO_URL: ${MONGO_URL}
-      TWITTER_CONSUMER_KEY: ${TWITTER_CONSUMER_KEY}
-      TWITTER_CONSUMER_SECRET: ${TWITTER_CONSUMER_SECRET}
-      COOKIE_KEY: ${COOKIE_KEY}
-      CLIENT_HOME_PAGE_URL: ${CLIENT_HOME_PAGE_URL}
     ports:
       - '7000:7000'
     external_links:

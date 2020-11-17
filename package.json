@@ -12,7 +12,8 @@
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",
-    "seed": "node dist/config/seed"
+    "seed": "node dist/config/seed",
+    "docker-local": "docker-compose --env-file .env.test up"
   },
   "husky": {
     "hooks": {
