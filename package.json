@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "dev": "nodemon dist/index",
+    "dev": "NODE_ENV=dev nodemon dist/index",
+    "prod": "NODE_ENV=prod nodemon dist/index",
+    "test": "NODE_ENV=test nodemon dist/index",
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",
