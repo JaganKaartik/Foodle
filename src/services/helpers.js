@@ -22,7 +22,7 @@ export const googleLogin = () => {
 };
 
 export const displayAllDish = () => {
-  return fetch(server_url + '/api/dish/all', {
+  return fetch(server_url + '/api/v1/dish/all', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export const displayAllDish = () => {
 };
 
 export const displayDish = (id) => {
-  return fetch(server_url + `/api/dish/${id}`, {
+  return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ export const displayDish = (id) => {
 };
 
 export const addDish = (name, type, price) => {
-  return fetch(server_url + '/api/dish/', {
+  return fetch(server_url + '/api/v1/dish/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ export const addDish = (name, type, price) => {
 };
 
 export const delDish = (id) => {
-  return fetch(server_url + `/api/dish/${id}`, {
+  return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ export const delDish = (id) => {
 };
 
 export const updateDish = (name, price) => {
-  return fetch(server_url + `/api/dish/`, {
+  return fetch(server_url + `/api/v1/dish/`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
