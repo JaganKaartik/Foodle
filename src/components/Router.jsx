@@ -7,6 +7,7 @@ import Navigation from './navigation/Navigation';
 import Auth from './Auth';
 import PrivateRoute from './navigation/PrivateRoute';
 import SearchDish from '../components/navigation/searchDish';
+import { checkAuth } from '../services/helpers';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -18,14 +19,28 @@ class Routes extends React.Component {
     isAuthenticated: false
   };
 
-  //Auth Handler to change the auth state [This being the parent component]
-
   authHandler() {
     this.setState((prevstate) => ({
       isAuthenticated: !prevstate.isAuthenticated
     }));
     console.log(this.state.isAuthenticated);
   }
+
+  //Auth Handler to change the auth state [This being the parent component]
+
+  componentDidMount = () => {
+    checkAuth()
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((resp) => {
+        if (resp.success === true) {
+          console.log('Successful Authentication');
+          this.props.authHandler();
+          this.dashHandler();
+        }
+      });
+  };
 
   render() {
     return (
