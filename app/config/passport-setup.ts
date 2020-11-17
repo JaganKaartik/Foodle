@@ -5,6 +5,13 @@ const User = require('../models/user')
 
 require('dotenv').config()
 
+const {
+  TWITTER_CONSUMER_KEY,
+  TWITTER_CONSUMER_SECRET,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET
+} = process.env
+
 passport.serializeUser((user, done) => {
   done(null, user.id)
 })
@@ -22,8 +29,8 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new TwitterStrategy(
     {
-      consumerKey: process.env.TWITTER_CONSUMER_KEY,
-      consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+      consumerKey: TWITTER_CONSUMER_KEY,
+      consumerSecret: TWITTER_CONSUMER_SECRET,
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
@@ -50,8 +57,8 @@ passport.use(
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
       callbackURL: '/auth/google/redirect',
       passReqToCallback: true
     },

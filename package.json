@@ -12,7 +12,9 @@
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",
-    "seed": "node dist/config/seed"
+    "seed": "node dist/config/seed",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up"
   },
   "husky": {
     "hooks": {

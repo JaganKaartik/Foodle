@@ -2,6 +2,8 @@ import express from 'express'
 import { connectDB } from './config/database'
 import Middleware from './middleware'
 
+require('dotenv').config()
+
 const app = express()
 
 connectDB()

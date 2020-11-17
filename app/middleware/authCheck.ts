@@ -1,4 +1,4 @@
-const authCheck = (req, res, next) => {
+export default (req, res, next) => {
   if (!req.user) {
     res.status(401).json({
       authenticated: false,
@@ -8,5 +8,3 @@ const authCheck = (req, res, next) => {
     next()
   }
 }
-
-export = authCheck
