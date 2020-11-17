@@ -4,11 +4,10 @@ services:
     container_name: foodle-api-server
     restart: always
     build: .
-    environment:
-      MONGO_URL: ${MONGO_URL}
+    env_file: test.env
     ports:
       - '7000:7000'
-    external_links:
+    depends_on:
       - mongo
     networks:
       - foodle-app
