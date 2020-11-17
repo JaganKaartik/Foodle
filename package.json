@@ -8,12 +8,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "dev": "yarn build && nodemon dist/index",
+    "dev": "nodemon dist/index",
     "start": "node dist/index",
     "lint": "eslint '*/**/*.ts' --fix",
     "p": "prettier '*/**/*.ts' --color",
     "seed": "node dist/config/seed",
-    "docker-local": "docker-compose --env-file .env.test up"
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up"
   },
   "husky": {
     "hooks": {

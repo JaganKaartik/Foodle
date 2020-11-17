@@ -1,16 +1,14 @@
 version: '3'
 services:
-  app:
-    container_name: foodle-api-server
-    restart: always
+  foodle-app:
     build: .
-    env_file: test.env
     ports:
       - '7000:7000'
     depends_on:
       - mongo
     networks:
       - foodle-app
+
   mongo:
     container_name: mongo
     image: mongo
