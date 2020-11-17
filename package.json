@@ -7,12 +7,14 @@
   "author": "JaganKaartik <kaartikjagan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p .",
-    "dev": "nodemon dist/index",
-    "start": "node dist/index",
-    "lint": "eslint '*/**/*.ts' --fix",
-    "p": "prettier '*/**/*.ts' --color",
-    "seed": "node dist/config/seed",
+    "build": "tsc",
+    "start:dev": "NODE_ENV=development APP_ENV=dev nodemon dist/index",
+    "start:test": "NODE_ENV=test APP_ENV=test nodemon dist/index",
+    "start:prod": "NODE_ENV=production APP_ENV=prod node dist/index",
+    "lint": "eslint '*/**/*.ts'",
+    "lint:fix": "eslint '*/**/*.ts' --fix",
+    "prettier": "prettier '*/**/*.ts' --write --color",
+    "db:seed": "node dist/config/seed",
     "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up"
   },
@@ -23,7 +25,7 @@
   },
   "lint-staged": {
     "**/*.ts": [
-      "yarn p",
+      "yarn prettier",
       "yarn lint"
     ]
   },

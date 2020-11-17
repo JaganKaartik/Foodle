@@ -1,8 +1,8 @@
 const passport = require('passport')
-
-require('dotenv').config()
-
-const { CLIENT_HOME_PAGE_URL } = process.env
+const {
+  CLIENT_HOME_PAGE_URL,
+  CLIENT_ORIGIN
+} = require('../config/default.config')
 
 const authGoogle = passport.authenticate('google', {
   scope: ['email', 'profile']
@@ -10,14 +10,14 @@ const authGoogle = passport.authenticate('google', {
 
 const authRedirectGoogle = passport.authenticate('google', {
   successRedirect: CLIENT_HOME_PAGE_URL,
-  failureRedirect: '/auth/status'
+  failureRedirect: `${CLIENT_ORIGIN}/auth`
 })
 
 const authTwitter = passport.authenticate('twitter')
 
 const authRedirectTwitter = passport.authenticate('twitter', {
   successRedirect: CLIENT_HOME_PAGE_URL,
-  failureRedirect: '/auth/status'
+  failureRedirect: `${CLIENT_ORIGIN}/auth`
 })
 
 const authStatus = (req, res) => {
