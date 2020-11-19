@@ -38,10 +38,10 @@ class Navigation extends Component {
             </li>
             <li>
               <NavLink to="/">
-                <i class="arrow alternate circle right outline icon"></i>
-                <button class="ui button" onClick={this.handleLogoutClick}>
+                <button class="tiny ui inverted button" onClick={this.handleLogoutClick}>
                   Logout
                 </button>
+                <i class="sign-out alternate icon"></i>
               </NavLink>
             </li>
           </ul>
