@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { twitterLogin, checkAuth } from '../services/helpers';
+import { twitterLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import OAuthModal from './modals/OAuthModal';
 
@@ -18,20 +18,6 @@ class Authentication extends Component {
     this.setState({
       toDashboard: true
     });
-  };
-
-  componentDidMount = () => {
-    checkAuth()
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((resp) => {
-        if (resp.success === true) {
-          console.log('Successful Authentication');
-          this.props.authHandler();
-          this.dashHandler();
-        }
-      });
   };
 
   valueHandler = (e) => {

@@ -6,8 +6,8 @@ import Home from './navigation/Home';
 import Navigation from './navigation/Navigation';
 import Auth from './Auth';
 import PrivateRoute from './navigation/PrivateRoute';
-import SuperAdmin from '../components/superadmin/SuperAdmin';
 import SearchDish from '../components/navigation/searchDish';
+import { checkAuth } from '../services/helpers';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -16,10 +16,8 @@ class Routes extends React.Component {
   }
 
   state = {
-    isAuthenticated: true
+    isAuthenticated: false
   };
-
-  //Auth Handler to change the auth state [This being the parent component]
 
   authHandler() {
     this.setState((prevstate) => ({
@@ -27,6 +25,22 @@ class Routes extends React.Component {
     }));
     console.log(this.state.isAuthenticated);
   }
+
+  //Auth Handler to change the auth state [This being the parent component]
+
+  componentDidMount = () => {
+    checkAuth()
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((resp) => {
+        if (resp.success === true) {
+          console.log('Successful Authentication');
+          this.props.authHandler();
+          this.dashHandler();
+        }
+      });
+  };
 
   render() {
     return (
@@ -62,13 +76,6 @@ class Routes extends React.Component {
               path="/profile"
               exact
               component={User}
-            />
-
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/superadmin"
-              exact
-              component={SuperAdmin}
             />
           </Switch>
         </div>
