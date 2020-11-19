@@ -49,7 +49,7 @@ class Routes extends React.Component {
           <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
           <Switch>
-            <Route path="/auth" exact>
+            <Route path="/login" exact>
               <Auth authHandler={this.authHandler} />
             </Route>
 

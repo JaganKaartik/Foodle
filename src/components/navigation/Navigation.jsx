@@ -5,7 +5,7 @@ class Navigation extends Component {
     return (
       <nav className="all">
         <div className="nav-wrapper">
-          <span className="brand-logo center title">
+          <span className="brand-logo center foodle">
             <NavLink to="/">Foodle</NavLink>
           </span>
           {this.displayNav()}
@@ -48,7 +48,7 @@ class Navigation extends Component {
         <div>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <NavLink to="/auth">Login</NavLink>
+              <NavLink to="/login">Login</NavLink>
             </li>
           </ul>
         </div>

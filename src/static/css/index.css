@@ -29,7 +29,11 @@ code {
 } */
 
 .foodle {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Josefin Slab', serif;
+}
+
+.brand-logo {
+  font-size: 50px;
 }
 
 .all {
