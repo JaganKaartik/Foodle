@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 class Navigation extends Component {
+  handleLogoutClick = () => {
+    window.open(process.env.REACT_APP_SERVER_URL + '/auth/logout', '_self');
+  };
+
   render() {
     return (
       <nav className="all">
         <div className="nav-wrapper">
-          <span className="brand-logo center title">
+          <span className="brand-logo center foodle">
             <NavLink to="/">Foodle</NavLink>
           </span>
           {this.displayNav()}
@@ -24,9 +28,6 @@ class Navigation extends Component {
             <li>
               <NavLink to="/profile">Profile</NavLink>
             </li>
-            <li>
-              <NavLink to="/superadmin">Super Admin</NavLink>
-            </li>
           </ul>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
@@ -34,10 +35,10 @@ class Navigation extends Component {
             </li>
             <li>
               <NavLink to="/">
-                <i class="arrow alternate circle right outline icon"></i>
-                <button class="ui button" onClick={this.props.authHandler}>
+                <button class="tiny ui inverted button" onClick={this.handleLogoutClick}>
                   Logout
                 </button>
+                <i class="sign-out alternate icon"></i>
               </NavLink>
             </li>
           </ul>
@@ -48,7 +49,7 @@ class Navigation extends Component {
         <div>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <NavLink to="/auth">Login</NavLink>
+              <NavLink to="/login">Login</NavLink>
             </li>
           </ul>
         </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Button from '@atlaskit/button';
 import Modal, { ModalTransition } from '@atlaskit/modal-dialog';
 
 class FoodModal extends Component {

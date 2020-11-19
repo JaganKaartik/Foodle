@@ -1,6 +1,8 @@
+/* LOGIN AUTH COMPONENT */
+
 .container-login100 {
   width: 100%;
-  min-height: 80vh;
+  min-height: 82vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -14,6 +16,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../images/bg-main.jpg');
+  margin-top: 1vh;
 }
 
 .wrap-login100 {
@@ -30,29 +33,36 @@
 .login100-form-title {
   width: 100%;
   display: block;
-  font-family: 'Enriqueta', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 39px;
-  color: #353535;
+  color: #3e84ca;
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;
 }
 
+.home-div {
+  position: relative;
+  margin-top: 1vh;
+}
+
 .wrap-login100 {
   width: 680px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 10px;
   position: relative;
   padding-left: 110px;
   padding-right: 110px;
   padding-top: 62px;
   padding-bottom: 33px;
+  opacity: 95%;
+  background-color: rgba(229, 229, 229, 0.849);
 }
 
 @media (max-width: 768px) {
   .wrap-login100 {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   @media (max-width: 576px) {

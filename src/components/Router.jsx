@@ -1,12 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
-import User from './navigation/User';
-import Home from './navigation/Home';
-import Navigation from './navigation/Navigation';
 import Auth from './Auth';
-import PrivateRoute from './navigation/PrivateRoute';
-import SearchDish from '../components/navigation/searchDish';
+import { Home, Navigation, PrivateRoute, User, SearchDish } from './navigation';
 import { checkAuth } from '../services/helpers';
 
 class Routes extends React.Component {
@@ -36,8 +32,8 @@ class Routes extends React.Component {
       .then((resp) => {
         if (resp.success === true) {
           console.log('Successful Authentication');
-          this.props.authHandler();
-          this.dashHandler();
+          this.authHandler();
+          // window.open('/dashboard', '_self');
         }
       });
   };
@@ -49,26 +45,26 @@ class Routes extends React.Component {
           <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
           <Switch>
-            <Route path="/auth" exact>
-              <Auth authHandler={this.authHandler} />
-            </Route>
-
             <Route path="/" exact>
               <Home />
             </Route>
 
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/search"
-              exact
-              component={SearchDish}
-            />
+            <Route path="/login" exact>
+              <Auth authHandler={this.authHandler} />
+            </Route>
 
             <PrivateRoute
               authstate={this.state.isAuthenticated}
               path="/dashboard"
               exact
               component={FoodTable}
+            />
+
+            <PrivateRoute
+              authstate={this.state.isAuthenticated}
+              path="/search"
+              exact
+              component={SearchDish}
             />
 
             <PrivateRoute
