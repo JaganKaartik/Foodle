@@ -1,15 +1,8 @@
-/* 
-    User Profile
-    Component Contains Dummy User Information
-*/
-
 import React from 'react';
 
 /*
-
     Fetch user information from the api and display 
     ID : Name
-ß
 */
 
 function User() {
