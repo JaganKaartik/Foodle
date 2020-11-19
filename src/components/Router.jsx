@@ -1,12 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
-import User from './navigation/User';
-import Home from './navigation/Home';
-import Navigation from './navigation/Navigation';
 import Auth from './Auth';
-import PrivateRoute from './navigation/PrivateRoute';
-import SearchDish from '../components/navigation/searchDish';
+import { Home, Navigation, PrivateRoute, User, SearchDish } from './navigation';
 import { checkAuth } from '../services/helpers';
 
 class Routes extends React.Component {
