@@ -19,7 +19,7 @@ class Routes extends React.Component {
     this.setState((prevstate) => ({
       isAuthenticated: !prevstate.isAuthenticated
     }));
-    console.log(this.state.isAuthenticated);
+    console.log('Authenticated : ' + this.state.isAuthenticated);
   }
 
   //Auth Handler to change the auth state [This being the parent component]
@@ -31,7 +31,7 @@ class Routes extends React.Component {
       })
       .then((resp) => {
         if (resp.success === true) {
-          console.log('Successful Authentication');
+          console.log('Successful Authentication @ Router');
           this.authHandler();
           // window.open('/dashboard', '_self');
         }

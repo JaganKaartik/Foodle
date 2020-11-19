@@ -1,5 +1,4 @@
 import * as actionTypes from './dishActionTypes';
-// Fetch Dishes
 
 export const fetchDishesRequest = () => {
   return {
@@ -41,8 +40,6 @@ export const fetchOneDishFailure = (error) => {
   };
 };
 
-// Add Dishes
-
 export const addDishSuccess = (message) => {
   return {
     type: actionTypes.ADD_DISH_SUCCESS,
@@ -57,8 +54,6 @@ export const addDishFailure = (message) => {
   };
 };
 
-// Update Dishes
-
 export const updateDishSuccess = (message) => {
   return {
     type: actionTypes.UPDATE_DISH_SUCCESS,
@@ -72,8 +67,6 @@ export const updateDishFailure = (message) => {
     payload: message
   };
 };
-
-// Delete Dishes
 
 export const deleteDishSuccess = (message) => {
   return {

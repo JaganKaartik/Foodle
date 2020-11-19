@@ -6,11 +6,9 @@ export const thunkFetchDishes = () => {
     dispatch(actionCreators.fetchDishesRequest());
     return displayAllDish()
       .then((resp) => {
-        console.log(resp);
         return resp.json();
       })
       .then((d) => {
-        console.log(d);
         dispatch(actionCreators.fetchDishesSuccess(d));
       })
       .catch((err) => dispatch(actionCreators.fetchDishesFailure(err)));
@@ -25,7 +23,6 @@ export const thunkFetchOneDish = (id) => {
         return resp.json();
       })
       .then((d) => {
-        console.log(d);
         dispatch(actionCreators.fetchOneDishSuccess(d));
       })
       .catch((err) => dispatch(actionCreators.fetchOneDishFailure(err)));
