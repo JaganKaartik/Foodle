@@ -1,3 +1,5 @@
+/* LOGIN AUTH COMPONENT */
+
 .container-login100 {
   width: 100%;
   min-height: 80vh;
@@ -51,8 +53,8 @@
 
 @media (max-width: 768px) {
   .wrap-login100 {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   @media (max-width: 576px) {
