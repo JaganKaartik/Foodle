@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 class Navigation extends Component {
+  handleLogoutClick = () => {
+    // Logout using Twitter passport api
+    // Set authenticated state to false in the HomePage
+    window.open(process.env.REACT_APP_SERVER_URL + '/auth/logout', '_self');
+    this.authHandler();
+  };
+
   render() {
     return (
       <nav className="all">
@@ -32,7 +39,7 @@ class Navigation extends Component {
             <li>
               <NavLink to="/">
                 <i class="arrow alternate circle right outline icon"></i>
-                <button class="ui button" onClick={this.props.authHandler}>
+                <button class="ui button" onClick={this.handleLogoutClick}>
                   Logout
                 </button>
               </NavLink>

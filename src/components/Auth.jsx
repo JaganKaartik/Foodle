@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { twitterLogin } from '../services/helpers';
+import { twitterLogin, googleLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import '../static/css/login.css';
 class Authentication extends Component {
@@ -23,6 +23,8 @@ class Authentication extends Component {
     e.preventDefault();
     if (e.currentTarget.value === 'twitter') {
       twitterLogin();
+    } else if (e.currentTarget.value === 'google') {
+      googleLogin();
     }
   };
 
@@ -34,7 +36,7 @@ class Authentication extends Component {
       <div className="container-login100">
         <div className="wrap-login100">
           <form className="Login100-form">
-            <span className="login100-form-title">Connect your Foodle Account.</span>
+            <span className="login100-form-title">Connect to your Foodle Account.</span>
             <br />
             <button
               value="google"
