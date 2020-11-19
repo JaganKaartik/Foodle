@@ -1,0 +1,69 @@
+.container-login100 {
+  width: 100%;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../images/bg-main.jpg');
+}
+
+.wrap-login100 {
+  width: 680px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.login100-form {
+  width: 100%;
+}
+
+.login100-form-title {
+  width: 100%;
+  display: block;
+  font-family: 'Enriqueta', serif;
+  font-size: 39px;
+  color: #353535;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.wrap-login100 {
+  width: 680px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 62px;
+  padding-bottom: 33px;
+}
+
+@media (max-width: 768px) {
+  .wrap-login100 {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (max-width: 576px) {
+    .wrap-login100 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .btn-face,
+    .btn-google {
+      width: 100%;
+    }
+  }
+}
