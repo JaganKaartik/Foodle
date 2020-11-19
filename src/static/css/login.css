@@ -16,6 +16,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../images/bg-main.jpg');
+  margin-top: 1vh;
 }
 
 .wrap-login100 {
@@ -32,12 +33,17 @@
 .login100-form-title {
   width: 100%;
   display: block;
-  font-family: 'Enriqueta', serif;
+  font-family: 'Pacifico', serif;
   font-size: 39px;
   color: #353535;
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;
+}
+
+.home-div {
+  position: relative;
+  margin-top: 1vh;
 }
 
 .wrap-login100 {
@@ -49,6 +55,7 @@
   padding-right: 110px;
   padding-top: 62px;
   padding-bottom: 33px;
+  opacity: 95%;
 }
 
 @media (max-width: 768px) {

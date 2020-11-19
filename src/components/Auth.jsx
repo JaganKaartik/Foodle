@@ -37,20 +37,12 @@ class Authentication extends Component {
           <form className="Login100-form">
             <span className="login100-form-title">Sign In With</span>
             <br />
-            <button
-              value="google"
-              className="z-depth-5 center-align ui google plus button"
-              onClick={this.valueHandler}
-            >
+            <button value="google" className="huge ui youtube button" onClick={this.valueHandler}>
               <i className="google icon" />
               Google
             </button>
-            <span style={{ display: 'inline-block', width: 210 }}></span>
-            <button
-              value="twitter"
-              className="z-depth-5 center-align ui twitter button"
-              onClick={this.valueHandler}
-            >
+            <span style={{ display: 'inline-block', width: 80 }}></span>
+            <button value="twitter" className="huge ui twitter button" onClick={this.valueHandler}>
               <i className="twitter icon" /> Twitter
             </button>
           </form>
