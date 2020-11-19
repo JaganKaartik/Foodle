@@ -49,26 +49,26 @@ class Routes extends React.Component {
           <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
           <Switch>
-            <Route path="/login" exact>
-              <Auth authHandler={this.authHandler} />
-            </Route>
-
             <Route path="/" exact>
               <Home />
             </Route>
 
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/search"
-              exact
-              component={SearchDish}
-            />
+            <Route path="/login" exact>
+              <Auth authHandler={this.authHandler} />
+            </Route>
 
             <PrivateRoute
               authstate={this.state.isAuthenticated}
               path="/dashboard"
               exact
               component={FoodTable}
+            />
+
+            <PrivateRoute
+              authstate={this.state.isAuthenticated}
+              path="/search"
+              exact
+              component={SearchDish}
             />
 
             <PrivateRoute
