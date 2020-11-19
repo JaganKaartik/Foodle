@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import home from '../../static/images/home.jpg';
+import homeL from '../../static/images/home-L.jpg';
+import homeR from '../../static/images/home-R.jpg';
 import '../../static/css/home.css';
 
 class Home extends Component {
   render() {
     return (
-      <div className="fade">
-        <img src={home} alt="cant load img"></img>
+      <div className="home-div">
+        <img className="sideA fadeA" src={homeL} alt="cant load img"></img>
+        <img className="sideB fadeB inner-image" src={homeR} alt="cant load img"></img>
       </div>
     );
   }
