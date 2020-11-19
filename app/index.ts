@@ -1,5 +1,5 @@
 import express from 'express'
-import { connectDB } from './config/database'
+import connectDB from './config/database'
 import Middleware from './middleware'
 import { PORT } from './config/default.config'
 
