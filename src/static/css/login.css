@@ -33,7 +33,7 @@
 .login100-form-title {
   width: 100%;
   display: block;
-  font-family: 'Montserrat', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 39px;
   color: #3e84ca;
   line-height: 1.2;
@@ -58,9 +58,6 @@
   opacity: 95%;
   background-color: rgba(229, 229, 229, 0.849);
 }
-/* .wrap-login100:after {
-  opacity: 0.5;
-} */
 
 @media (max-width: 768px) {
   .wrap-login100 {

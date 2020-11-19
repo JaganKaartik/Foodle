@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { twitterLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
 import '../static/css/login.css';
-
 class Authentication extends Component {
   state = {
     toDashboard: false
@@ -35,15 +34,22 @@ class Authentication extends Component {
       <div className="container-login100">
         <div className="wrap-login100">
           <form className="Login100-form">
-            <span className="login100-form-title">Sign In With</span>
+            <span className="login100-form-title">Connect your Foodle Account.</span>
             <br />
-            <button value="google" className="huge ui youtube button" onClick={this.valueHandler}>
-              <i className="google icon" />
-              Google
+            <button
+              value="google"
+              className="fluid huge ui youtube button"
+              onClick={this.valueHandler}
+            >
+              <i className="google icon" /> Login with Google
             </button>
             <span style={{ display: 'inline-block', width: 100 }}></span>
-            <button value="twitter" className="huge ui twitter button" onClick={this.valueHandler}>
-              <i className="twitter icon" /> Twitter
+            <button
+              value="twitter"
+              className="fluid huge ui twitter button"
+              onClick={this.valueHandler}
+            >
+              <i className="twitter icon" /> Login with Twitter
             </button>
           </form>
         </div>
