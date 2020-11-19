@@ -42,7 +42,7 @@ class Authentication extends Component {
             <button
               value="google"
               className="z-depth-5 center-align ui google plus button"
-              onClick={this.props.valueHandler}
+              onClick={this.valueHandler}
             >
               <i className="google icon" />
               Google
@@ -51,7 +51,7 @@ class Authentication extends Component {
             <button
               value="twitter"
               className="z-depth-5 center-align ui twitter button"
-              onClick={this.props.valueHandler}
+              onClick={this.valueHandler}
             >
               <i className="twitter icon" /> Twitter
             </button>
