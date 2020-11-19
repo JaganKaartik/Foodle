@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { twitterLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
-// import OAuthModal from './modals/OAuthModal';
 import '../static/css/login.css';
 
 class Authentication extends Component {
@@ -37,7 +36,6 @@ class Authentication extends Component {
         <div className="wrap-login100">
           <form className="Login100-form">
             <span className="login100-form-title">Sign In With</span>
-            {/* <OAuthModal valueHandler={this.valueHandler.bind(this)} /> */}
             <br />
             <button
               value="google"
