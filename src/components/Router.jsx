@@ -36,8 +36,8 @@ class Routes extends React.Component {
       .then((resp) => {
         if (resp.success === true) {
           console.log('Successful Authentication');
-          this.props.authHandler();
-          this.dashHandler();
+          this.authHandler();
+          // window.open('/dashboard', '_self');
         }
       });
   };

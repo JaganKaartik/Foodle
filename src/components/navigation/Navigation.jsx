@@ -24,9 +24,6 @@ class Navigation extends Component {
             <li>
               <NavLink to="/profile">Profile</NavLink>
             </li>
-            <li>
-              <NavLink to="/superadmin">Super Admin</NavLink>
-            </li>
           </ul>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
