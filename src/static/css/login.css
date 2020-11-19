@@ -2,7 +2,7 @@
 
 .container-login100 {
   width: 100%;
-  min-height: 80vh;
+  min-height: 82vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -33,9 +33,9 @@
 .login100-form-title {
   width: 100%;
   display: block;
-  font-family: 'Pacifico', serif;
+  font-family: 'Montserrat', serif;
   font-size: 39px;
-  color: #353535;
+  color: #3e84ca;
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;
@@ -48,7 +48,7 @@
 
 .wrap-login100 {
   width: 680px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 10px;
   position: relative;
   padding-left: 110px;
@@ -56,7 +56,11 @@
   padding-top: 62px;
   padding-bottom: 33px;
   opacity: 95%;
+  background-color: rgba(229, 229, 229, 0.849);
 }
+/* .wrap-login100:after {
+  opacity: 0.5;
+} */
 
 @media (max-width: 768px) {
   .wrap-login100 {

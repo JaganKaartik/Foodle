@@ -41,7 +41,7 @@ class Authentication extends Component {
               <i className="google icon" />
               Google
             </button>
-            <span style={{ display: 'inline-block', width: 80 }}></span>
+            <span style={{ display: 'inline-block', width: 100 }}></span>
             <button value="twitter" className="huge ui twitter button" onClick={this.valueHandler}>
               <i className="twitter icon" /> Twitter
             </button>
