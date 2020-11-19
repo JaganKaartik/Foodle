@@ -1,23 +1,20 @@
 const passport = require('passport')
-const {
-  CLIENT_HOME_PAGE_URL,
-  CLIENT_ORIGIN
-} = require('../config/default.config')
+const { CLIENT_HOME, CLIENT_LOGIN } = require('../config/default.config')
 
 const authGoogle = passport.authenticate('google', {
   scope: ['email', 'profile']
 })
 
 const authRedirectGoogle = passport.authenticate('google', {
-  successRedirect: CLIENT_HOME_PAGE_URL,
-  failureRedirect: `${CLIENT_ORIGIN}/auth`
+  successRedirect: CLIENT_HOME,
+  failureRedirect: CLIENT_LOGIN
 })
 
 const authTwitter = passport.authenticate('twitter')
 
 const authRedirectTwitter = passport.authenticate('twitter', {
-  successRedirect: CLIENT_HOME_PAGE_URL,
-  failureRedirect: `${CLIENT_ORIGIN}/auth`
+  successRedirect: CLIENT_HOME,
+  failureRedirect: CLIENT_LOGIN
 })
 
 const authStatus = (req, res) => {
@@ -38,7 +35,7 @@ const authStatus = (req, res) => {
 
 const logout = (req, res) => {
   req.logout()
-  res.redirect('/auth/status')
+  res.redirect(CLIENT_LOGIN)
 }
 
 const test = (req, res) => {
