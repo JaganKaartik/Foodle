@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 class Navigation extends Component {
   handleLogoutClick = () => {
     window.open(process.env.REACT_APP_SERVER_URL + '/auth/logout', '_self');
-    this.authHandler();
+    // this.authHandler();
   };
 
   render() {
