@@ -8,12 +8,12 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
 const passportSetup = require('../config/passport-setup')
-const { CLIENT_ORIGIN } = require('../config/default.config')
+const { CLIENT_ORIGIN, COOKIE_KEY } = require('../config/default.config')
 
 Middleware.use(
   cookieSession({
     name: 'session',
-    keys: [process.env.COOKIE_KEY],
+    keys: [COOKIE_KEY],
     maxAge: 24 * 60 * 60 * 100
   })
 )
