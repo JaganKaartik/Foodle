@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { twitterLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
-import OAuthModal from './modals/OAuthModal';
+// import OAuthModal from './modals/OAuthModal';
+import '../static/css/login.css';
 
 class Authentication extends Component {
   state = {
@@ -32,10 +33,30 @@ class Authentication extends Component {
       return <Redirect to="/dashboard" />;
     }
     return (
-      <div className="container">
-        <br />
-        <br />
-        <OAuthModal valueHandler={this.valueHandler.bind(this)} />
+      <div className="container-login100">
+        <div className="wrap-login100">
+          <form className="Login100-form">
+            <span className="login100-form-title">Sign In With</span>
+            {/* <OAuthModal valueHandler={this.valueHandler.bind(this)} /> */}
+            <br />
+            <button
+              value="google"
+              className="z-depth-5 center-align ui google plus button"
+              onClick={this.props.valueHandler}
+            >
+              <i className="google icon" />
+              Google
+            </button>
+            <span style={{ display: 'inline-block', width: 210 }}></span>
+            <button
+              value="twitter"
+              className="z-depth-5 center-align ui twitter button"
+              onClick={this.props.valueHandler}
+            >
+              <i className="twitter icon" /> Twitter
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
