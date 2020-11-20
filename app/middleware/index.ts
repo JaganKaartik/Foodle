@@ -7,6 +7,7 @@ const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
+const rateLimit = require('express-rate-limit')
 const passportSetup = require('../config/passport-setup')
 const { CLIENT_ORIGIN, COOKIE_KEY } = require('../config/default.config')
 
@@ -17,6 +18,15 @@ Middleware.use(
     maxAge: 24 * 60 * 60 * 100
   })
 )
+
+const apiLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 5,
+  message:
+    'Too many accounts created from this IP, please try again after a minute'
+})
+
+Middleware.use('/api/v1/', apiLimiter)
 
 Middleware.use(cookieParser())
 
