@@ -2,7 +2,6 @@ import React from 'react';
 import { addDish } from '../../services/helpers';
 
 class addDishForm extends React.Component {
-  //Forn to add dish
   state = {
     name: '',
     type: '',

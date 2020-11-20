@@ -20,13 +20,12 @@ class SearchDish extends Component {
   formHandler = (e) => {
     e.preventDefault();
     this.props.fetchdish(this.state.id);
-    console.log(this.props.data.dish.name);
+    console.log(this.props.data.dish);
     this.modalHandler();
   };
 
   modalHandler = () => {
     this.state.modal ? this.setState({ modal: false }) : this.setState({ modal: true });
-    console.log('Modal State: ' + this.state.modal);
   };
 
   render() {
