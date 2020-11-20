@@ -12,7 +12,8 @@ class Routes extends React.Component {
   }
 
   state = {
-    isAuthenticated: false
+    isAuthenticated: false,
+    userInfo: {}
   };
 
   authHandler() {
@@ -33,7 +34,7 @@ class Routes extends React.Component {
         if (resp.success === true) {
           console.log('Successful Authentication @ Router');
           this.authHandler();
-          // window.open('/dashboard', '_self');
+          this.setState({ userInfo: resp.user });
         }
       });
   };
@@ -69,6 +70,7 @@ class Routes extends React.Component {
 
             <PrivateRoute
               authstate={this.state.isAuthenticated}
+              userInfo={this.state.userInfo}
               path="/profile"
               exact
               component={User}
