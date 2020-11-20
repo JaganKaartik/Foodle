@@ -48,10 +48,6 @@ class Routes extends React.Component {
           <Switch>
             <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
 
-            {/* <Route path="/" exact> */}
-            {/* <Home /> */}
-            {/* </Route> */}
-
             <Route path="/login" exact>
               <Auth authHandler={this.authHandler} />
             </Route>
