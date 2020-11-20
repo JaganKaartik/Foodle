@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-
+import '../../static/css/home.css';
 export default class User extends Component {
   render() {
-    console.log(this.props.userInfo);
     return (
-      <div className="container-login100">
-        <div className="wrap-login100">
-          <img src={this.props.userInfo.profileBannerUrl} />
-          <img className="inner-image" src={this.props.userInfo.profileImageUrl} />
+      <div>
+        <div className="container-login100">
+          <div className="wrap-login100">
+            <img
+              src={this.props.userInfo.profileImageUrl}
+              alt="no-img"
+              class="inner-image-profile"
+            />
+            <img src={this.props.userInfo.profileBannerUrl} alt="no-img" />
+            <br />
+            <span style={{ display: 'inline-block', width: 100 }}></span>
+            <span class="twitter-profile">{this.props.userInfo.name}</span>
+          </div>
         </div>
       </div>
     );

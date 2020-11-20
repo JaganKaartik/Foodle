@@ -36,3 +36,14 @@ img {
   position: absolute;
   top: 1px;
 }
+
+.inner-image-profile {
+  position: absolute;
+  bottom: 33px;
+}
+
+.twitter-profile {
+  font-size: 25px;
+  font-family: 'Libre Baskerville', serif;
+  color: black;
+}
