@@ -20,7 +20,8 @@ class SearchDish extends Component {
   formHandler = (e) => {
     e.preventDefault();
     this.props.fetchdish(this.state.id);
-    console.log(this.props.data.dish);
+    console.log('Control : ' + this.props.data);
+    console.log(this.props.data);
     this.modalHandler();
   };
 
@@ -57,9 +58,6 @@ class SearchDish extends Component {
     );
   }
 }
-
-// Map the state to props
-// Access the dish attribute and displauy the foodcard accordingly
 
 const mapStateToProps = (state) => {
   return {
