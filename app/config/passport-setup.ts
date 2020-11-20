@@ -40,7 +40,9 @@ passport.use(
             provider: profile.provider,
             name: profile._json.name,
             profileImageUrl: profile._json.profile_image_url,
-            otherInfo: profile._json.screen_name
+            otherInfo: profile._json.screen_name,
+            location: profile._json.location,
+            profileBannerUrl: profile._json.profile_banner_url
           }).save()
           done(null, newUser)
         } else {
