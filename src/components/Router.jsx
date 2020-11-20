@@ -23,9 +23,8 @@ class Routes extends React.Component {
     console.log('Authenticated : ' + this.state.isAuthenticated);
   }
 
-  //Auth Handler to change the auth state [This being the parent component]
-
   componentDidMount = () => {
+    console.log('Mounted After BACKEND REDIRECT');
     checkAuth()
       .then((resp) => {
         return resp.json();
@@ -42,39 +41,37 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
+        <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
-          <Switch>
-            <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
+        <Switch>
+          <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
 
-            <Route path="/login" exact>
-              <Auth authHandler={this.authHandler} />
-            </Route>
+          <Route path="/login" exact>
+            <Auth authHandler={this.authHandler} />
+          </Route>
 
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/dashboard"
-              exact
-              component={FoodTable}
-            />
+          <PrivateRoute
+            authstate={this.state.isAuthenticated}
+            path="/dashboard"
+            exact
+            component={FoodTable}
+          />
 
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/search"
-              exact
-              component={SearchDish}
-            />
+          <PrivateRoute
+            authstate={this.state.isAuthenticated}
+            path="/search"
+            exact
+            component={SearchDish}
+          />
 
-            <PrivateRoute
-              authstate={this.state.isAuthenticated}
-              path="/profile"
-              exact
-              component={User}
-              userInfo={this.state.userInfo}
-            />
-          </Switch>
-        </div>
+          <PrivateRoute
+            authstate={this.state.isAuthenticated}
+            path="/profile"
+            exact
+            component={User}
+            userInfo={this.state.userInfo}
+          />
+        </Switch>
       </Router>
     );
   }

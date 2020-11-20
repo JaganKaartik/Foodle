@@ -23,26 +23,12 @@ class FoodTable extends Component {
     }
   };
 
-  // deleteHandler = (field,e) => {
-  //   e.preventDefault();
-  //   this.props.deleteOneDish(field)
-  //   this.props.displayAllDishes()
-  // }
-
-  // editHandler = (field,e) => {
-  //   const name = field.split("$")[0]
-  //   const price = "$" + field.split("$")[1]
-  //   this.props.updateDish(name,price)
-  //   this.props.displayAllDishes()
-  // }
-
   render() {
     if (this.props.data.loading) return <FoodleLoader />;
     return (
       <div>
         <table className="highlight">
           <FoodTableHeader display={this.props.displayAllDishes} />
-          {/* <FoodTableBody data={this.props.data} onDelete={this.deleteHandler} onEdit={this.editHandler} /> */}
           <FoodTableBody data={this.props.data.dishes} click={this.clickHandler} />
         </table>
       </div>
