@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
 import Auth from './Auth';
-import { Home, Navigation, PrivateRoute, User, SearchDish } from './navigation';
+import { Home, Navigation, PrivateRoute, AuthHomeRoute, User, SearchDish } from './navigation';
 import { checkAuth } from '../services/helpers';
 
 class Routes extends React.Component {
@@ -46,9 +46,11 @@ class Routes extends React.Component {
           <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
           <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
+            <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
+
+            {/* <Route path="/" exact> */}
+            {/* <Home /> */}
+            {/* </Route> */}
 
             <Route path="/login" exact>
               <Auth authHandler={this.authHandler} />
