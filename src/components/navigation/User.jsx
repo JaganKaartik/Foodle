@@ -1,5 +1,4 @@
 import React from 'react';
-
 /*
     Fetch user information from the api and display 
     ID : Name
