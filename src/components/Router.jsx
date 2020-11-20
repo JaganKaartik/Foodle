@@ -72,10 +72,10 @@ class Routes extends React.Component {
 
             <PrivateRoute
               authstate={this.state.isAuthenticated}
-              userInfo={this.state.userInfo}
               path="/profile"
               exact
               component={User}
+              userInfo={this.state.userInfo}
             />
           </Switch>
         </div>

@@ -1,38 +1,33 @@
-import React from 'react';
-/*
-    Fetch user information from the api and display 
-    ID : Name
-*/
-
-function User() {
-  return (
-    <div className="userwrapper">
-      <table className="highlight">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>User ID</th>
-            <th>Foodle Level</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>001</th>
-            <th>Kevin Hart</th>
-            <th>thisIsRealKevinHart41</th>
-            <th>Insane Foodie</th>
-            <th>Los Angeles</th>
-            <th>California</th>
-            <th>90008</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+import React, { Component } from 'react';
+import '../../static/css/home.css';
+export default class User extends Component {
+  render() {
+    const authProvider = this.props.userInfo.provider;
+    return (
+      <div>
+        <div className="container-login100">
+          <div className="wrap-login100">
+            {authProvider === 'twitter' ? (
+              <div>
+                <img
+                  src={this.props.userInfo.profileImageUrl}
+                  alt="no-img"
+                  class="inner-image-profile"
+                />
+                <img src={this.props.userInfo.profileBannerUrl} alt="no-img" />
+                <br />
+                <span style={{ display: 'inline-block', width: 100 }}></span>
+                <span class="twitter-profile">{this.props.userInfo.name}</span>
+              </div>
+            ) : (
+              <div>
+                <img src={this.props.userInfo.profileImageUrl} alt="no-img" />
+                <span class="twitter-profile">{this.props.userInfo.name}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default User;
