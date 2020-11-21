@@ -37,10 +37,12 @@ passport.use(
         if (!currentUser) {
           const newUser = new User({
             userId: profile._json.id_str,
-            provider: profile.proivider,
+            provider: profile.provider,
             name: profile._json.name,
             profileImageUrl: profile._json.profile_image_url,
-            otherInfo: profile._json.screen_name
+            otherInfo: profile._json.screen_name,
+            location: profile._json.location,
+            profileBannerUrl: profile._json.profile_banner_url
           }).save()
           done(null, newUser)
         } else {
@@ -67,7 +69,7 @@ passport.use(
           if (!currentUser) {
             const newUser = new User({
               userId: profile._json.sub,
-              provider: profile.proivider,
+              provider: profile.provider,
               name: profile._json.name,
               profileImageUrl: profile._json.picture,
               otherInfo: profile._json.email

@@ -7,7 +7,9 @@ const userSchema = new Schema({
   provider: String,
   name: String,
   profileImageUrl: String,
-  otherInfo: String
+  otherInfo: String,
+  location: String,
+  profileBannerUrl: String
 })
 
 export = mongoose.model('user', userSchema)

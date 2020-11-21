@@ -20,7 +20,7 @@ services:
       - foodle-app
 volumes:
   mongo-data:
-    name: ${VOLUME_ID}
+    name: 'my-volume-1'
 
 networks:
   foodle-app:
