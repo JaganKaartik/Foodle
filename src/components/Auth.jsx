@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { twitterLogin, googleLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
-import '../static/css/login.css';
+import '../static/css/home.css';
 class Authentication extends Component {
   state = {
     toDashboard: false

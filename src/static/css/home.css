@@ -21,11 +21,6 @@ img {
   max-height: 100%;
   display: block;
 }
-/* 
-.authfade {
-  opacity: 0.55;
-  margin-top: 1vh;
-} */
 
 .home-div {
   position: relative;
@@ -46,4 +41,65 @@ img {
   font-size: 25px;
   font-family: 'Libre Baskerville', serif;
   color: black;
+}
+
+/* LOGIN AUTH COMPONENT */
+
+.container-login100 {
+  width: 100%;
+  min-height: 82vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../images/bg-main.jpg');
+  margin-top: 1vh;
+}
+
+.wrap-login100 {
+  width: 680px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.login100-form {
+  width: 100%;
+}
+
+.login100-form-title {
+  width: 100%;
+  display: block;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 39px;
+  color: #3e84ca;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.home-div {
+  position: relative;
+  margin-top: 1vh;
+}
+
+.wrap-login100 {
+  width: 680px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: relative;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 62px;
+  padding-bottom: 33px;
+  opacity: 95%;
+  background-color: rgba(229, 229, 229, 0.849);
 }
