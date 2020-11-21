@@ -54,7 +54,7 @@ img {
   padding-right: 110px;
   padding-top: 62px;
   padding-bottom: 33px;
-  /* opacity: 95%; */
+  background-color: rgba(255, 255, 255, 0.842);
 }
 
 .container-login {
@@ -90,3 +90,23 @@ img {
   text-align: center;
   padding-bottom: 10px;
 }
+
+/* 
+@media (max-width: 768px) {
+  .wrap-login100 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 576px) {
+    .wrap-login100 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .btn-face,
+    .btn-google {
+      width: 100%;
+    }
+  }
+} */
