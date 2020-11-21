@@ -36,7 +36,7 @@ Middleware.use(passport.session())
 
 Middleware.use(
   cors({
-    origin: CLIENT_ORIGIN,
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
     credentials: true
