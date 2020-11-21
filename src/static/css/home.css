@@ -45,7 +45,20 @@ img {
 
 /* LOGIN AUTH COMPONENT */
 
-.container_login {
+.wrapper-login {
+  width: 680px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: relative;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 62px;
+  padding-bottom: 33px;
+  opacity: 95%;
+  background-color: rgba(229, 229, 229, 0.849);
+}
+
+.container-login {
   width: 100%;
   min-height: 82vh;
   display: -webkit-box;
@@ -77,17 +90,4 @@ img {
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;
-}
-
-.wrap-login {
-  width: 680px;
-  background: rgb(255, 255, 255);
-  border-radius: 10px;
-  position: relative;
-  padding-left: 110px;
-  padding-right: 110px;
-  padding-top: 62px;
-  padding-bottom: 33px;
-  opacity: 95%;
-  background-color: rgba(229, 229, 229, 0.849);
 }
