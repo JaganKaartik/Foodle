@@ -11,7 +11,7 @@ const seed = () => {
     .catch((err) => console.error(`Failed to insert documents: ${err}`))
 }
 
-if (process.env.NODE_ENV === 'prod-local') {
+if (process.env.NODE_ENV === 'production') {
   connectDB()
   seed()
 }
