@@ -15,7 +15,8 @@ Middleware.use(
   cookieSession({
     name: 'session',
     keys: [COOKIE_KEY],
-    maxAge: 24 * 60 * 60 * 100
+    maxAge: 24 * 60 * 60 * 100,
+    secure: process.env.NODE_ENV === 'production'
   })
 )
 

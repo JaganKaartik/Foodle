@@ -6,6 +6,7 @@ import { PORT } from './config/default.config'
 const app = express()
 
 connectDB()
+app.set('trust proxy', 1)
 app.use(Middleware)
 
 const port = PORT || 7000
