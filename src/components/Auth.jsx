@@ -34,27 +34,27 @@ class Authentication extends Component {
     }
     return (
       <div className="container-login">
-        {/* <div className="wrapper-login"> */}
-        <form className="login-form">
-          <span className="login-form-title">Connect to your Foodle Account.</span>
-          <br />
-          <button
-            value="google"
-            className="fluid huge ui youtube button"
-            onClick={this.valueHandler}
-          >
-            <i className="google icon" /> Login with Google
-          </button>
-          <span style={{ display: 'inline-block', width: 100 }}></span>
-          <button
-            value="twitter"
-            className="fluid huge ui twitter button"
-            onClick={this.valueHandler}
-          >
-            <i className="twitter icon" /> Login with Twitter
-          </button>
-        </form>
-        {/* </div> */}
+        <div className="wrapper-login">
+          <form className="login-form">
+            <span className="login-form-title">Connect to your Foodle Account.</span>
+            <br />
+            <button
+              value="google"
+              className="fluid huge ui youtube button"
+              onClick={this.valueHandler}
+            >
+              <i className="google icon" /> Login with Google
+            </button>
+            <span style={{ display: 'inline-block', width: 100 }}></span>
+            <button
+              value="twitter"
+              className="fluid huge ui twitter button"
+              onClick={this.valueHandler}
+            >
+              <i className="twitter icon" /> Login with Twitter
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
