@@ -6,7 +6,7 @@ export default class User extends Component {
     return (
       <div>
         <div className="container-login">
-          <div className="wrap-login">
+          <div className="wrapper-login">
             {authProvider === 'twitter' ? (
               <div>
                 <img

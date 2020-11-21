@@ -54,8 +54,7 @@ img {
   padding-right: 110px;
   padding-top: 62px;
   padding-bottom: 33px;
-  opacity: 95%;
-  background-color: rgba(229, 229, 229, 0.849);
+  /* opacity: 95%; */
 }
 
 .container-login {
