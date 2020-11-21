@@ -20,8 +20,6 @@ class SearchDish extends Component {
   formHandler = (e) => {
     e.preventDefault();
     this.props.fetchdish(this.state.id);
-    console.log('Control : ' + this.props.data);
-    console.log(this.props.data);
     this.modalHandler();
   };
 

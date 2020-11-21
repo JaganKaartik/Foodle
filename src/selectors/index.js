@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 
 export const getTypes = (dishes) => {
-  console.log('gettypes');
   let typesArray = [];
   let length = dishes.length;
   for (let i = 0; i < length; ++i) {

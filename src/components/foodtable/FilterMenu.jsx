@@ -20,7 +20,6 @@ class FilterMenu extends Component {
             <div className="item" onClick={this.clickHandler.bind(this, null)}>
               All
             </div>
-            {console.log('Reselect Value: ' + this.props.type)}
             {this.props.type.map((type) => {
               return (
                 <div

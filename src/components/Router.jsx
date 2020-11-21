@@ -20,18 +20,15 @@ class Routes extends React.Component {
     this.setState((prevstate) => ({
       isAuthenticated: !prevstate.isAuthenticated
     }));
-    console.log('Authenticated : ' + this.state.isAuthenticated);
   }
 
   componentDidMount = () => {
-    console.log('Mounted After BACKEND REDIRECT');
     checkAuth()
       .then((resp) => {
         return resp.json();
       })
       .then((resp) => {
         if (resp.success === true) {
-          console.log('Successful Authentication @ Router');
           this.authHandler();
           this.setState({ userInfo: resp.user });
         }

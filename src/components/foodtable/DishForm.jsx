@@ -19,9 +19,8 @@ class addDishForm extends React.Component {
     addDish(this.state.name, this.state.type, this.state.price).then((res) => {
       if (res.ok) {
         this.props.onAdd();
-        console.log('Successfully added dish');
       } else {
-        console.log('Unable to add dish');
+        // Add Logic
       }
     });
   };

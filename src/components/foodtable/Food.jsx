@@ -19,8 +19,6 @@ class Food extends Component {
       this.setState(() => {
         return { isEditable: false };
       });
-      console.log('From Food : ' + this.props.name);
-      console.log('From Temp : ' + this.state.temp);
       this.props.click(this.props.name + this.state.temp, 'edit', e);
     } else {
       this.setState(() => {
@@ -31,7 +29,6 @@ class Food extends Component {
 
   editHandler = (e) => {
     this.setState({ temp: e.target.value });
-    console.log(e.target.value);
   };
 
   render() {
