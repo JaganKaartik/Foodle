@@ -45,7 +45,7 @@ img {
 
 /* LOGIN AUTH COMPONENT */
 
-.container-login100 {
+.container_login {
   width: 100%;
   min-height: 82vh;
   display: -webkit-box;
@@ -64,18 +64,11 @@ img {
   margin-top: 1vh;
 }
 
-.wrap-login100 {
-  width: 680px;
-  background: #fff;
-  border-radius: 10px;
-  position: relative;
-}
-
-.login100-form {
+.login-form {
   width: 100%;
 }
 
-.login100-form-title {
+.login-form-title {
   width: 100%;
   display: block;
   font-family: 'Libre Baskerville', serif;
@@ -86,12 +79,7 @@ img {
   padding-bottom: 10px;
 }
 
-.home-div {
-  position: relative;
-  margin-top: 1vh;
-}
-
-.wrap-login100 {
+.wrap-login {
   width: 680px;
   background: rgb(255, 255, 255);
   border-radius: 10px;

@@ -33,10 +33,10 @@ class Authentication extends Component {
       return <Redirect to="/dashboard" />;
     }
     return (
-      <div className="container-login100">
-        <div className="wrap-login100">
-          <form className="Login100-form">
-            <span className="login100-form-title">Connect to your Foodle Account.</span>
+      <div className="container-login">
+        <div className="wrap-login">
+          <form className="login-form">
+            <span className="login-form-title">Connect to your Foodle Account.</span>
             <br />
             <button
               value="google"

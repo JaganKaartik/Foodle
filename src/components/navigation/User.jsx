@@ -5,8 +5,8 @@ export default class User extends Component {
     const authProvider = this.props.userInfo.provider;
     return (
       <div>
-        <div className="container-login100">
-          <div className="wrap-login100">
+        <div className="container-login">
+          <div className="wrap-login">
             {authProvider === 'twitter' ? (
               <div>
                 <img
