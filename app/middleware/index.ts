@@ -17,9 +17,7 @@ Middleware.use(
     keys: [COOKIE_KEY],
     maxAge: 24 * 60 * 60 * 100,
     secure: process.env.NODE_ENV === 'production',
-    httpOnly: true,
-    sameSite: false,
-    domain: 'foodle-app.netlify.app'
+    sameSite: false
   })
 )
 
