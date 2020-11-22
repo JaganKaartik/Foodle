@@ -17,7 +17,7 @@ Middleware.use(
     keys: [COOKIE_KEY],
     maxAge: 24 * 60 * 60 * 100,
     secure: process.env.NODE_ENV === 'production',
-    httpOnly: false,
+    httpOnly: true,
     sameSite: false
   })
 )
@@ -39,7 +39,7 @@ Middleware.use(passport.session())
 Middleware.use(
   cors({
     origin: [
-      'https://foodle-app.netlify.app/,http://localhost:3000,http://localhost:5000'
+      'https://foodle-app.netlify.app,http://localhost:3000,http://localhost:5000'
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
