@@ -36,18 +36,16 @@ Middleware.use(cookieParser())
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
-// Middleware.use(
-//   cors({
-//     origin: [
-//       'https://foodle-app.netlify.app/,http://localhost:3000,http://localhost:5000'
-//     ],
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     preflightContinue: true,
-//     credentials: true
-//   })
-// )
-
-Middleware.use(cors())
+Middleware.use(
+  cors({
+    origin: [
+      'https://foodle-app.netlify.app/,http://localhost:3000,http://localhost:5000'
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: true,
+    credentials: true
+  })
+)
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
