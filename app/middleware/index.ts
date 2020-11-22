@@ -18,7 +18,8 @@ Middleware.use(
     maxAge: 24 * 60 * 60 * 100,
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    sameSite: false
+    sameSite: false,
+    domain: 'foodle-app.netlify.app'
   })
 )
 
