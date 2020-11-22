@@ -17,7 +17,8 @@ Middleware.use(
     keys: [COOKIE_KEY],
     maxAge: 24 * 60 * 60 * 100,
     secure: process.env.NODE_ENV === 'production',
-    httpOnly: false
+    httpOnly: false,
+    sameSite: false
   })
 )
 
