@@ -36,7 +36,9 @@ Middleware.use(passport.session())
 
 Middleware.use(
   cors({
-    origin: '*',
+    origin: [
+      'https://foodle-app.netlify.app/,http://localhost:3000,http://localhost:5000'
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
     credentials: true
