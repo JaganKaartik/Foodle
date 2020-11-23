@@ -35,6 +35,17 @@ Middleware.use(cookieParser())
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
+Middleware.use(async (req, res, next) => {
+  await next()
+  res.setHeader('Access-Control-Allow-Origin', [
+    'https://foodle-app.netlify.app,http://localhost:3000,http://localhost:5000'
+  ])
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+})
+
 Middleware.use(
   cors({
     origin: [
