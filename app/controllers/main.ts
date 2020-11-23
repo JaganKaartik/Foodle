@@ -6,4 +6,7 @@ const error = (req, res) => {
   res.send('Error')
 }
 
-export { root, error }
+const testRoute = (req, res) => {
+  res.send({ message: 'test route' })
+}
+export { root, error, testRoute }
