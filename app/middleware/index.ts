@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
+const referrerPolicy = require('referrer-policy')
 const passportSetup = require('../config/passport-setup')
 const { CLIENT_ORIGIN, COOKIE_KEY } = require('../config/default.config')
 
@@ -56,6 +57,8 @@ Middleware.use(
     credentials: true
   })
 )
+
+Middleware.use(referrerPolicy())
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())
