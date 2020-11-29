@@ -6,8 +6,7 @@ const {
   TWITTER_CONSUMER_KEY,
   TWITTER_CONSUMER_SECRET,
   GOOGLE_CLIENT_ID,
-  GOOGLE_CLIENT_SECRET,
-  JWT_SECRET
+  GOOGLE_CLIENT_SECRET
 } = require('./default.config')
 
 passport.serializeUser((user, done) => {
