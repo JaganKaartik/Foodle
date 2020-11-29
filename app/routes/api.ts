@@ -6,18 +6,18 @@ import {
   deleteDish,
   updateDish
 } from '../controllers/api'
-import authCheck from '../middleware/authCheck'
+import tokenCheck from '../middleware/tokenCheck'
 
 const { check } = require('express-validator')
 
 const apiRouter = express.Router()
 
-apiRouter.get('/dish/all', authCheck, getAllDish)
-apiRouter.get('/dish/:id', authCheck, [check('id').exists()], getDish)
-apiRouter.delete('/dish/:id', authCheck, [check('id').exists()], deleteDish)
+apiRouter.get('/dish/all', tokenCheck, getAllDish)
+apiRouter.get('/dish/:id', tokenCheck, [check('id').exists()], getDish)
+apiRouter.delete('/dish/:id', tokenCheck, [check('id').exists()], deleteDish)
 apiRouter.put(
   '/dish/',
-  authCheck,
+  tokenCheck,
   [
     check('name').exists().isString().notEmpty(),
     check('price').exists().isString().notEmpty()
@@ -26,7 +26,7 @@ apiRouter.put(
 )
 apiRouter.post(
   '/dish/',
-  authCheck,
+  tokenCheck,
   [
     check('name').exists().isString().notEmpty(),
     check('type').exists().isString().notEmpty(),

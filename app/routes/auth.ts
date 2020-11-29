@@ -5,8 +5,7 @@ import {
   authTwitter,
   authRedirectTwitter,
   authStatus,
-  logout,
-  test
+  logout
 } from '../controllers/auth'
 
 const authRouter = express.Router()
@@ -17,6 +16,5 @@ authRouter.get('/twitter', authTwitter)
 authRouter.get('/twitter/redirect', authRedirectTwitter)
 authRouter.get('/status', authStatus)
 authRouter.get('/logout', logout)
-authRouter.get('/test', test)
 
 export = authRouter

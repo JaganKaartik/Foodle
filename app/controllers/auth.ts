@@ -38,16 +38,11 @@ const logout = (req, res) => {
   res.redirect(CLIENT_LOGIN)
 }
 
-const test = (req, res) => {
-  res.send({ user: req.user })
-}
-
 export {
   authGoogle,
   authRedirectGoogle,
   authTwitter,
   authRedirectTwitter,
   authStatus,
-  logout,
-  test
+  logout
 }
