@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const { JWT_SECRET } = require('../config/default.config.ts')
+const { JWT_SECRET } = require('../config/default.config')
 
 export default (req, res, next) => {
   const token = req.header('x-auth-token')
