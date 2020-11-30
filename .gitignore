@@ -109,3 +109,5 @@ dist
 
 # dist folder
 dist
+
+.DS_Store
