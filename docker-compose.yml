@@ -1,6 +1,14 @@
 version: '3'
 services:
-  foodle-app:
+  react-app:
+    image: react-app
+    stdin_open: true
+    ports:
+      - '3000:3000'
+    networks:
+      - foodle-app
+
+  api-server:
     build: .
     ports:
       - '7000:7000'
@@ -18,6 +26,7 @@ services:
       - mongo-data:/data/db
     networks:
       - foodle-app
+
 volumes:
   mongo-data:
     name: 'my-volume-1'
