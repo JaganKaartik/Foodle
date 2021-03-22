@@ -20,33 +20,36 @@ export const googleLogin = () => {
 };
 
 export const displayAllDish = () => {
+  const authToken = localStorage.getItem('authToken');
   return fetch(server_url + '/api/v1/dish/all', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    method: 'GET',{
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
     mode: 'cors',
     credentials: 'include'
   });
 };
 
 export const displayDish = (id) => {
+  const authToken = localStorage.getItem('authToken');
   return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
     mode: 'cors',
     credentials: 'include'
   });
 };
 
 export const addDish = (name, type, price) => {
+  const authToken = localStorage.getItem('authToken');
   return fetch(server_url + '/api/v1/dish/', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
     body: JSON.stringify({
       name,
       type,
@@ -58,22 +61,24 @@ export const addDish = (name, type, price) => {
 };
 
 export const delDish = (id) => {
+  const authToken = localStorage.getItem('authToken');
   return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
     mode: 'cors',
     credentials: 'include'
   });
 };
 
 export const updateDish = (name, price) => {
+  const authToken = localStorage.getItem('authToken');
   return fetch(server_url + `/api/v1/dish/`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
     body: JSON.stringify({
       name,
       price
