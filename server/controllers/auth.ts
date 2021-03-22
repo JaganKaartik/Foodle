@@ -8,9 +8,6 @@ const {
   JWT_SECRET
 } = require('../config/default.config')
 
-console.log(NODE_ENV)
-console.log(JWT_SECRET)
-
 const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
 
 const authGoogle = passport.authenticate('google', {
@@ -39,8 +36,6 @@ const authRedirectTwitter = (req, res) => {
     failureRedirect: '/',
     session: false
   })
-  console.log(NODE_ENV)
-  console.log(JWT_SECRET)
   const token = jwt.sign(
     {
       data: req.user
