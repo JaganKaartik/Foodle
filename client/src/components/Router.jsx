@@ -21,9 +21,10 @@ class Routes extends React.Component {
   }
 
   componentDidMount = () => {
-    var query = queryString.parse(window.location.search);
-    if (query.token) {
-      window.localStorage.setItem('foodle-jwt', query.token);
+    let params = new URL(document.location).searchParams;
+    let authToken = params.get('token');
+    if (authToken) {
+      window.localStorage.setItem('foodle-jwt', authToken);
       this.authHandler();
     }
   };
