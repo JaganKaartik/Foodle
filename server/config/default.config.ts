@@ -1,6 +1,7 @@
-require('dotenv')
+require('dotenv').config()
 
 const {
+  NODE_ENV,
   PORT,
   MONGO_URL,
   TWITTER_CONSUMER_KEY,
@@ -11,12 +12,13 @@ const {
   CLIENT_ORIGIN,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  JWT_TOKEN,
+  JWT_SECRET,
   CLIENT_URL_DEV,
   CLIENT_URL_PROD
 } = process.env
 
 export {
+  NODE_ENV,
   PORT,
   MONGO_URL,
   TWITTER_CONSUMER_KEY,
@@ -27,7 +29,7 @@ export {
   CLIENT_ORIGIN,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  JWT_TOKEN,
+  JWT_SECRET,
   CLIENT_URL_DEV,
   CLIENT_URL_PROD
 }
