@@ -11,8 +11,6 @@ app.use(Middleware)
 
 const port = PORT || 7000
 
-console.log(process.env)
-
 app.listen(port, () => {
   console.log('Server Started Successfully')
 })
