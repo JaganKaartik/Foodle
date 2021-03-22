@@ -4,7 +4,6 @@ import {
   authRedirectGoogle,
   authTwitter,
   authRedirectTwitter,
-  authStatus,
   logout
 } from '../controllers/auth'
 
@@ -14,7 +13,6 @@ authRouter.get('/google', authGoogle)
 authRouter.get('/google/redirect', authRedirectGoogle)
 authRouter.get('/twitter', authTwitter)
 authRouter.get('/twitter/redirect', authRedirectTwitter)
-authRouter.get('/user/status', authStatus)
 authRouter.get('/logout', logout)
 
 export = authRouter
