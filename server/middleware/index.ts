@@ -9,7 +9,14 @@ const passport = require('passport')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
 const passportSetup = require('../config/passport-setup')
-const { COOKIE_KEY } = require('../config/default.config')
+const {
+  NODE_ENV,
+  CLIENT_URL_PROD,
+  CLIENT_URL_DEV,
+  COOKIE_KEY
+} = require('../config/default.config')
+
+const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
 
 Middleware.use(
   cookieSession({
@@ -35,7 +42,7 @@ Middleware.use(cookieParser())
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
-Middleware.use(cors())
+Middleware.use(cors({ credentials: true, origin: clientUrl }))
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())

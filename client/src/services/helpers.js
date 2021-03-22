@@ -20,7 +20,7 @@ export const googleLogin = () => {
 };
 
 export const displayAllDish = () => {
-  const authToken = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('foodle-jwt');
   return fetch(server_url + '/api/v1/dish/all', {
     method: 'GET',
     headers: {
@@ -32,7 +32,7 @@ export const displayAllDish = () => {
 };
 
 export const displayDish = (id) => {
-  const authToken = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('foodle-jwt');
   return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'GET',
     headers: {
@@ -44,7 +44,7 @@ export const displayDish = (id) => {
 };
 
 export const addDish = (name, type, price) => {
-  const authToken = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('foodle-jwt');
   return fetch(server_url + '/api/v1/dish/', {
     method: 'POST',
     headers: {
@@ -61,7 +61,7 @@ export const addDish = (name, type, price) => {
 };
 
 export const delDish = (id) => {
-  const authToken = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('foodle-jwt');
   return fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'DELETE',
     headers: {
@@ -73,7 +73,7 @@ export const delDish = (id) => {
 };
 
 export const updateDish = (name, price) => {
-  const authToken = localStorage.getItem('authToken');
+  const authToken = localStorage.getItem('foodle-jwt');
   return fetch(server_url + `/api/v1/dish/`, {
     method: 'PUT',
     headers: {
