@@ -1,4 +1,4 @@
-require('dotenv').config({ path: `.env.${process.env.APP_ENV}` })
+require('dotenv')
 
 const {
   PORT,
