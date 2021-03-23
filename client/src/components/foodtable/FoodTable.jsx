@@ -27,7 +27,7 @@ class FoodTable extends Component {
     if (this.props.data.loading) return <FoodleLoader />;
     return (
       <div>
-        <table className="highlight">
+        <table className="responsive-table striped highlight">
           <FoodTableHeader display={this.props.displayAllDishes} />
           <FoodTableBody data={this.props.data.dishes} click={this.clickHandler} />
         </table>

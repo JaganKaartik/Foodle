@@ -149,26 +149,119 @@ img {
   padding-bottom: 10px;
 }
 
-/* 
-@media (max-width: 768px) {
-  .wrap-login100 {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  @media (max-width: 576px) {
-    .wrap-login100 {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .btn-face,
-    .btn-google {
-      width: 100%;
-    }
-  }
-} */
-
 #menu-toggle:checked + #menu {
   display: block;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+td,
+th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.striped tr {
+  border-bottom: none;
+}
+.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(242, 242, 242, 0.842);
+}
+.striped > tbody > tr > td {
+  border-radius: 0;
+}
+
+.highlight > tbody > tr {
+  transition: background-color 0.25s ease;
+}
+.highlight > tbody > tr:hover {
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+/* Blockquote */
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid rgba(242, 242, 242, 0.5);
+}
+
+/* Responsive */
+@media only screen and (max-width: 992px) {
+  table.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    position: relative;
+    /* sort out borders */
+  }
+  table.responsive-table td:empty:before {
+    content: '\00a0';
+  }
+  table.responsive-table th,
+  table.responsive-table td {
+    margin: 0;
+    vertical-align: top;
+  }
+  table.responsive-table th {
+    text-align: left;
+  }
+  table.responsive-table thead {
+    display: block;
+    float: left;
+  }
+  table.responsive-table thead tr {
+    display: block;
+    padding: 0 10px 0 0;
+  }
+  table.responsive-table thead tr th::before {
+    content: '\00a0';
+  }
+  table.responsive-table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  table.responsive-table tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  table.responsive-table th {
+    display: block;
+    text-align: right;
+  }
+  table.responsive-table td {
+    display: block;
+    min-height: 1.25em;
+    text-align: left;
+  }
+  table.responsive-table tr {
+    border-bottom: none;
+    padding: 0 10px;
+  }
+  table.responsive-table thead {
+    border: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
 }

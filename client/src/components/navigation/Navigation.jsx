@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import logoSVG from '../../assets/images/f.svg';
+import logoSVG from '../../assets/images/logo.svg';
 class Navigation extends Component {
   handleLogoutClick = () => {
     window.open(process.env.REACT_APP_SERVER_URL + '/auth/logout', '_self');
@@ -9,7 +9,7 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <header className="bg-blue-50 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+        <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex">
             <NavLink to="/">
               <img src={logoSVG} width="32" heigsht="36" alt="Andy Leverenz" />
@@ -39,7 +39,7 @@ class Navigation extends Component {
   displayNav() {
     if (this.props.authstate === true) {
       return (
-        <ul className="nav-text lg:flex items-center justify-between text-base text-blue-400 pt-4 lg:pt-0">
+        <ul className="nav-text lg:flex items-center justify-between text-base text-blue-500 pt-4 lg:pt-0">
           <li>
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
               <NavLink to="/dashboard">Dashboard</NavLink>
@@ -71,7 +71,7 @@ class Navigation extends Component {
       );
     } else {
       return (
-        <ul className="nav-text lg:flex items-center justify-between text-base text-indigo-700 pt-4 lg:pt-0">
+        <ul className="nav-text lg:flex items-center justify-between text-base text-blue-500  pt-4 lg:pt-0">
           <li>
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
               <NavLink to="/login">Login</NavLink>

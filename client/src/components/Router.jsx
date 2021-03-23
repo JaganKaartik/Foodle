@@ -11,7 +11,7 @@ class Routes extends React.Component {
   }
 
   state = {
-    isAuthenticated: false
+    isAuthenticated: true
   };
 
   authHandler() {
