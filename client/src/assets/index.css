@@ -29,7 +29,13 @@ code {
 }
 
 .foodle {
-  font-family: 'Josefin Slab', serif;
+  display: inline;
+  font-family: 'Bebas Neue';
+  color: #0096c7;
+}
+
+.nav-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .brand-logo {
