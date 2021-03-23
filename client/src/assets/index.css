@@ -40,7 +40,7 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
-.nav-wrapper {
+.nav-theme {
   /* background-color: #00b4d8 !important; */
   background-color: #0096c7 !important;
 }
@@ -162,3 +162,7 @@ img {
     }
   }
 } */
+
+#menu-toggle:checked + #menu {
+  display: block;
+}
