@@ -11,6 +11,19 @@ export const checkAuth = () => {
   });
 };
 
+export const getUserProfile = () => {
+  const authToken = localStorage.getItem('foodle-jwt');
+  const userId = localStorage.getItem('foodle-usr-id');
+  return fetch(server_url + '/api/v1/user/' + userId, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    },
+    mode: 'cors',
+    credentials: 'include'
+  });
+};
+
 export const twitterLogin = () => {
   window.open(server_url + '/auth/twitter', '_self');
 };

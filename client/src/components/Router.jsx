@@ -23,8 +23,10 @@ class Routes extends React.Component {
   componentDidMount = () => {
     let params = new URL(document.location).searchParams;
     let authToken = params.get('token');
+    let userId = params.get('userid');
     if (authToken) {
       window.localStorage.setItem('foodle-jwt', authToken);
+      window.localStorage.setItem('foodle-usr-id', userId);
       this.authHandler();
     }
   };
