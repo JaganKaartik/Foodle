@@ -49,3 +49,116 @@ code {
   max-width: 90%;
   margin: auto;
 }
+
+/* HOME COMPONENTS */
+
+.fadeA {
+  opacity: 0.85;
+}
+
+.fadeB {
+  opacity: 0.95;
+}
+
+.sideA {
+  clip-path: polygon(100% 0, 0% 100%, 0 0);
+}
+
+.sideB {
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.home-div {
+  position: relative;
+  margin-top: 1vh;
+}
+
+.inner-image {
+  position: absolute;
+  top: 1px;
+}
+
+.inner-image-profile {
+  position: absolute;
+  bottom: 33px;
+}
+
+.twitter-profile {
+  font-size: 25px;
+  font-family: 'Libre Baskerville', serif;
+  color: black;
+}
+
+/* LOGIN AUTH COMPONENT */
+
+.wrapper-login {
+  width: 680px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: relative;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 62px;
+  padding-bottom: 33px;
+  background-color: rgba(255, 255, 255, 0.842);
+}
+
+.container-login {
+  width: 100%;
+  min-height: 82vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./images/bg-main.jpg');
+  margin-top: 1vh;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form-title {
+  width: 100%;
+  display: block;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 39px;
+  color: #3e84ca;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* 
+@media (max-width: 768px) {
+  .wrap-login100 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 576px) {
+    .wrap-login100 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .btn-face,
+    .btn-google {
+      width: 100%;
+    }
+  }
+} */

@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="homeContainer hoverable">
+        <div>
           <Routes />
         </div>
       </Provider>
