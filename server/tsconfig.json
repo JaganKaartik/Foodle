@@ -4,7 +4,7 @@
     "target": "ESNEXT",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./app",
+    "rootDir": "./",
     "strict": true,
     "noImplicitAny": false,
     "moduleResolution": "node",

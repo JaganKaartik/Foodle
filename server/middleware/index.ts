@@ -8,9 +8,15 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
-const referrerPolicy = require('referrer-policy')
 const passportSetup = require('../config/passport-setup')
-const { CLIENT_ORIGIN, COOKIE_KEY } = require('../config/default.config')
+const {
+  NODE_ENV,
+  CLIENT_URL_PROD,
+  CLIENT_URL_DEV,
+  COOKIE_KEY
+} = require('../config/default.config')
+
+const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
 
 Middleware.use(
   cookieSession({
@@ -36,29 +42,7 @@ Middleware.use(cookieParser())
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
-Middleware.use(async (req, res, next) => {
-  await next()
-  res.setHeader('Access-Control-Allow-Origin', [
-    'https://foodle-app.netlify.app,http://localhost:3000,http://localhost:5000'
-  ])
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-})
-
-Middleware.use(
-  cors({
-    origin: [
-      'https://foodle-app.netlify.app,http://localhost:3000,http://localhost:5000'
-    ],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: true,
-    credentials: true
-  })
-)
-
-Middleware.use(referrerPolicy())
+Middleware.use(cors({ credentials: true, origin: clientUrl }))
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())

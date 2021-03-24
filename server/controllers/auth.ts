@@ -2,50 +2,53 @@ import jwt from 'jsonwebtoken'
 
 const passport = require('passport')
 const {
-  CLIENT_HOME,
-  CLIENT_LOGIN,
+  NODE_ENV,
+  CLIENT_URL_PROD,
+  CLIENT_URL_DEV,
   JWT_SECRET
 } = require('../config/default.config')
+
+const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
 
 const authGoogle = passport.authenticate('google', {
   scope: ['email', 'profile']
 })
 
-const authRedirectGoogle = passport.authenticate('google', {
-  successRedirect: CLIENT_HOME,
-  failureRedirect: CLIENT_LOGIN
-})
+const authRedirectGoogle = (req, res) => {
+  passport.authenticate('google', {
+    failureRedirect: '/',
+    session: false
+  })
+  const token = jwt.sign(
+    {
+      data: req.user
+    },
+    JWT_SECRET,
+    { expiresIn: '24h' }
+  )
+  res.redirect(`${clientUrl}?token=${token}`)
+}
 
 const authTwitter = passport.authenticate('twitter')
 
-const authRedirectTwitter = passport.authenticate('twitter', {
-  successRedirect: CLIENT_HOME,
-  failureRedirect: CLIENT_LOGIN
-})
-
-const authStatus = (req, res) => {
-  if (req.user) {
-    const token = jwt.sign({ user: req.user }, JWT_SECRET, {
-      expiresIn: 3600
-    })
-    res.status(200).send({
-      token,
-      success: true,
-      message: 'User has successfully authenticated',
-      user: req.user,
-      cookies: req.cookies
-    })
-  } else {
-    res.status(401).send({
-      success: false,
-      message: 'user failed to authenticate.'
-    })
-  }
+const authRedirectTwitter = (req, res) => {
+  passport.authenticate('twitter', {
+    failureRedirect: '/',
+    session: false
+  })
+  const token = jwt.sign(
+    {
+      data: req.user
+    },
+    JWT_SECRET,
+    { expiresIn: '24h' }
+  )
+  res.redirect(`${clientUrl}?token=${token}`)
 }
 
 const logout = (req, res) => {
   req.logout()
-  res.redirect(CLIENT_LOGIN)
+  res.redirect(clientUrl)
 }
 
 export {
@@ -53,6 +56,5 @@ export {
   authRedirectGoogle,
   authTwitter,
   authRedirectTwitter,
-  authStatus,
   logout
 }
