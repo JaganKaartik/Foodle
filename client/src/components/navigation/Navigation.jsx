@@ -11,11 +11,11 @@ class Navigation extends Component {
     modal: false
   };
 
-  handleLogout() {
-    // eslint-disable-next-line no-console
-    console.log(this.props.authstate);
+  handleLogout = (e) => {
+    e.preventDefault();
     logout();
-  }
+    this.props.authHandler();
+  };
 
   changeHandler = (e) => {
     e.preventDefault();
@@ -84,7 +84,7 @@ class Navigation extends Component {
           </li>
           <li>
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
-              <NavLink to="/logout" onClick={this.handleLogout}>
+              <NavLink to="/logout" onClick={this.handleLogout.bind(this)}>
                 {/* <button
                   className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
                   onClick={this.handleLogoutClick}
