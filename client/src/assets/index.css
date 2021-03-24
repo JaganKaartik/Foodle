@@ -281,3 +281,8 @@ blockquote {
     width: 70%;
   }
 }
+
+.home-content {
+  font-family: 'Cormorant Garamond', serif;
+  /* font-family: 'Nunito', sans-serif; */
+}

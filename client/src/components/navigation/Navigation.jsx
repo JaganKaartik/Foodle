@@ -9,7 +9,7 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <header className="bg-blue-200 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+        <div className="bg-blue-100 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex">
             <NavLink to="/">
               <img src={logoSVG} width="32" heigsht="36" alt="Andy Leverenz" />
@@ -32,7 +32,7 @@ class Navigation extends Component {
             <nav>{this.displayNav()}</nav>
             {this.displayUser()}
           </div>
-        </header>
+        </div>
       </div>
     );
   }
@@ -57,13 +57,13 @@ class Navigation extends Component {
           </li>
           <li>
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
-              <NavLink to="/">
-                <button
+              <NavLink to="/logout">
+                {/* <button
                   className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
                   onClick={this.handleLogoutClick}
-                >
-                  Logout
-                </button>
+                > */}
+                Logout
+                {/* </button> */}
               </NavLink>
             </div>
           </li>

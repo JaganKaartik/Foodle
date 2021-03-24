@@ -43,6 +43,8 @@ class Routes extends React.Component {
             <Auth authHandler={this.authHandler} />
           </Route>
 
+          <Route path="/logout" exact></Route>
+
           <PrivateRoute
             authstate={this.state.isAuthenticated}
             path="/dashboard"
