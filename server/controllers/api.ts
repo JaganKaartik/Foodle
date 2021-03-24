@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator')
 const Dishes = require('../models/dish')
+const User = require('../models/user')
 
 const addDish = (req, res) => {
   const errors = validationResult(req)
@@ -101,4 +102,14 @@ const updateDish = (req, res) => {
   }
 }
 
-export { addDish, getAllDish, getDish, deleteDish, updateDish }
+const getUserInfo = (req, res) => {
+  User.find({ userId: req.params.userid })
+    .then((data: JSON) => {
+      res.send(data)
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+}
+
+export { addDish, getAllDish, getDish, deleteDish, updateDish, getUserInfo }

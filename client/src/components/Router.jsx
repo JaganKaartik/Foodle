@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
 import Auth from './Auth';
-import { Home, Navigation, PrivateRoute, AuthHomeRoute, SearchDish } from './navigation';
-
+import { Home, Navigation, PrivateRoute, AuthHomeRoute, User } from './navigation';
+import { login } from '../services/token';
 class Routes extends React.Component {
   constructor(props) {
     super(props);
@@ -23,8 +23,9 @@ class Routes extends React.Component {
   componentDidMount = () => {
     let params = new URL(document.location).searchParams;
     let authToken = params.get('token');
+    let userId = params.get('userid');
     if (authToken) {
-      window.localStorage.setItem('foodle-jwt', authToken);
+      login(authToken, userId);
       this.authHandler();
     }
   };
@@ -50,9 +51,9 @@ class Routes extends React.Component {
 
           <PrivateRoute
             authstate={this.state.isAuthenticated}
-            path="/search"
+            path="/profile"
             exact
-            component={SearchDish}
+            component={User}
           />
         </Switch>
       </Router>

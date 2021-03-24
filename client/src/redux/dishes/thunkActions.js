@@ -19,11 +19,12 @@ export const thunkFetchOneDish = (id) => {
   return function (dispatch) {
     dispatch(actionCreators.fetchOneDishRequest());
     return displayDish(id)
-      .then((resp) => {
-        return resp.json();
-      })
       .then((d) => {
-        dispatch(actionCreators.fetchOneDishSuccess(d));
+        if (d.length !== 0) {
+          dispatch(actionCreators.fetchOneDishSuccess(d[0]));
+        } else {
+          dispatch(actionCreators.fetchOneDishFailure('Dish not found'));
+        }
       })
       .catch((err) => dispatch(actionCreators.fetchOneDishFailure(err)));
   };

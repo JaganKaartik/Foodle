@@ -14,9 +14,11 @@ class FoodModal extends Component {
             <Modal actions={actions} onClose={this.close} heading="Search Info">
               <table>
                 <thead>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Price</th>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>

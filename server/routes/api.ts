@@ -4,7 +4,8 @@ import {
   getAllDish,
   getDish,
   deleteDish,
-  updateDish
+  updateDish,
+  getUserInfo
 } from '../controllers/api'
 import tokenCheck from '../middleware/tokenCheck'
 
@@ -12,6 +13,7 @@ const { check } = require('express-validator')
 
 const apiRouter = express.Router()
 
+apiRouter.get('/user/:userid', tokenCheck, getUserInfo)
 apiRouter.get('/dish/all', tokenCheck, getAllDish)
 apiRouter.get('/dish/:id', tokenCheck, [check('id').exists()], getDish)
 apiRouter.delete('/dish/:id', tokenCheck, [check('id').exists()], deleteDish)

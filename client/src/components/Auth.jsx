@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { twitterLogin, googleLogin } from '../services/helpers';
 import { Redirect } from 'react-router-dom';
-import '../static/css/home.css';
 class Authentication extends Component {
   state = {
     toDashboard: false
@@ -33,7 +32,7 @@ class Authentication extends Component {
       return <Redirect to="/dashboard" />;
     }
     return (
-      <div className="container-login">
+      <div className="container-login flex-grow">
         <div className="wrapper-login">
           <form className="login-form">
             <span className="login-form-title">Connect to your Foodle Account.</span>

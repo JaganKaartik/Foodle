@@ -5,18 +5,16 @@ import FilterMenu from './FilterMenu';
 class FoodTableHeader extends Component {
   render() {
     return (
-      <thead>
+      <thead className="shadow-2xl bg-gray-200">
         <tr>
           <th>ID</th>
           <th>Item Name</th>
           <th>
-            {' '}
-            <FilterMenu />{' '}
+            <FilterMenu />
           </th>
           <th>Item Price</th>
           <th>
-            {' '}
-            <AddModal onAdd={this.props.display} />{' '}
+            <AddModal onAdd={this.props.display} />
           </th>
         </tr>
       </thead>
