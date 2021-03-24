@@ -297,4 +297,7 @@ blockquote {
   .home-container {
     margin: 0 auto;
   }
+  .gifs {
+    display: none;
+  }
 }
