@@ -20,10 +20,10 @@ export const thunkFetchOneDish = (id) => {
     dispatch(actionCreators.fetchOneDishRequest());
     return displayDish(id)
       .then((d) => {
-        if (typeof d !== undefined) {
-          dispatch(actionCreators.fetchOneDishSuccess(d));
+        if (d.length !== 0) {
+          dispatch(actionCreators.fetchOneDishSuccess(d[0]));
         } else {
-          dispatch(actionCreators.fetchOneDishFailure('dish not found'));
+          dispatch(actionCreators.fetchOneDishFailure('Dish not found'));
         }
       })
       .catch((err) => dispatch(actionCreators.fetchOneDishFailure(err)));

@@ -62,9 +62,6 @@ export const displayDish = (id) => {
       credentials: 'include'
     })
     .then((resp) => resp.data)
-    .then((d) => {
-      return d[0];
-    })
     .catch((err) => err);
 };
 
