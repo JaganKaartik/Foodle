@@ -12,3 +12,11 @@
 - Built using React (with Context API & Hooks), Redux, TailwindCSS, Atlaskit & Semantic UI.
 - Server built using Typescript, Express.js-Node.js & MongoDB as the database.
 - Features OAuth Authentication (Google & Twitter), JWT Session, API validation, Dockerized client & server for containerized deployment.
+
+<h3 align="center">
+   Screenshots
+</h1>
+
+![](/media/home.png)
+![](/media/auth.png)
+![](/media/dashboard.png)
