@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const server_url = process.env.REACT_APP_SERVER_URL || '';
 
 export const checkAuth = () => {
@@ -14,14 +16,19 @@ export const checkAuth = () => {
 export const getUserProfile = () => {
   const authToken = localStorage.getItem('foodle-jwt');
   const userId = localStorage.getItem('foodle-usr-id');
-  return fetch(server_url + '/api/v1/user/' + userId, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${authToken}`
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });
+  return axios
+    .get(server_url + '/api/v1/user/' + userId, {
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      },
+      mode: 'cors',
+      credentials: 'include'
+    })
+    .then((resp) => resp.data)
+    .then((d) => {
+      return d[0];
+    })
+    .catch((err) => err);
 };
 
 export const twitterLogin = () => {

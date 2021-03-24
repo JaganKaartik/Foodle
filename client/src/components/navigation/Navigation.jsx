@@ -9,13 +9,13 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+        <header className="bg-blue-200 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex">
             <NavLink to="/">
               <img src={logoSVG} width="32" heigsht="36" alt="Andy Leverenz" />
             </NavLink>
           </div>
-          <label for="menu-toggle" className="pointer-cursor lg:hidden block">
+          <label htmlFor="menu-toggle" className="pointer-cursor lg:hidden block">
             <svg
               className="fill-current text-gray-900"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ class Navigation extends Component {
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
               <NavLink to="/">
                 <button
-                  classNameName="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
+                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
                   onClick={this.handleLogoutClick}
                 >
                   Logout
