@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { REACT_APP_SERVER_DEV, REACT_APP_SERVER_PROD } from '../config';
 
-const server_url = process.env.REACT_APP_SERVER_URL || '';
+const server_url =
+  process.env.NODE_ENV === 'production' ? REACT_APP_SERVER_PROD : REACT_APP_SERVER_DEV;
 
 export const checkAuth = () => {
   return fetch(server_url + '/auth/status', {

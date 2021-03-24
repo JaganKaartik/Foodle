@@ -4,7 +4,7 @@ import bg2 from '../../assets/images/bg2.gif';
 class Home extends Component {
   render() {
     return (
-      <div className="bg-gray-50 grid grid-rows-2 grid-cols-3 gap-1 home-container">
+      <div className="flex-grow bg-gray-50 grid grid-rows-2 grid-cols-3 gap-1 home-container">
         <p className="p-20 home-content col-start-2 row-start-1 col-span-2 text-5xl">
           Foodle is a SPA built on the MERN stack, a CRUD application.
         </p>
