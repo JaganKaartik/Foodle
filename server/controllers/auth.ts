@@ -17,7 +17,7 @@ const authGoogle = passport.authenticate('google', {
 const authRedirectGoogle = (req, res) => {
   const token = jwt.sign(
     {
-      data: req.user
+      data: req.user.userId
     },
     JWT_SECRET,
     { expiresIn: '24h' }
@@ -30,7 +30,7 @@ const authTwitter = passport.authenticate('twitter')
 const authRedirectTwitter = (req, res) => {
   const token = jwt.sign(
     {
-      data: req.user
+      data: req.user.userId
     },
     JWT_SECRET,
     { expiresIn: '24h' }
