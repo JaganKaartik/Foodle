@@ -125,6 +125,11 @@ class Navigation extends Component {
               <NavLink to="/login">Login</NavLink>
             </div>
           </li>
+          <li>
+            <div className="foodle text-4xl text-blue-500">
+              <NavLink to="/">Foodle</NavLink>
+            </div>
+          </li>
         </ul>
       );
     }

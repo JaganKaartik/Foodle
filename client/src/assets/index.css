@@ -31,7 +31,6 @@ code {
 .foodle {
   display: inline;
   font-family: 'Bebas Neue';
-  color: #0096c7;
 }
 
 .nav-text {
@@ -284,4 +283,18 @@ blockquote {
 .home-content {
   font-family: 'Cormorant Garamond', serif;
   /* font-family: 'Nunito', sans-serif; */
+}
+
+.home-container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+@media only screen and (max-width: 992px) {
+  .home-para {
+    font-size: 20px;
+  }
+  .home-container {
+    margin: 0 auto;
+  }
 }
