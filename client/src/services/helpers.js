@@ -53,14 +53,19 @@ export const displayAllDish = () => {
 
 export const displayDish = (id) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return fetch(server_url + `/api/v1/dish/${id}`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${authToken}`
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });
+  return axios
+    .get(server_url + `/api/v1/dish/${id}`, {
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      },
+      mode: 'cors',
+      credentials: 'include'
+    })
+    .then((resp) => resp.data)
+    .then((d) => {
+      return d[0];
+    })
+    .catch((err) => err);
 };
 
 export const addDish = (name, type, price) => {
