@@ -1,3 +1,7 @@
+.home-card {
+  background-color: #0b1c2c;
+}
+
 .home-container {
   margin: auto;
   background-color: #0b1c2c;
@@ -44,8 +48,10 @@
   }
 }
 
-.home-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-gap: 9px;
+@media only screen and (min-width: 1050px) {
+  .home-grid {
+    display: grid;
+    grid-template: auto auto / 0.5fr 1fr;
+    grid-gap: 9px;
+  }
 }
