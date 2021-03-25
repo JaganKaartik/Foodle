@@ -9,8 +9,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="flex flex-col h-screen">
           <Routes />
+          <Footer />
         </div>
-        <Footer />
       </Provider>
     );
   }

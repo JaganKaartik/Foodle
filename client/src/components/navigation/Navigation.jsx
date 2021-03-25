@@ -37,7 +37,7 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <header className="bg-blue-100 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+        <header className="nav-theme-dark lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex">
             <NavLink to="/">
               <img src={logoSVG} width="32" heigsht="36" alt="Andy Leverenz" />

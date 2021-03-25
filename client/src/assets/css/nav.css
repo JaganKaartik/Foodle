@@ -1,0 +1,12 @@
+.nav-theme {
+  background-color: #334368 !important;
+  /* background-color: #31708e !important; */
+}
+
+.nav-theme-dark {
+  background-color: #0f1318 !important;
+}
+
+.nav-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

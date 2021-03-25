@@ -1,0 +1,51 @@
+.home-container {
+  margin: auto;
+  background-color: #0b1c2c;
+  /* background-color: #fafafa; */
+}
+
+.home-container-dark {
+  margin: auto;
+  background-color: #0b1c2c;
+}
+
+.home-content {
+  font-family: 'Cormorant Garamond', serif;
+  /* font-family: 'Nunito', sans-serif; */
+}
+
+.home-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Phones - Home Content */
+@media only screen and (max-width: 500px) {
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 9px;
+  }
+  .home-content {
+    font-size: 20px;
+  }
+}
+
+/* iPads - Home Content */
+@media only screen and (max-width: 1050px) {
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240, 1fr));
+    grid-gap: 9px;
+    justify-content: center;
+  }
+  .home-content {
+    font-size: 30px;
+  }
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 9px;
+}
