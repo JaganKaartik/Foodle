@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-import bg1 from '../../assets/images/bg1.gif';
-import bg2 from '../../assets/images/bg2.gif';
+import bg1 from '../../assets/images/Cooking_Light.gif';
+import bg2 from '../../assets/images/SI_Light.gif';
 class Home extends Component {
   render() {
     return (
-      <div className="flex-grow bg-blue-50 grid grid-rows-2 grid-cols-3 gap-1 home-container">
-        <div className="p-2 col-start-2 row-start-1 col-span-2">
+      <div className="home-grid flex-grow home-container">
+        {/* <div className="col-start-1 row-start-1"> */}
+        <div>
+          <img className="gifs" src={bg2} alt="cant load img" />
+        </div>
+
+        {/* <div className="col-start-2 row-start-2"> */}
+        <div>
+          <img className="gifs" src={bg1} alt="cant load img" />
+        </div>
+
+        {/* <div className="p-2 col-start-2 row-start-1"> */}
+        <div>
           <div class="shadow-2xl max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div class="md:flex">
               <div class="md:flex-shrink-0"></div>
@@ -18,7 +29,8 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="col-start-1 row-start-2 col-span-2">
+        {/* <div className="col-start-1 row-start-2 "> */}
+        <div>
           <div class="shadow-2xl max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div class="md:flex">
               <div class="md:flex-shrink-0"></div>
@@ -41,12 +53,15 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="col-start-1 row-start-1">
-          <img src={bg2} alt="cant load img" />
+        {/* <div className="col-start-1 row-start-1">
+        <div>
+          <img className="gifs" src={bg2} alt="cant load img" />
         </div>
-        <div className="col-start-3 row-start-2">
-          <img src={bg1} alt="cant load img" />
-        </div>
+
+        <div className="col-start-2 row-start-2">
+        <div>
+          <img className="gifs" src={bg1} alt="cant load img" />
+        </div> */}
       </div>
     );
   }
