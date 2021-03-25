@@ -3,7 +3,6 @@ import { apiRouter, authRouter, mainRouter } from '../routes'
 
 const Middleware = express()
 const bodyParser = require('body-parser')
-const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
@@ -12,21 +11,10 @@ const passportSetup = require('../config/passport-setup')
 const {
   NODE_ENV,
   CLIENT_URL_PROD,
-  CLIENT_URL_DEV,
-  COOKIE_KEY
+  CLIENT_URL_DEV
 } = require('../config/default.config')
 
 const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
-
-Middleware.use(
-  cookieSession({
-    name: 'session',
-    keys: [COOKIE_KEY],
-    maxAge: 24 * 60 * 60 * 100,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: false
-  })
-)
 
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,

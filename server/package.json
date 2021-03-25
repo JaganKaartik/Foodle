@@ -8,9 +8,10 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start:dev": "yarn build && NODE_ENV=development APP_ENV=dev nodemon dist/index",
-    "start:test": "NODE_ENV=test APP_ENV=test nodemon dist/index",
-    "start:prod": "NODE_ENV=production APP_ENV=prod node dist/index",
+    "start:dev": "yarn build && NODE_ENV=development nodemon dist/index",
+    "start:test": "NODE_ENV=test nodemon dist/index",
+    "start:prod": "node dist/index",
+    "postinstall": "yarn run build",
     "lint": "eslint '*/**/*.ts'",
     "lint:fix": "eslint '*/**/*.ts' --fix",
     "prettier": "prettier '*/**/*.ts' --write --color",
