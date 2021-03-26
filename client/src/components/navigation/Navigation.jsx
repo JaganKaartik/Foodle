@@ -36,8 +36,8 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div>
-        <header className="bg-blue-100 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+      <div class="dark">
+        <header className="nav-theme lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex">
             <NavLink to="/">
               <img src={logoSVG} width="32" heigsht="36" alt="Andy Leverenz" />
@@ -109,6 +109,17 @@ class Navigation extends Component {
                 alt="Andy Leverenz"
               />
             </div>
+          </li>
+          <li>
+            <label for="toogleA" class="flex items-center cursor-pointer">
+              <div class="relative">
+                <input id="toogleA" type="checkbox" class="hidden" />
+
+                <div class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+
+                <div class="toggle__dot absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0"></div>
+              </div>
+            </label>
           </li>
         </ul>
       );
