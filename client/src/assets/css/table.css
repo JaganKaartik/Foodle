@@ -27,9 +27,23 @@ th {
 .striped tr {
   border-bottom: none;
 }
+
 .striped > tbody > tr:nth-child(odd) {
   background-color: rgba(242, 242, 242, 0.842);
 }
+
+.highlight > tbody > tr:hover {
+  background-color: rgba(206, 203, 203, 0.842);
+}
+
+.striped-dark > tbody > tr:nth-child(odd) {
+  background-color: #102a43;
+}
+
+.striped-dark > tbody > tr:nth-child(even) {
+  background-color: #243b53;
+}
+
 .striped > tbody > tr > td {
   border-radius: 0;
 }
@@ -37,8 +51,8 @@ th {
 .highlight > tbody > tr {
   transition: background-color 0.25s ease;
 }
-.highlight > tbody > tr:hover {
-  background-color: rgba(242, 242, 242, 0.5);
+.highlight-dark > tbody > tr:hover {
+  background-color: #102a43;
 }
 
 /* Blockquote */

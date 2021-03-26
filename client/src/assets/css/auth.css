@@ -25,7 +25,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('../images/bg-main.jpg');
+  background-image: url('../images/bg-main2.jpg');
   margin-top: 1vh;
 }
 
@@ -36,10 +36,17 @@
 .login-form-title {
   width: 100%;
   display: block;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'enriqueta', serif;
   font-size: 39px;
   color: #3e84ca;
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
 }

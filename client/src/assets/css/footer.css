@@ -1,13 +1,13 @@
-.footer {
-  font-family: 'Montserrat', sans-serif;
+.footer-dark {
+  font-family: 'Nunito', sans-serif;
   font-weight: 300;
   background-color: rgb(220, 228, 245);
   color: rgb(0, 0, 0);
 }
 
-.footer-dark {
-  font-family: 'Montserrat', sans-serif;
+.footer {
+  font-family: 'Nunito', sans-serif;
   font-weight: 300;
   background-color: #06080e;
-  color: white;
+  color: rgb(99, 131, 233);
 }

@@ -1,8 +1,17 @@
-.nav-theme {
-  background-color: #3f5ea7 !important;
+:root {
+  --background-color: #3f5ea7;
 }
 
-.nav-theme-dark {
+[data-theme='dark'] {
+  --background-color: #0f1318;
+}
+
+.nav-theme {
+  background-color: #0f1318 !important;
+  /* background-color: #3f5ea7 !important; */
+}
+
+.nav-theme.dark {
   background-color: #0f1318 !important;
 }
 

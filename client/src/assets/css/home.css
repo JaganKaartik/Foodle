@@ -15,7 +15,6 @@
 
 .home-content {
   font-family: 'Cormorant Garamond', serif;
-  /* font-family: 'Nunito', sans-serif; */
 }
 
 .home-container {
@@ -30,6 +29,7 @@
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 9px;
   }
+
   .home-content {
     font-size: 20px;
   }
@@ -53,5 +53,8 @@
     display: grid;
     grid-template: auto auto / 0.5fr 1fr;
     grid-gap: 9px;
+  }
+  .home-content {
+    font-size: 60px;
   }
 }

@@ -6,6 +6,7 @@
 @import 'css/table.css';
 @import 'css/auth.css';
 @import 'css/footer.css';
+@import 'css/toggle.css';
 
 body {
   margin: 0;
