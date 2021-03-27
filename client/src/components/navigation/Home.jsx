@@ -1,13 +1,22 @@
-import React from 'react';
-import bg1 from '../../assets/images/Cooking_Dark.gif';
-import bg2 from '../../assets/images/SI_Dark.gif';
+import React, { useState, useEffect } from 'react';
 
 function Home() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme === 'dark') {
+      setTheme('dark');
+    }
+  }, []);
+
+  const img = require.context('../../assets/images', true);
+
   return (
     <div className="home-grid flex-grow home-container">
       {/* <div className="col-start-1 row-start-1"> */}
       <div>
-        <img className="gifs" src={bg2} alt="cant load img" />
+        <img className="gifs" src={img(`SI_${theme}.gif`)} alt="cant load img" />
       </div>
 
       {/* <div className="p-2 col-start-2 row-start-1"> */}
@@ -26,7 +35,7 @@ function Home() {
 
       {/* <div className="col-start-2 row-start-2"> */}
       <div>
-        <img className="gifs" src={bg1} alt="cant load img" />
+        <img className="gifs" src={img(`Cooking_${theme}.gif`)} alt="cant load img" />
       </div>
 
       {/* <div className="p-2 col-start-2 row-start-1"> */}

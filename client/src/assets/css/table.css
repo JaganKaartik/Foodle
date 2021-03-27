@@ -29,19 +29,15 @@ th {
 }
 
 .striped > tbody > tr:nth-child(odd) {
-  background-color: rgba(242, 242, 242, 0.842);
+  background-color: var(--stripped-odd);
 }
 
-.highlight > tbody > tr:hover {
-  background-color: rgba(206, 203, 203, 0.842);
+.striped > tbody > tr:nth-child(odd) {
+  background-color: var(--stripped-odd);
 }
 
-.striped-dark > tbody > tr:nth-child(odd) {
-  background-color: #102a43;
-}
-
-.striped-dark > tbody > tr:nth-child(even) {
-  background-color: #243b53;
+.striped > tbody > tr:nth-child(even) {
+  background-color: var(--stripped-even);
 }
 
 .striped > tbody > tr > td {
@@ -51,10 +47,10 @@ th {
 .highlight > tbody > tr {
   transition: background-color 0.25s ease;
 }
-.highlight-dark > tbody > tr:hover {
-  background-color: #102a43;
-}
 
+.highlight > tbody > tr:hover {
+  background-color: var(--highlight-color);
+}
 /* Blockquote */
 
 blockquote {

@@ -1,14 +1,6 @@
-.footer-dark {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 300;
-  background-color: rgb(220, 228, 245);
-  color: rgb(0, 0, 0);
-  flex-shrink: 0;
-}
-
 .footer {
   font-family: 'Nunito', sans-serif;
   font-weight: 300;
-  background-color: #06080e;
-  color: rgb(99, 131, 233);
+  background-color: var(--footer-bg);
+  color: var(--footer-color);
 }

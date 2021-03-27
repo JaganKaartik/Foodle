@@ -1,16 +1,10 @@
 .home-card {
-  background-color: #0b1c2c;
+  background-color: var(--home-container-card);
 }
 
 .home-container {
   margin: auto;
-  background-color: #0b1c2c;
-  /* background-color: #fafafa; */
-}
-
-.home-container-dark {
-  margin: auto;
-  background-color: #0b1c2c;
+  background-color: var(--home-container-card);
 }
 
 .home-content {
