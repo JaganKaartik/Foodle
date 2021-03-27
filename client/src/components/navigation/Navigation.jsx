@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import FoodModal from '../modals/FoodModal';
 import * as thunkActions from '../../redux';
 import { logout } from '../../services/token';
+import Toggler from '../commons/Toggle';
 class Navigation extends Component {
   state = {
     id: '',
@@ -117,12 +118,7 @@ class Navigation extends Component {
           </li>
           <li>
             <div class="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
-              <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox" />
-                  <div class="slider round"></div>
-                </label>
-              </div>
+              <Toggler />
             </div>
           </li>
         </ul>
@@ -142,12 +138,7 @@ class Navigation extends Component {
           </li>
           <li>
             <div class="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
-              <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox" />
-                  <div class="slider round"></div>
-                </label>
-              </div>
+              <Toggler />
             </div>
           </li>
         </ul>

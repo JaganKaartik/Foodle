@@ -3,6 +3,7 @@
   font-weight: 300;
   background-color: rgb(220, 228, 245);
   color: rgb(0, 0, 0);
+  flex-shrink: 0;
 }
 
 .footer {
