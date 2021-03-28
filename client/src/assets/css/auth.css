@@ -1,13 +1,12 @@
 .wrapper-login {
   width: 680px;
-  background: rgb(255, 255, 255);
   border-radius: 10px;
   position: relative;
   padding-left: 110px;
   padding-right: 110px;
   padding-top: 62px;
   padding-bottom: 33px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: var(--wrapper-bg);
 }
 
 .container-login {
@@ -25,7 +24,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../images/bg-main2.jpg');
-  margin-top: 1vh;
 }
 
 .login-form {
@@ -37,7 +35,7 @@
   display: block;
   font-family: 'enriqueta', serif;
   font-size: 39px;
-  color: #3e84ca;
+  color: var(--login-form-color);
   line-height: 1.2;
   text-align: center;
   padding-bottom: 10px;

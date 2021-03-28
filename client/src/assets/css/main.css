@@ -8,19 +8,8 @@
   --highlight-color: rgba(206, 203, 203, 0.842);
   --list-text-color: #0f1318;
   --nav-text-color: #fafafa;
-  /* --primary-color: #203647;
-  --secondary-color: #536390;
-  --font-color: #515151;
-  --bg-color: #fff;
-  --heading-color: #292922;
-  --masthead-color: #505050;
-  --post-content-color: #0d6dbb;
-  --posts-color: #0d6dbb;
-  --sidebar-color: #203647;
-  --code-bg: #f9f9f9;
-  --tag-base-color: #eee;
-  --tag-content-color: rgb(82, 79, 100);
-  --strong-color: #030b13; */
+  --wrapper-bg: rgba(51, 78, 104, 0.75);
+  --login-form-color: #58a0e2;
 }
 
 [data-theme='dark'] {
@@ -33,17 +22,6 @@
   --highlight-color: #102a43;
   --list-text-color: #e0e9f3;
   --nav-text-color: #4b7297;
-  /* --primary-color: #486581;
-  --secondary-color: #818cab;
-  --font-color: #c5d9e9;
-  --bg-color: #030b13;
-  --heading-color: #818cab;
-  --masthead-color: #c2bdbd;
-  --post-content-color: #6993e2;
-  --posts-color: #0d6dbb;
-  --sidebar-color: #07121d;
-  --code-bg: #21252b;
-  --tag-base-color: #102a43;
-  --tag-content-color: #fff;
-  --strong-color: #587ec4; */
+  --wrapper-bg: rgba(15, 19, 24, 0.75);
+  --login-form-color: #3e84ca;
 }
