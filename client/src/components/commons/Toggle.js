@@ -14,7 +14,7 @@ const Toggler = (props) => {
   return (
     <div>
       <div className="theme-switch-wrapper">
-        <label className="theme-switch" for="checkbox">
+        <label className="theme-switch" htmlFor="checkbox">
           <input type="checkbox" id="checkbox" onChange={onChangeHandler} />
           <div className="slider round"></div>
         </label>

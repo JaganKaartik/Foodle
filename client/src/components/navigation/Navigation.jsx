@@ -48,7 +48,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div class="dark">
+      <div className="dark">
         <header className="nav-theme lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2">
           <div className="flex-1 flex justify-between items-center">
             <NavLink to="/">
@@ -56,7 +56,7 @@ class Navigation extends Component {
             </NavLink>
           </div>
 
-          <label for="menu-toggle" className="pointer-cursor lg:hidden block">
+          <label htmlFor="menu-toggle" className="pointer-cursor lg:hidden block">
             <svg
               className="fill-current menu-svg"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ class Navigation extends Component {
             </div>
           </li>
           <li>
-            <div class="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
+            <div className="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
               <Toggler />
             </div>
           </li>
@@ -144,7 +144,7 @@ class Navigation extends Component {
             </div>
           </li>
           <li>
-            <div class="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
+            <div className="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
               <Toggler />
             </div>
           </li>

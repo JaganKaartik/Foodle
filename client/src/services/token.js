@@ -9,6 +9,6 @@ export const login = (authToken, userId) => {
 };
 
 export const authTokenStatus = () => {
-  const resp = window.localStorage.getItem('foodle-jwt') ? true : false;
-  return resp;
+  const item = window.localStorage.getItem('foodle-jwt') ? true : false;
+  return item;
 };
