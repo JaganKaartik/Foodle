@@ -48,81 +48,85 @@ function Home() {
             <div className="md:flex-shrink-0"></div>
             <div className="p-10">
               <div className="block mt-1 text-lg leading-tight font-medium text-blue-800 hover:underline">
-                Tech Stack
+                Stack
               </div>
-              <p className="flex flex-wrap justify-evenly mt-2 text-blue-500">
+              <p className="flex flex-wrap gap-2 justify-between mt-2">
+                <div className="shadow-2xl">
+                  <img
+                    alt="JavaScript"
+                    src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+                  />
+                </div>
                 <div>
                   <img
                     alt="MongoDB"
-                    src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white"
+                    src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Expressjs"
-                    src="https://img.shields.io/badge/-Express.js-2088FF?style=flat-square&logo=Express&logoColor=white"
+                    src="https://img.shields.io/badge/-Express.js-2088FF?style=for-the-badge&logo=Express&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="React"
-                    src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white"
+                    src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"
                   />
                 </div>
                 <div>
                   <img
                     alt="redux"
-                    src="https://img.shields.io/badge/-Redux-764ABC?style=flat-square&logo=redux&logoColor=white"
+                    src="https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Nodejs"
-                    src="https://img.shields.io/badge/-Node.js-43853d?style=flat-square&logo=Node.js&logoColor=white"
+                    src="https://img.shields.io/badge/-Node.js-43853d?style=for-the-badge&logo=Node.js&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="TypeScript"
-                    src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white"
+                    src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Docker"
-                    src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white"
+                    src="https://img.shields.io/badge/-Docker-46a2f1?style=for-the-badge&logo=docker&logoColor=white"
                   />
                 </div>
-              </p>
-              <p className="flex flex-wrap justify-evenly mt-2 text-blue-500">
                 <div>
                   <img
                     alt="TailwindCSS"
-                    src="https://img.shields.io/badge/-TailwindCSS-38b2ac?style=flat-square&logo=tailwind%20css&logoColor=white"
+                    src="https://img.shields.io/badge/-TailwindCSS-38b2ac?style=for-the-badge&logo=tailwind%20css&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="ESLint"
-                    src="https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white"
+                    src="https://img.shields.io/badge/-ESLint-4b32c3?style=for-the-badge&logo=eslint&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Prettier"
-                    src="https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white"
+                    src="https://img.shields.io/badge/-Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Atlaskit"
-                    src="https://img.shields.io/badge/-Atlaskit-0052CC?style=flat-square&logo=atlassian&logoColor=white"
+                    src="https://img.shields.io/badge/-Atlaskit-0052CC?style=for-the-badge&logo=atlassian&logoColor=white"
                   />
                 </div>
                 <div>
                   <img
                     alt="Heroku"
-                    src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white"
+                    src="https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white"
                   />
                 </div>
                 <div>
@@ -131,13 +135,20 @@ function Home() {
                     src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"
                   />
                 </div>
+                <div>
+                  <img
+                    alt="GitHub"
+                    src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"
+                  />
+                </div>
               </p>
+              <br />
+              <div className="block mt-1 text-lg leading-tight font-medium text-blue-800 hover:underline">
+                Features:
+              </div>
               <p className="mt-2 text-blue-500">
-                Server built using Typescript, Express.js-Node.js & MongoDB as the database.
-              </p>
-              <p className="mt-2 text-blue-500">
-                Features OAuth Authentication (Google & Twitter), JWT Session, API validation,
-                Dockerized client & server for containerized deployment.
+                Oauth Authentication (Google & Twitter), JWT Session, API validation, Dockerized
+                client & server for containerized deployment.
               </p>
             </div>
           </div>
