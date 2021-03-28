@@ -5,20 +5,13 @@ import bg1_light from '../../assets/images/cooking_light.gif';
 import bg1_dark from '../../assets/images/cooking_dark.gif';
 
 function Home() {
-  // eslint-disable-next-line no-unused-vars
-  const [theme, setTheme] = useState('light');
-  const [data, setData] = useState('');
-
+  const [data, setData] = useState({ img1: bg1_light, img2: bg2_light });
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
   useEffect(() => {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
     if (currentTheme === 'dark') {
-      setTheme('dark');
       setData({ img1: bg1_dark, img2: bg2_dark });
-    } else {
-      setTheme('light');
-      setData({ img1: bg1_light, img2: bg2_light });
     }
-  }, [data]);
+  }, [currentTheme]);
 
   return (
     <div className="home-grid flex-grow home-container">
