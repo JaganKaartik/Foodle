@@ -56,3 +56,7 @@
 .home-list {
   font-family: 'Raleway', sans-serif;
 }
+
+.menu-svg {
+  color: var(--menu-svg-color);
+}

@@ -11,6 +11,7 @@
   --wrapper-bg: rgba(51, 78, 104, 0.75);
   --login-form-color: #58a0e2;
   --table-text-color: #4b7297;
+  --menu-svg-color: rgba(17, 24, 39, 1);
 }
 
 [data-theme='dark'] {
@@ -26,4 +27,5 @@
   --wrapper-bg: rgba(15, 19, 24, 0.75);
   --login-form-color: #3e84ca;
   --table-text-color: #4b7297;
+  --menu-svg-color: #fafafa;
 }
