@@ -22,23 +22,15 @@ class OperationsModal extends Component {
             <Modal actions={actions} onClose={this.close} heading="Dish Operations!">
               <div className="item">
                 {this.props.isEditable ? (
-                  <button
-                    type="button"
-                    className="ui green basic button"
-                    onClick={this.props.handler}
-                  >
+                  <Button onClick={this.props.handler}>
                     <i className="save icon" />
                     Save
-                  </button>
+                  </Button>
                 ) : (
-                  <button
-                    type="button"
-                    className="ui olive basic button"
-                    onClick={this.props.handler}
-                  >
+                  <Button onClick={this.props.handler}>
                     <i className="edit icon" />
                     Edit
-                  </button>
+                  </Button>
                 )}
               </div>
 
@@ -55,14 +47,10 @@ class OperationsModal extends Component {
               )}
 
               <div className="item">
-                <button
-                  type="button"
-                  className="ui orange basic button"
-                  onClick={this.props.click.bind(this, this.props.foodid, 'delete')}
-                >
+                <Button onClick={this.props.click.bind(this, this.props.foodid, 'delete')}>
                   <i className="ban icon" />
                   Delete
-                </button>
+                </Button>
               </div>
             </Modal>
           )}
