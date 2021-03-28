@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
 import Auth from './Auth';
 import { Home, Navigation, PrivateRoute, AuthHomeRoute, User } from './navigation';
-import { login, authStatus } from '../services/token';
+import { login } from '../services/token';
 import { UserProvider } from '../context/User.Context';
 class Routes extends React.Component {
   constructor(props) {
