@@ -5,6 +5,7 @@ import bg1_light from '../../assets/images/cooking_light.gif';
 import bg1_dark from '../../assets/images/cooking_dark.gif';
 
 function Home() {
+  // eslint-disable-next-line no-unused-vars
   const [theme, setTheme] = useState('light');
   const [data, setData] = useState('');
 
