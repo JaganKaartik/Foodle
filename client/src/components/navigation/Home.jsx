@@ -51,7 +51,7 @@ function Home() {
               <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Stack
               </div>
-              <p className="flex flex-wrap gap-2 justify-between mt-2">
+              <p className="flex flex-wrap gap-1.5 md:justify justify-between mt-2">
                 <div className="shadow-2xl">
                   <img
                     alt="JavaScript"
