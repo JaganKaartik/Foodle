@@ -12,6 +12,17 @@ class Navigation extends Component {
     modal: false
   };
 
+  componentDidMount() {
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+  }
   handleLogout = (e) => {
     e.preventDefault();
     logout();
@@ -59,7 +70,7 @@ class Navigation extends Component {
           </label>
           <input className="hidden" type="checkbox" id="menu-toggle" />
 
-          <div className="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+          <div className="hidden lg:flex lg:items-center lg:w-auto w-full " id="menu">
             <nav>{this.displayNav()}</nav>
           </div>
         </header>
@@ -74,7 +85,7 @@ class Navigation extends Component {
   displayNav() {
     if (this.props.authstate === true) {
       return (
-        <ul className="nav-text lg:flex items-center justify-between text-base text-blue-500 pt-4 lg:pt-0">
+        <ul className="nav-text lg:flex items-center justify-between text-base pt-4 lg:pt-0">
           <li>
             <div className="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
               <NavLink to="/dashboard">Dashboard</NavLink>

@@ -33,7 +33,7 @@ class Food extends Component {
 
   render() {
     return (
-      <tr className="text-blue-500">
+      <tr className="table-content">
         <td>{this.props.foodId}</td>
         <td>{this.props.name}</td>
         <td>{this.props.type}</td>

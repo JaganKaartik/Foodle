@@ -5,7 +5,7 @@ import FilterMenu from './FilterMenu';
 class FoodTableHeader extends Component {
   render() {
     return (
-      <thead className="shadow-2xl bg-gray-200">
+      <thead className="shadow-2xl">
         <tr>
           <th>ID</th>
           <th>Item Name</th>
