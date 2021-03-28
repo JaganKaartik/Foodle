@@ -93,9 +93,45 @@ function Home() {
                     src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white"
                   />
                 </div>
-                Built using React (with Context API & Hooks), Redux, TailwindCSS, Atlaskit.
               </p>
-              <p className="flex flex-wrap justify-evenly mt-2 text-blue-500"></p>
+              <p className="flex flex-wrap justify-evenly mt-2 text-blue-500">
+                <div>
+                  <img
+                    alt="TailwindCSS"
+                    src="https://img.shields.io/badge/-TailwindCSS-38b2ac?style=flat-square&logo=tailwind%20css&logoColor=white"
+                  />
+                </div>
+                <div>
+                  <img
+                    alt="ESLint"
+                    src="https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white"
+                  />
+                </div>
+                <div>
+                  <img
+                    alt="Prettier"
+                    src="https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white"
+                  />
+                </div>
+                <div>
+                  <img
+                    alt="Atlaskit"
+                    src="https://img.shields.io/badge/-Atlaskit-0052CC?style=flat-square&logo=atlassian&logoColor=white"
+                  />
+                </div>
+                <div>
+                  <img
+                    alt="Heroku"
+                    src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white"
+                  />
+                </div>
+                <div>
+                  <img
+                    alt="Vercel"
+                    src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"
+                  />
+                </div>
+              </p>
               <p className="mt-2 text-blue-500">
                 Server built using Typescript, Express.js-Node.js & MongoDB as the database.
               </p>
