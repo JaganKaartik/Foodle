@@ -15,10 +15,10 @@ export const checkAuth = () => {
   });
 };
 
-export const getUserProfile = () => {
+export const getUserProfile = async () => {
   const authToken = localStorage.getItem('foodle-jwt');
   const userId = localStorage.getItem('foodle-usr-id');
-  return axios
+  const result = await axios
     .get(server_url + '/api/v1/user/' + userId, {
       headers: {
         Authorization: `Bearer ${authToken}`
@@ -31,6 +31,7 @@ export const getUserProfile = () => {
       return d[0];
     })
     .catch((err) => err);
+  return result;
 };
 
 export const twitterLogin = () => {

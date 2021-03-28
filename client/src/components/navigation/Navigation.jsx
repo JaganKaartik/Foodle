@@ -6,12 +6,12 @@ import FoodModal from '../modals/FoodModal';
 import * as thunkActions from '../../redux';
 import { logout } from '../../services/token';
 import Toggler from '../commons/Toggle';
+import ProfileImage from '../profile';
 class Navigation extends Component {
   state = {
     id: '',
     modal: false
   };
-
   componentDidMount() {
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -120,11 +120,7 @@ class Navigation extends Component {
           </li>
           <li>
             <div className="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
-              <img
-                className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-900"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt="Andy Leverenz"
-              />
+              <ProfileImage />
             </div>
           </li>
           <li>

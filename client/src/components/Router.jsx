@@ -4,6 +4,7 @@ import FoodTable from './foodtable/FoodTable';
 import Auth from './Auth';
 import { Home, Navigation, PrivateRoute, AuthHomeRoute, User } from './navigation';
 import { login } from '../services/token';
+import { UserProvider } from '../context/User.Context';
 class Routes extends React.Component {
   constructor(props) {
     super(props);
@@ -32,31 +33,33 @@ class Routes extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
+      <UserProvider>
+        <Router>
+          <Navigation authHandler={this.authHandler} authstate={this.state.isAuthenticated} />
 
-        <Switch>
-          <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
+          <Switch>
+            <AuthHomeRoute authstate={this.state.isAuthenticated} path="/" exact component={Home} />
 
-          <Route path="/login" exact>
-            <Auth authHandler={this.authHandler} />
-          </Route>
+            <Route path="/login" exact>
+              <Auth authHandler={this.authHandler} />
+            </Route>
 
-          <PrivateRoute
-            authstate={this.state.isAuthenticated}
-            path="/dashboard"
-            exact
-            component={FoodTable}
-          />
+            <PrivateRoute
+              authstate={this.state.isAuthenticated}
+              path="/dashboard"
+              exact
+              component={FoodTable}
+            />
 
-          <PrivateRoute
-            authstate={this.state.isAuthenticated}
-            path="/profile"
-            exact
-            component={User}
-          />
-        </Switch>
-      </Router>
+            <PrivateRoute
+              authstate={this.state.isAuthenticated}
+              path="/profile"
+              exact
+              component={User}
+            />
+          </Switch>
+        </Router>
+      </UserProvider>
     );
   }
 }

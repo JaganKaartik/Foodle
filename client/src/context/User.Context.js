@@ -4,15 +4,11 @@ import { getUserProfile } from '../services/helpers.js';
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState('');
 
   useEffect(() => {
-    async function fetchUserProfile() {
-      const result = await getUserProfile();
-      return result;
-    }
-    const res = fetchUserProfile();
-    setData(res);
+    const result = getUserProfile();
+    result.then((resp) => setData(resp));
   }, []);
   return <UserContext.Provider value={[data, setData]}>{props.children}</UserContext.Provider>;
 };

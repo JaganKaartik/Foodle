@@ -13,10 +13,10 @@ const Toggler = (props) => {
 
   return (
     <div>
-      <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
+      <div className="theme-switch-wrapper">
+        <label className="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" onChange={onChangeHandler} />
-          <div class="slider round"></div>
+          <div className="slider round"></div>
         </label>
       </div>
     </div>
