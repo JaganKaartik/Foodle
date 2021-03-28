@@ -36,10 +36,26 @@
 - Dockerized client & server for containerized deployment.
 
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
-<h3 align="center">
-   Screenshots
-</h1>
+<h2 align="center">
+   Dark UI
+</h2>
 
-![](/media/home.png)
-![](/media/auth.png)
-![](/media/dashboard.png)
+![](/media/dark_home.png)
+![](/media/dark_login.png)
+![](/media/dash_dark.png)
+
+<h2 align="center">
+   Light UI
+</h2>
+
+![](/media/light_home.png)
+![](/media/light_login.png)
+![](/media/dash.png)
+
+<h2 align="center">
+   Common UI
+</h2>
+
+![](/media/add_dish.png)
+![](/media/dish_op.png)
+![](/media/search_dish.png)
