@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import bg2_light from '../../assets/images/si_light.gif';
-import bg2_dark from '../../assets/images/si_dark.gif';
-import bg1_light from '../../assets/images/cooking_light.gif';
-import bg1_dark from '../../assets/images/cooking_dark.gif';
+import bg2_light from '../../assets/images/si_light.mp4';
+import bg2_dark from '../../assets/images/si_dark.mp4';
+import bg1_light from '../../assets/images/cooking_light.mp4';
+import bg1_dark from '../../assets/images/cooking_dark.mp4';
 
 function Home() {
   const [data, setData] = useState({ img1: bg1_light, img2: bg2_light });
@@ -16,7 +16,9 @@ function Home() {
   return (
     <div className="home-grid flex-grow home-container">
       <div>
-        <img className="gifs" src={data.img2} alt="cant load img" />
+        <video autoplay loop muted playsinline>
+          <source src={data.img2} type="video/mp4" />
+        </video>
       </div>
 
       <div>
@@ -33,7 +35,9 @@ function Home() {
       </div>
 
       <div>
-        <img className="gifs" src={data.img1} alt="cant load img" />
+        <video autoplay loop muted playsinline>
+          <source src={data.img1} type="video/mp4" />
+        </video>
       </div>
 
       <div>
