@@ -48,7 +48,7 @@ function Home() {
           <div className="md:flex">
             <div className="md:flex-shrink-0"></div>
             <div className="p-10">
-              <div className="block mt-1 text-lg leading-tight font-medium text-blue-800 hover:underline">
+              <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Stack
               </div>
               <p className="flex flex-wrap gap-2 justify-between mt-2">
@@ -144,12 +144,16 @@ function Home() {
                 </div>
               </p>
               <br />
-              <div className="block mt-1 text-lg leading-tight font-medium text-blue-800 hover:underline">
+              <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Features:
               </div>
-              <p className="mt-2 text-blue-500">
-                Oauth Authentication (Google & Twitter), JWT Session, API validation, Dockerized
-                client & server for containerized deployment.
+              <p className="home-list mt-2 text-blue-500 text-lg">
+                <ul>
+                  <li>OAuth Authentication (Google and Twitter)</li>
+                  <li>JWT Session</li>
+                  <li>API Validation & Rate Limiting</li>
+                  <li>Dockerized Server & Client</li>
+                </ul>
               </p>
             </div>
           </div>

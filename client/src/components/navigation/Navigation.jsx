@@ -125,14 +125,14 @@ class Navigation extends Component {
       );
     } else {
       return (
-        <ul className="nav-text lg:flex items-center justify-between text-base text-blue-500  pt-4 lg:pt-0">
+        <ul className="nav-text lg:flex items-center justify-between text-base  pt-4 lg:pt-0">
           <li>
             <div className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2">
               <NavLink to="/login">Login</NavLink>
             </div>
           </li>
           <li>
-            <div className="foodle text-4xl text-blue-500">
+            <div className="foodle text-4xl ">
               <NavLink to="/">Foodle</NavLink>
             </div>
           </li>
