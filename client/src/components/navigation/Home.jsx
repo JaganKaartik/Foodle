@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import bg2_light from '../../assets/images/SI_light.gif';
-import bg2_dark from '../../assets/images/SI_dark.gif';
-import bg1_light from '../../assets/images/Cooking_light.gif';
-import bg1_dark from '../../assets/images/Cooking_dark.gif';
+import bg2_light from '../../assets/images/si_light.gif';
+import bg2_dark from '../../assets/images/si_dark.gif';
+import bg1_light from '../../assets/images/cooking_light.gif';
+import bg1_dark from '../../assets/images/cooking_dark.gif';
 
 function Home() {
   const [theme, setTheme] = useState('light');
