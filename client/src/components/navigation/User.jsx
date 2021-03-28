@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../context/User.Context';
 
 const User = () => {
+  // eslint-disable-next-line no-unused-vars
   const [data, setData] = useContext(UserContext);
 
   return (
