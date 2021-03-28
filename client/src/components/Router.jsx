@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FoodTable from './foodtable/FoodTable';
 import Auth from './Auth';
 import { Home, Navigation, PrivateRoute, AuthHomeRoute, User } from './navigation';
-import { login } from '../services/token';
+import { login, authTokenStatus } from '../services/token';
 import { UserProvider } from '../context/User.Context';
 class Routes extends React.Component {
   constructor(props) {
@@ -21,12 +21,28 @@ class Routes extends React.Component {
     }));
   }
 
+  componentDidUpdate = () => {
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+  };
+
   componentDidMount = () => {
-    let params = new URL(document.location).searchParams;
-    let authToken = params.get('token');
-    let userId = params.get('userid');
-    if (authToken) {
-      login(authToken, userId);
+    if (!authTokenStatus()) {
+      let params = new URL(document.location).searchParams;
+      let authToken = params.get('token');
+      let userId = params.get('userid');
+      if (authToken) {
+        login(authToken, userId);
+        this.authHandler();
+      }
+    } else {
       this.authHandler();
     }
   };

@@ -8,6 +8,7 @@ export const login = (authToken, userId) => {
   window.localStorage.setItem('foodle-usr-id', userId);
 };
 
-export const authStatus = () => {
-  window.localStorage.getItem('foodle-jwt');
+export const authTokenStatus = () => {
+  const resp = window.localStorage.getItem('foodle-jwt') ? true : false;
+  return resp;
 };
