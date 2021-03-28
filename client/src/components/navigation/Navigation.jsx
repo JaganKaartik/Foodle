@@ -7,6 +7,7 @@ import * as thunkActions from '../../redux';
 import { logout } from '../../services/token';
 import Toggler from '../commons/Toggle';
 import ProfileImage from '../profile';
+import ReactGA from 'react-ga';
 class Navigation extends Component {
   state = {
     id: '',
@@ -40,6 +41,12 @@ class Navigation extends Component {
     e.preventDefault();
     this.props.fetchdish(this.state.id);
     this.modalHandler();
+    ReactGA.event({
+      category: 'Search',
+      action: 'queried an id',
+      label: 'search modal',
+      value: this.state.id
+    });
   };
 
   modalHandler = () => {

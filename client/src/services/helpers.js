@@ -70,19 +70,21 @@ export const displayDish = (id) => {
 
 export const addDish = (name, type, price) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return fetch(server_url + '/api/v1/dish/', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${authToken}`
-    },
-    body: JSON.stringify({
-      name,
-      type,
-      price
-    }),
-    mode: 'cors',
-    credentials: 'include'
-  });
+  return axios
+    .post(server_url + '/api/v1/dish/', {
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      },
+      body: JSON.stringify({
+        name,
+        type,
+        price
+      }),
+      mode: 'cors',
+      credentials: 'include'
+    })
+    .then((resp) => resp.data)
+    .catch((err) => err);
 };
 
 export const delDish = (id) => {
