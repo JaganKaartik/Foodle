@@ -29,9 +29,6 @@ class Routes extends React.Component {
       login(authToken, userId);
       this.authHandler();
     }
-    if (authStatus) {
-      this.authHandler();
-    }
   };
 
   render() {
