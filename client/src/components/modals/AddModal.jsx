@@ -17,7 +17,6 @@ class AddModal extends Component {
     return (
       <div>
         <Button onClick={this.open}>Add Dish</Button>
-
         <ModalTransition>
           {isOpen && (
             <Modal actions={actions} onClose={this.close} heading="Add Dish!">

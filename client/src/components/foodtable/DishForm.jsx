@@ -1,6 +1,6 @@
 import React from 'react';
 import { addDish } from '../../services/helpers';
-
+import Button from '@atlaskit/button';
 class addDishForm extends React.Component {
   state = {
     name: '',
@@ -59,9 +59,8 @@ class addDishForm extends React.Component {
               value={this.state.price}
             />
           </div>
-          <button className="ui button" type="submit">
-            Add Dish
-          </button>
+
+          <Button type="submit">Add Dish</Button>
         </form>
       </div>
     );
