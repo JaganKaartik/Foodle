@@ -26,7 +26,7 @@ const User = () => {
               {data.name}
             </div>
 
-            <p class="mt-2 text-gray-500">
+            <p className="mt-2 text-gray-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius enim voluptatem corrupti
               est ratione ipsa vitae veritatis eligendi placeat fugit!
             </p>

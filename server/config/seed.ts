@@ -3,15 +3,12 @@ import seedData = require('./seed.json')
 
 const Dishes = require('../models/dish')
 
-const seed = () => {
-  Dishes.insertMany(seedData)
-    .then((res) => {
-      console.log(`${res} Successfully inserted seed items! `)
-    })
-    .catch((err) => console.error(`Failed to insert documents: ${err}`))
+const seed = async () => {
+  await Dishes.deleteMany({})
+  await Dishes.insertMany(seedData)
 }
 
-if (process.env.NODE_ENV === 'production') {
-  connectDB()
-  seed()
-}
+connectDB()
+seed()
+
+export = seed

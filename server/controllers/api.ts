@@ -1,3 +1,5 @@
+import seed from '../config/seed'
+
 const { validationResult } = require('express-validator')
 const Dishes = require('../models/dish')
 const User = require('../models/user')
@@ -112,4 +114,22 @@ const getUserInfo = (req, res) => {
     })
 }
 
-export { addDish, getAllDish, getDish, deleteDish, updateDish, getUserInfo }
+const seedDatabase = (req, res) => {
+  seed()
+    .then(() => {
+      res.send({ success: true })
+    })
+    .catch((err) => {
+      res.send({ success: false })
+    })
+}
+
+export {
+  addDish,
+  getAllDish,
+  getDish,
+  deleteDish,
+  updateDish,
+  getUserInfo,
+  seedDatabase
+}

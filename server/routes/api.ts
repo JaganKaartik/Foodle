@@ -1,11 +1,13 @@
 import express from 'express'
+import seed from '../config/seed'
 import {
   addDish,
   getAllDish,
   getDish,
   deleteDish,
   updateDish,
-  getUserInfo
+  getUserInfo,
+  seedDatabase
 } from '../controllers/api'
 import tokenCheck from '../middleware/tokenCheck'
 
@@ -13,6 +15,7 @@ const { check } = require('express-validator')
 
 const apiRouter = express.Router()
 
+apiRouter.get('/seed', tokenCheck, seedDatabase)
 apiRouter.get('/user/:userid', tokenCheck, getUserInfo)
 apiRouter.get('/dish/all', tokenCheck, getAllDish)
 apiRouter.get('/dish/:id', tokenCheck, [check('id').exists()], getDish)

@@ -16,6 +16,8 @@ const {
 
 const clientUrl = NODE_ENV === 'production' ? CLIENT_URL_PROD : CLIENT_URL_DEV
 
+Middleware.use(cors({ credentials: true, origin: clientUrl }))
+
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 25,
@@ -29,8 +31,6 @@ Middleware.use(cookieParser())
 
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
-
-Middleware.use(cors({ credentials: true, origin: clientUrl }))
 
 Middleware.use(bodyParser.urlencoded({ extended: false }))
 Middleware.use(bodyParser.json())

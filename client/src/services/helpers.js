@@ -4,15 +4,18 @@ import { REACT_APP_SERVER_DEV, REACT_APP_SERVER_PROD } from '../config';
 const server_url =
   process.env.NODE_ENV === 'production' ? REACT_APP_SERVER_PROD : REACT_APP_SERVER_DEV;
 
-export const checkAuth = () => {
-  return fetch(server_url + '/auth/status', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    credentials: 'include'
-  });
+export const seedDB = () => {
+  const authToken = localStorage.getItem('foodle-jwt');
+  return axios
+    .get(server_url + '/api/v1/seed', {
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      },
+      mode: 'cors',
+      credentials: 'include'
+    })
+    .then((resp) => resp.data)
+    .catch((err) => err);
 };
 
 export const getUserProfile = async () => {
