@@ -32,7 +32,7 @@
    Features
 </h2>
 
-<h2 align="center">
+
    
 | Features |
 |----------------------------------------------------------|
@@ -44,7 +44,7 @@
 | Dark UI. |
 | UI Optimized for Mobile|
 
-</h2>
+
 
 
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
