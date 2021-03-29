@@ -54,9 +54,9 @@ export const displayAllDish = () => {
   });
 };
 
-export const displayDish = (id) => {
+export const displayDish = async (id) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return axios
+  return await axios
     .get(server_url + `/api/v1/dish/${id}`, {
       headers: {
         Authorization: `Bearer ${authToken}`
@@ -68,9 +68,9 @@ export const displayDish = (id) => {
     .catch((err) => err);
 };
 
-export const addDish = (name, type, price) => {
+export const addDish = async (name, type, price) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return axios
+  return await axios
     .post(server_url + '/api/v1/dish/', {
       headers: {
         Authorization: `Bearer ${authToken}`
@@ -87,9 +87,9 @@ export const addDish = (name, type, price) => {
     .catch((err) => err);
 };
 
-export const delDish = (id) => {
+export const delDish = async (id) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return fetch(server_url + `/api/v1/dish/${id}`, {
+  return await fetch(server_url + `/api/v1/dish/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${authToken}`
@@ -99,9 +99,9 @@ export const delDish = (id) => {
   });
 };
 
-export const updateDish = (name, price) => {
+export const updateDish = async (name, price) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return fetch(server_url + `/api/v1/dish/`, {
+  return await fetch(server_url + `/api/v1/dish/`, {
     method: 'PUT',
     headers: {
       Authorization: `Bearer ${authToken}`

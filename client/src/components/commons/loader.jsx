@@ -4,8 +4,8 @@ export default class FoodleLoader extends Component {
   render() {
     return (
       <div>
-        <div class="progress">
-          <div class="indeterminate"></div>
+        <div className="progress">
+          <div className="indeterminate"></div>
         </div>
       </div>
     );

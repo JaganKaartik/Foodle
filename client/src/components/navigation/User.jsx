@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../context/User.Context';
+import logoSVG from '../../assets/images/logo.svg';
 
 const User = () => {
   // eslint-disable-next-line no-unused-vars
@@ -7,13 +8,21 @@ const User = () => {
 
   return (
     <div className="container-login flex-grow">
-      <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div class="md:flex">
-          <div class="md:flex-shrink-0">
-            <img class="h-48 w-full object-cover md:w-48" src={data.profileImageUrl} alt="Man" />
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="md:flex">
+          <div className="md:flex-shrink-0">
+            {data.profileImageUrl ? (
+              <img
+                className="h-48 w-full object-cover md:w-48"
+                src={data.profileImageUrl}
+                alt="Man"
+              />
+            ) : (
+              <img className="h-48 w-full object-cover md:w-48" src={logoSVG} alt="Man" />
+            )}
           </div>
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+          <div className="p-8">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
               {data.name}
             </div>
 

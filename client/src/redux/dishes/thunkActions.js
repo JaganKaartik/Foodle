@@ -19,9 +19,9 @@ export const thunkFetchOneDish = (id) => {
   return function (dispatch) {
     dispatch(actionCreators.fetchOneDishRequest());
     return displayDish(id)
-      .then((d) => {
-        if (d.length !== 0) {
-          dispatch(actionCreators.fetchOneDishSuccess(d[0]));
+      .then((resp) => {
+        if (resp.length !== 0) {
+          dispatch(actionCreators.fetchOneDishSuccess(resp[0]));
         } else {
           dispatch(actionCreators.fetchOneDishFailure('Dish not found'));
         }
