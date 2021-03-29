@@ -2,14 +2,13 @@
    Foodle
 </h1>
 
-<h4 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h4>
+<h3 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h3>
 
-<div align="center">
-  <sub>Built with ❤︎ </sub>
-</div>
 
-### Built With
-<p>
+<h2 align="center">
+   Built With ❤︎ using
+</h2>
+<p align="center">
 <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
 <img alt="Expressjs" src="https://img.shields.io/badge/-Express.js-2088FF?style=flat-square&logo=Express&logoColor=white" />
 <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
@@ -18,7 +17,7 @@
 <img alt="Docker" src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
 <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
 </p>
-<p>
+<p align="center">
 <img alt="TailwindCSS" src="https://img.shields.io/badge/-TailwindCSS-38b2ac?style=flat-square&logo=tailwind%20css&logoColor=white" />
 <img alt="ESLint" src="https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white" />   
 <img alt="Prettier" src="https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white" />
@@ -29,13 +28,27 @@
 <!--   <img alt="github actions" src="https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" /> -->
 </p>
 
-### Features
-- OAuth Authentication (Google & Twitter).
-- JWT Token based session.
-- API validation.
-- Dockerized client & server for containerized deployment.
+<h2 align="center">
+   Features
+</h2>
+
+<h2 align="center">
+   
+| Features |
+|----------------------------------------------------------|
+| OAuth Authentication (Google & Twitter).                 |
+| JWT Token based session.                                 |
+| API validation.                                          |
+| API RateLimiting                                         |
+| Dockerized client & server for containerized deployment. |
+| Dark UI. |
+| UI Optimized for Mobile|
+
+</h2>
+
 
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
+
 <h2 align="center">
    Dark UI
 </h2>
