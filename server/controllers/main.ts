@@ -3,10 +3,12 @@ const root = (req, res) => {
 }
 
 const error = (req, res) => {
-  res.send('Error')
+  res.send('Error 404')
 }
 
-const testRoute = (req, res) => {
-  res.send({ message: 'test route' })
+const healthCheck = (req, res) => {
+  res.status(200)
+  res.send('Health Check! -- Server Health : OK')
 }
-export { root, error, testRoute }
+
+export { root, error, healthCheck }

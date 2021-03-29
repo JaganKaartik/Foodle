@@ -1,10 +1,10 @@
 import express from 'express'
-import { root, error, testRoute } from '../controllers/main'
+import { root, error, healthCheck } from '../controllers/main'
 
 const mainRouter = express.Router()
 
 mainRouter.get('/', root)
 mainRouter.get('/error', error)
-mainRouter.get('/test', testRoute)
+mainRouter.get('/health-check', healthCheck)
 
 export = mainRouter
