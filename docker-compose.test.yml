@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 
 services:
-  foodle-app:
-    container_name: foodle-app-test
+  react-app:
     command: yarn start:test

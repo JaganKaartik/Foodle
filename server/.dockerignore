@@ -1,9 +1,10 @@
 .git
 .eslint.json
 .eslintignore
-.prettier
+.prettierrc
 .gitignore
 LICENSE
 README.md
 node_modules
 .dockerignore
+Procfile

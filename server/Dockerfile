@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock ./
 
-# Install app dependencies
+# Install app dependencies (no lockfile)
 RUN yarn install --pure-lockfile
 
 # Copy app source to work directory
@@ -15,4 +15,4 @@ COPY . .
 RUN yarn build
 
 # Expose Port 
-EXPOSE 7000
+EXPOSE 8000
