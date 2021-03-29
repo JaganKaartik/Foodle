@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 
 services:
-  foodle-app:
-    container_name: foodle-app-prod
+  react-app:
     command: yarn start:prod
