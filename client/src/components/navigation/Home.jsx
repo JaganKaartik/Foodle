@@ -44,7 +44,7 @@ function Home() {
               <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Stack
               </div>
-              <p className="flex flex-wrap gap-1.5 md:justify justify-between mt-2">
+              <div className="flex flex-wrap gap-1.5 md:justify justify-between mt-2">
                 <div className="shadow-2xl">
                   <img
                     alt="JavaScript"
@@ -135,19 +135,45 @@ function Home() {
                     src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"
                   />
                 </div>
-              </p>
+              </div>
               <br />
               <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Features:
               </div>
-              <p className="home-list mt-2 text-blue-500 text-lg">
+              <div className="home-list mt-2 text-blue-500 text-lg">
                 <ul>
                   <li>OAuth Authentication (Google and Twitter)</li>
                   <li>JWT Session</li>
                   <li>API Validation & Rate Limiting</li>
                   <li>Dockerized Server & Client</li>
                 </ul>
-              </p>
+              </div>
+              <br />
+              <div className="flex flex-wrap gap-5">
+                <div>
+                  <a
+                    class="github-button"
+                    href="https://github.com/JaganKaartik"
+                    data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+                    data-size="large"
+                    aria-label="Follow @JaganKaartik on GitHub"
+                  >
+                    Follow @JaganKaartik
+                  </a>
+                </div>
+                <div>
+                  <a
+                    class="github-button"
+                    href="https://github.com/JaganKaartik/Foodle"
+                    data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    aria-label="Star JaganKaartik/Foodle on GitHub"
+                  >
+                    Star this Repo!
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

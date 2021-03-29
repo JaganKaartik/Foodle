@@ -52,7 +52,8 @@ class Authentication extends Component {
                 </div>
                 <div>
                   <button
-                    className="rounded-xl w-full shadow-2xl inline-flex items-center h-12 px-5 text-indigo-100 transition duration-200 ease-in-out bg-indigo-500 hover:bg-blue-400 transform hover:-translate-y-1 hover:scale-110 .."
+                    value="twitter"
+                    className="disabled rounded-xl w-full shadow-2xl inline-flex items-center h-12 px-5 text-indigo-100 transition duration-200 ease-in-out bg-indigo-500 hover:bg-blue-400 transform hover:-translate-y-1 hover:scale-110 .."
                     onClick={this.valueHandler}
                   >
                     <span>Login with Twitter</span>

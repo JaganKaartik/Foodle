@@ -25,7 +25,7 @@ authRouter.get(
   '/twitter/redirect',
   passport.authenticate('twitter', {
     failureRedirect: '/',
-    session: true
+    session: false
   }),
   authRedirectTwitter
 )
