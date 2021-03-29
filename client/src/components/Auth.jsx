@@ -28,8 +28,8 @@ class Authentication extends Component {
   };
 
   render() {
-    if (this.state.toDashboard) {
-      return <Redirect to="/dashboard" />;
+    if (!this.state.toDashboard) {
+      return <Redirect to="/profile" />;
     } else
       return (
         <div className="container-login flex-grow">
