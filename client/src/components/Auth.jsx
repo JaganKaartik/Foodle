@@ -28,7 +28,7 @@ class Authentication extends Component {
   };
 
   render() {
-    if (!this.state.toDashboard) {
+    if (this.state.toDashboard) {
       return <Redirect to="/profile" />;
     } else
       return (
