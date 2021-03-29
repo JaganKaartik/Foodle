@@ -148,6 +148,32 @@ function Home() {
                   <li>Dockerized Server & Client</li>
                 </ul>
               </div>
+              <br />
+              <div className="flex flex-wrap gap-5">
+                <div>
+                  <a
+                    class="github-button"
+                    href="https://github.com/JaganKaartik"
+                    data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+                    data-size="large"
+                    aria-label="Follow @JaganKaartik on GitHub"
+                  >
+                    Follow @JaganKaartik
+                  </a>
+                </div>
+                <div>
+                  <a
+                    class="github-button"
+                    href="https://github.com/JaganKaartik/Foodle"
+                    data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    aria-label="Star JaganKaartik/Foodle on GitHub"
+                  >
+                    Star this Repo!
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
