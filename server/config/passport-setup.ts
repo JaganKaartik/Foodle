@@ -31,7 +31,7 @@ passport.use(
       callbackURL: '/auth/twitter/redirect'
     },
     async (token, tokenSecret, profile, done) => {
-      User.findOne({
+      await User.findOne({
         userId: profile._json.id_str
       }).then((currentUser) => {
         if (!currentUser) {
@@ -42,8 +42,10 @@ passport.use(
             profileImageUrl: profile._json.profile_image_url,
             otherInfo: profile._json.screen_name,
             location: profile._json.location,
-            profileBannerUrl: profile._json.profile_banner_url
-          }).save()
+            profileBannerUrl: profile._json.profile_banner_url,
+            role: 'user'
+          })
+          newUser.save()
           done(null, newUser)
         } else {
           done(null, currentUser)
@@ -62,7 +64,7 @@ passport.use(
       passReqToCallback: true
     },
     async (request, accessToken, refreshToken, profile, done) => {
-      User.findOne({
+      await User.findOne({
         userId: profile._json.sub
       })
         .then((currentUser) => {
@@ -72,8 +74,10 @@ passport.use(
               provider: profile.provider,
               name: profile._json.name,
               profileImageUrl: profile._json.picture,
-              otherInfo: profile._json.email
-            }).save()
+              otherInfo: profile._json.email,
+              role: 'user'
+            })
+            newUser.save()
             done(null, newUser)
           } else {
             done(null, currentUser)

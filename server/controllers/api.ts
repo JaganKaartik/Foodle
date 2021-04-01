@@ -4,10 +4,10 @@ const { validationResult } = require('express-validator')
 const Dishes = require('../models/dish')
 const User = require('../models/user')
 
-const addDish = (req, res) => {
+const addDish = async (req, res) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
-    Dishes.find({}, { id: 1, _id: 0 })
+    await Dishes.find({}, { id: 1, _id: 0 })
       .limit(1)
       .sort({ $natural: -1 })
       .then((data: JSON) => {
@@ -37,8 +37,8 @@ const addDish = (req, res) => {
   }
 }
 
-const getAllDish = (req, res) => {
-  Dishes.find({})
+const getAllDish = async (req, res) => {
+  await Dishes.find({})
     .then((data: JSON) => {
       res.send(data)
     })
@@ -47,10 +47,10 @@ const getAllDish = (req, res) => {
     })
 }
 
-const getDish = (req, res) => {
+const getDish = async (req, res) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
-    Dishes.find({ id: req.params.id })
+    await Dishes.find({ id: req.params.id })
       .then((data: JSON) => {
         res.send(data)
       })
@@ -62,10 +62,10 @@ const getDish = (req, res) => {
   }
 }
 
-const deleteDish = (req, res) => {
+const deleteDish = async (req, res) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
-    Dishes.findOneAndRemove({ id: req.params.id })
+    await Dishes.findOneAndRemove({ id: req.params.id })
       .then((data: JSON) => {
         if (data) {
           res.send({ success: true })
@@ -81,10 +81,10 @@ const deleteDish = (req, res) => {
   }
 }
 
-const updateDish = (req, res) => {
+const updateDish = async (req, res) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
-    Dishes.findOneAndUpdate(
+    await Dishes.findOneAndUpdate(
       { name: req.body.name },
       { price: req.body.price },
       { new: true }
@@ -104,8 +104,8 @@ const updateDish = (req, res) => {
   }
 }
 
-const getUserInfo = (req, res) => {
-  User.find({ userId: req.params.userid })
+const getUserInfo = async (req, res) => {
+  await User.find({ userId: req.params.userid })
     .then((data: JSON) => {
       res.send(data)
     })
