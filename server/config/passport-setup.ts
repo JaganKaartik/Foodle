@@ -44,7 +44,8 @@ passport.use(
             location: profile._json.location,
             profileBannerUrl: profile._json.profile_banner_url,
             role: 'user'
-          }).save()
+          })
+          newUser.save()
           done(null, newUser)
         } else {
           done(null, currentUser)
@@ -75,7 +76,8 @@ passport.use(
               profileImageUrl: profile._json.picture,
               otherInfo: profile._json.email,
               role: 'user'
-            }).save()
+            })
+            newUser.save()
             done(null, newUser)
           } else {
             done(null, currentUser)
