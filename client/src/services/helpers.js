@@ -77,15 +77,16 @@ export const displayDish = async (id) => {
 export const addDish = async (name, type, price) => {
   const authToken = localStorage.getItem('foodle-jwt');
   return await axios
-    .post(server_url + '/api/v1/dish/', {
+    .request(server_url + '/api/v1/dish/', {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${authToken}`
       },
-      body: JSON.stringify({
+      data: {
         name,
         type,
         price
-      }),
+      },
       mode: 'cors',
       credentials: 'include'
     })
@@ -107,15 +108,15 @@ export const delDish = async (id) => {
 
 export const updateDish = async (name, price) => {
   const authToken = localStorage.getItem('foodle-jwt');
-  return await fetch(server_url + `/api/v1/dish/`, {
+  return await axios(server_url + `/api/v1/dish/`, {
     method: 'PUT',
     headers: {
       Authorization: `Bearer ${authToken}`
     },
-    body: JSON.stringify({
+    data: {
       name,
       price
-    }),
+    },
     mode: 'cors',
     credentials: 'include'
   });

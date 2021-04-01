@@ -8,7 +8,7 @@ import { logout } from '../../services/token';
 import Toggler from '../commons/Toggle';
 import ProfileImage from '../profile';
 import ReactGA from 'react-ga';
-import { seedDB } from '../../services/helpers';
+import Admin from '../profile/admin';
 class Navigation extends Component {
   state = {
     id: '',
@@ -25,11 +25,6 @@ class Navigation extends Component {
       }
     }
   }
-
-  handleSeedClick = (e) => {
-    e.preventDefault();
-    seedDB();
-  };
 
   handleLogout = (e) => {
     e.preventDefault();
@@ -102,12 +97,7 @@ class Navigation extends Component {
         <ul className="nav-text lg:flex items-center justify-between text-base pt-4 lg:pt-0">
           <li>
             <div className="lg:p-1.5 py-0.5 px-0 block border-b-2 border-transparent lg:mb-0 mb-2">
-              <button
-                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 shadow"
-                onClick={this.handleSeedClick.bind(this)}
-              >
-                Re-Seed DB
-              </button>
+              <Admin />
             </div>
           </li>
           <li>
