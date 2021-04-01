@@ -21,19 +21,22 @@ export const seedDB = () => {
 export const getUserProfile = async () => {
   const authToken = localStorage.getItem('foodle-jwt');
   const userId = localStorage.getItem('foodle-usr-id');
-  const result = await axios
-    .get(server_url + '/api/v1/user/' + userId, {
-      headers: {
-        Authorization: `Bearer ${authToken}`
-      },
-      mode: 'cors',
-      credentials: 'include'
-    })
-    .then((resp) => resp.data)
-    .then((d) => {
-      return d[0];
-    })
-    .catch((err) => err);
+  let result;
+  if (authToken && userId) {
+    result = await axios
+      .get(server_url + '/api/v1/user/' + userId, {
+        headers: {
+          Authorization: `Bearer ${authToken}`
+        },
+        mode: 'cors',
+        credentials: 'include'
+      })
+      .then((resp) => resp.data)
+      .then((d) => {
+        return d[0];
+      })
+      .catch((err) => err);
+  }
   return result;
 };
 
