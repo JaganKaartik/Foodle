@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import bg2_light from '../../assets/images/si_light.gif';
-import bg2_dark from '../../assets/images/si_dark.gif';
-import bg1_light from '../../assets/images/cooking_light.gif';
-import bg1_dark from '../../assets/images/cooking_dark.gif';
+import React from 'react';
+import pic1 from '../../assets/images/pic1.svg';
+import pic2 from '../../assets/images/pic2.svg';
 
 function Home() {
-  const [data, setData] = useState({ img1: bg1_light, img2: bg2_light });
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-  useEffect(() => {
-    if (currentTheme === 'dark') {
-      setData({ img1: bg1_dark, img2: bg2_dark });
-    }
-  }, [currentTheme]);
+  // const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  // useEffect(() => {
+  //   if (currentTheme === 'dark') {
+  //   }
+  // }, [currentTheme]);
 
   return (
     <div className="home-grid flex-grow home-container">
       <div>
-        <img className="gifs" src={data.img2} alt="cant load img" />
+        <img
+          className="h-auto w-full object-cover md:flex-shrink-0"
+          src={pic1}
+          alt="cant load img"
+        />
       </div>
 
       <div>
@@ -33,7 +33,11 @@ function Home() {
       </div>
 
       <div>
-        <img className="gifs" src={data.img1} alt="cant load img" />
+        <img
+          className="h-auto w-full object-cover md:flex-shrink-0"
+          src={pic2}
+          alt="cant load img"
+        />
       </div>
 
       <div>
@@ -44,26 +48,28 @@ function Home() {
               <div className="block mt-1 text-lg leading-tight font-medium text-blue-700 hover:underline">
                 Stack
               </div>
-              <div className="flex flex-wrap gap-1.5 md:justify justify-between mt-2">
-                <div className="shadow-2xl">
+              {/* <div className="flex flex-wrap gap-1 md:justify justify-between mt-2"> */}
+              <div className="grid grid-cols-3 lg:grid-cols-5 gap-2">
+                <div className="">
                   <img
                     alt="JavaScript"
                     src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
                   />
                 </div>
-                <div>
+                <div className="">
                   <img
                     alt="MongoDB"
                     src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white"
                   />
                 </div>
+
                 <div>
                   <img
                     alt="Expressjs"
                     src="https://img.shields.io/badge/-Express.js-2088FF?style=for-the-badge&logo=Express&logoColor=white"
                   />
                 </div>
-                <div>
+                <div className="col-span-1">
                   <img
                     alt="React"
                     src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"
@@ -171,6 +177,11 @@ function Home() {
                     aria-label="Star JaganKaartik/Foodle on GitHub"
                   >
                     Star this Repo!
+                  </a>
+                </div>
+                <div>
+                  <a className="text-blue-500" href="https://storyset.com/people">
+                    Illustration by Freepik Storyset
                   </a>
                 </div>
               </div>
