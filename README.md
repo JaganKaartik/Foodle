@@ -54,6 +54,14 @@ Ref: [Hapi-Foodle-API](https://github.com/JaganKaartik/Hapi-Foodle-API)
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
 
 <h2 align="center">
+   Demo
+</h2>
+
+<p align="center">
+   <img src="/media/home.gif">
+</p>
+
+<h2 align="center">
    Dark UI
 </h2>
 
