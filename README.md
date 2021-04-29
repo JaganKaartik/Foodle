@@ -47,6 +47,10 @@
    What else ? This was my first react project. 🐣
 </h2>
 
+**This project was created on January 2020. Originally it was built using Hapi.js as the backend. Recently, migrated to Express.**
+
+Ref: [Hapi-Foodle-API](https://github.com/JaganKaartik/Hapi-Foodle-API)
+
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
 
 <h2 align="center">
