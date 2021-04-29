@@ -5,9 +5,9 @@
 <h3 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h3>
 
 
-<h2 align="center">
+<h3 align="center">
    Built With ❤︎ using
-</h2>
+</h3>
 
 <p align="center">
 <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
@@ -27,23 +27,25 @@
 </p>
 
 <h2 align="center">
-   Features
+   What makes Foodle unique from a regular CRUD App ? Features ?
 </h2>
 
+- OAuth Authentication
+   - Twitter & Google (Only Google in Production)                
+- JWT based session management                                 
+- API 
+    - Validation                                         
+    - Rate Limiting   
+- Dockerized client & server for containerized deployment
+- UI
+    - Dark Mode
+    - Mobile/Tablet Responsive UI
+    - Atlaskit Components (Modals/Buttons)
+- Role based system (Admin & Users). 
 
-   
-| Features |
-|----------------------------------------------------------|
-| OAuth Authentication (Google & Twitter).                 |
-| JWT Token based session.                                 |
-| API validation.                                          |
-| API RateLimiting                                         |
-| Dockerized client & server for containerized deployment. |
-| Dark UI. |
-| UI Optimized for Mobile|
-
-
-
+<h2 align="center">
+   What else ? This was my first react project. 🐣
+</h2>
 
 **Note: Ignore no of Commits, PRs and Issues History. This is a sandbox repo with continuous changes.**
 
