@@ -1,13 +1,10 @@
 <p align="center">
-    <img src="/media/food.png" height="150" width="150">
+    <img src="/media/dinner-date.png" height="250" width="250">
    <h1 align="center">FOODLE
 <h4 align="center">Foodle is a SPA built on the MERN stack, a CRUD application of Dishes.</h4>
 </h1>
 </p>
   
-
-
-
 <h3 align="center">
    Built With ❤︎ using
 </h3>
@@ -87,3 +84,6 @@ Ref: [Hapi-Foodle-API](https://github.com/JaganKaartik/Hapi-Foodle-API)
 ![](/media/add_dish.png)
 ![](/media/dish_op.png)
 ![](/media/search_dish.png)
+
+**Attributions:**
+<a href="https://iconscout.com/3ds/dinner-date" target="_blank">Dinner date 3D</a> on <a href="https://iconscout.com">Iconscout</a>
