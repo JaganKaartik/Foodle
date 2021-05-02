@@ -1,8 +1,10 @@
-<h1 align="center">
-   Foodle
-</h1>
+<p align="center">
+    <img src="/media/food.png" height="200" width="200">
+   <h1 align="center">Foodle</h1>
+   <h4 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h4>
+</p>
+  
 
-<h3 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h3>
 
 
 <h3 align="center">
