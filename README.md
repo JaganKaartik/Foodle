@@ -1,8 +1,11 @@
-<h1 align="center">
-   Foodle
+<p align="center">
+    <img src="/media/food.png" height="150" width="150">
+   <h1 align="center">FOODLE
+<h4 align="center">Foodle is a SPA built on the MERN stack, a CRUD application of Dishes.</h4>
 </h1>
+</p>
+  
 
-<h3 align="center">Foodle is a SPA built on the MERN stack, a CRUD application dealing with Dishes.</h3>
 
 
 <h3 align="center">
@@ -27,21 +30,21 @@
 </p>
 
 <h2 align="center">
-   What makes Foodle unique from a regular CRUD App ? Features ?
+   What makes Foodle unique from a regular CRUD App ?
 </h2>
 
-- OAuth Authentication
+- OAuth Authentication 🔒
    - Twitter & Google (Only Google in Production)                
-- JWT based session management                                 
+- JWT based session management 🎟️                         
 - API 
-    - Validation                                         
-    - Rate Limiting   
-- Dockerized client & server for containerized deployment
+    - Validation ✅ ✅ ✅                                    
+    - Rate Limiting 👮 🛑 🏃 🏃 🏃 🏃 🏃 🏃 
+- Dockerized client & server for containerized deployment 🛳️ 🐋
 - UI
-    - Dark Mode
-    - Mobile/Tablet Responsive UI
-    - Atlaskit Components (Modals/Buttons)
-- Role based system (Admin & Users). 
+    - Dark Mode 🌚
+    - Mobile/Tablet Responsive UI 📱
+    - Atlaskit Components (Modals/Buttons) 🟦
+- Role based system (Admin & Users). 🧑‍🦱 🧑‍🦰
 
 <h2 align="center">
    What else ? This was my first react project. 🐣
