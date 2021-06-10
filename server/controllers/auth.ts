@@ -14,20 +14,7 @@ const authGoogle = passport.authenticate('google', {
   scope: ['email', 'profile']
 })
 
-const authRedirectGoogle = (req, res) => {
-  const token = jwt.sign(
-    {
-      data: req.user.userId
-    },
-    JWT_SECRET,
-    { expiresIn: '24h' }
-  )
-  res.redirect(`${clientUrl}?token=${token}&userid=${req.user.userId}`)
-}
-
-const authTwitter = passport.authenticate('twitter')
-
-const authRedirectTwitter = (req, res) => {
+const authRedirectHandler = (req, res) => {
   const token = jwt.sign(
     {
       data: req.user.userId
@@ -43,10 +30,4 @@ const logout = (req, res) => {
   res.redirect(clientUrl)
 }
 
-export {
-  authGoogle,
-  authRedirectGoogle,
-  authTwitter,
-  authRedirectTwitter,
-  logout
-}
+export { authGoogle, authRedirectHandler, logout }

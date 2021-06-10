@@ -2,8 +2,6 @@ import express from 'express'
 import { apiRouter, authRouter, mainRouter } from '../routes'
 
 const Middleware = express()
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const cors = require('cors')
 const rateLimit = require('express-rate-limit')
@@ -20,20 +18,18 @@ Middleware.use(cors({ credentials: true, origin: clientUrl }))
 
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 25,
+  max: 100,
   message:
     'Too many accounts created from this IP, please try again after a minute'
 })
 
 Middleware.use('/api/v1/', apiLimiter)
 
-Middleware.use(cookieParser())
-
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
-Middleware.use(bodyParser.urlencoded({ extended: false }))
-Middleware.use(bodyParser.json())
+Middleware.use(express.urlencoded({ extended: false }))
+Middleware.use(express.json())
 Middleware.use('/', mainRouter)
 Middleware.use('/auth', authRouter)
 Middleware.use('/api/v1', apiRouter)

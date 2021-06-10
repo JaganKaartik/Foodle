@@ -1,11 +1,5 @@
 import express from 'express'
-import {
-  authGoogle,
-  authRedirectGoogle,
-  authTwitter,
-  authRedirectTwitter,
-  logout
-} from '../controllers/auth'
+import { authGoogle, authRedirectHandler, logout } from '../controllers/auth'
 
 const passport = require('passport')
 
@@ -18,17 +12,9 @@ authRouter.get(
     failureRedirect: '/',
     session: true
   }),
-  authRedirectGoogle
+  authRedirectHandler
 )
-authRouter.get('/twitter', authTwitter)
-authRouter.get(
-  '/twitter/redirect',
-  passport.authenticate('twitter', {
-    failureRedirect: '/',
-    session: false
-  }),
-  authRedirectTwitter
-)
+
 authRouter.get('/logout', logout)
 
 export = authRouter
