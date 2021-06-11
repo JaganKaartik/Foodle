@@ -28,8 +28,9 @@ Middleware.use('/api/v1/', apiLimiter)
 Middleware.use(passport.initialize())
 Middleware.use(passport.session())
 
-Middleware.use(express.urlencoded({ extended: false }))
+Middleware.use(express.urlencoded({ extended: true }))
 Middleware.use(express.json())
+
 Middleware.use('/', mainRouter)
 Middleware.use('/auth', authRouter)
 Middleware.use('/api/v1', apiRouter)

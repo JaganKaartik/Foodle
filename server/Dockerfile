@@ -15,4 +15,7 @@ COPY . .
 RUN yarn build
 
 # Expose Port 
-EXPOSE 8000
+EXPOSE 7000
+
+# Command
+CMD ["yarn","start:prod"]

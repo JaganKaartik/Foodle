@@ -1,35 +1,20 @@
-version: "3"
+version: '3'
 services:
   react-app:
     image: react-app
     stdin_open: true
     ports:
-      - "3000:3000"
+      - '3000:3000'
     networks:
       - foodle-app
 
   api-server:
-    image: foodle-api-server
+    image: foodle-api
     ports:
-      - "8000:8000"
+      - '7000:7000'
     networks:
       - foodle-app
-    depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:3.6.19-xenial
-    ports:
-      - "27017:27017"
-    networks:
-      - foodle-app
-    volumes:
-      - mongo-data:/data/db
 
 networks:
   foodle-app:
     driver: bridge
-
-volumes:
-  mongo-data:
-    name: "foodle-volume"

@@ -1,5 +1,0 @@
-version: "3"
-
-services:
-  react-app:
-    command: yarn start:test
