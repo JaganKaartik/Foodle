@@ -10,7 +10,7 @@
     "build": "tsc",
     "start:dev": "yarn build && NODE_ENV=development nodemon dist/index",
     "start:test": "NODE_ENV=test nodemon dist/index",
-    "start:prod": "node dist/index",
+    "start:prod": "NODE_ENV=production node dist/index",
     "postinstall": "yarn run build",
     "lint": "eslint '*/**/*.ts'",
     "lint:fix": "eslint '*/**/*.ts' --fix",
